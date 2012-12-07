@@ -28,6 +28,7 @@ Partial Class Form2
         Dim EpithetoLabel As System.Windows.Forms.Label
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form2))
         Dim EmailLabel As System.Windows.Forms.Label
+        Dim Hoby2Label As System.Windows.Forms.Label
         Me.PeopleDataSet = New WindowsApplication1.peopleDataSet
         Me.PeopleBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.PeopleTableAdapter = New WindowsApplication1.peopleDataSetTableAdapters.PeopleTableAdapter
@@ -49,10 +50,12 @@ Partial Class Form2
         Me.Hm_GennisisTextBox = New System.Windows.Forms.TextBox
         Me.EpithetoTextBox = New System.Windows.Forms.TextBox
         Me.EmailTextBox = New System.Windows.Forms.TextBox
+        Me.Hoby2TextBox = New System.Windows.Forms.TextBox
         OnomaLabel = New System.Windows.Forms.Label
         Hm_GennisisLabel = New System.Windows.Forms.Label
         EpithetoLabel = New System.Windows.Forms.Label
         EmailLabel = New System.Windows.Forms.Label
+        Hoby2Label = New System.Windows.Forms.Label
         CType(Me.PeopleDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PeopleBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PeopleBindingNavigator, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -258,11 +261,30 @@ Partial Class Form2
         Me.EmailTextBox.Size = New System.Drawing.Size(100, 20)
         Me.EmailTextBox.TabIndex = 8
         '
+        'Hoby2Label
+        '
+        Hoby2Label.AutoSize = True
+        Hoby2Label.Location = New System.Drawing.Point(153, 199)
+        Hoby2Label.Name = "Hoby2Label"
+        Hoby2Label.Size = New System.Drawing.Size(41, 13)
+        Hoby2Label.TabIndex = 9
+        Hoby2Label.Text = "Hoby2:"
+        '
+        'Hoby2TextBox
+        '
+        Me.Hoby2TextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PeopleBindingSource, "Hoby2", True))
+        Me.Hoby2TextBox.Location = New System.Drawing.Point(200, 196)
+        Me.Hoby2TextBox.Name = "Hoby2TextBox"
+        Me.Hoby2TextBox.Size = New System.Drawing.Size(100, 20)
+        Me.Hoby2TextBox.TabIndex = 10
+        '
         'Form2
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(633, 338)
+        Me.Controls.Add(Hoby2Label)
+        Me.Controls.Add(Me.Hoby2TextBox)
         Me.Controls.Add(EmailLabel)
         Me.Controls.Add(Me.EmailTextBox)
         Me.Controls.Add(EpithetoLabel)
@@ -304,4 +326,5 @@ Partial Class Form2
     Friend WithEvents Hm_GennisisTextBox As System.Windows.Forms.TextBox
     Friend WithEvents EpithetoTextBox As System.Windows.Forms.TextBox
     Friend WithEvents EmailTextBox As System.Windows.Forms.TextBox
+    Friend WithEvents Hoby2TextBox As System.Windows.Forms.TextBox
 End Class
