@@ -22,51 +22,51 @@ Partial Class Login
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.UsernameTextBox = New System.Windows.Forms.TextBox
-        Me.PasswordTextBox = New System.Windows.Forms.TextBox
-        Me.Label1 = New System.Windows.Forms.Label
-        Me.Label2 = New System.Windows.Forms.Label
+        Me.UserNameText = New System.Windows.Forms.TextBox
+        Me.PasswordText = New System.Windows.Forms.TextBox
+        Me.UserNameLabel = New System.Windows.Forms.Label
+        Me.PasswordLabel = New System.Windows.Forms.Label
         Me.LoginButton = New System.Windows.Forms.Button
         Me.RegisterButton = New System.Windows.Forms.Button
         Me.SuspendLayout()
         '
-        'UsernameTextBox
+        'UserNameText
         '
-        Me.UsernameTextBox.Location = New System.Drawing.Point(40, 71)
-        Me.UsernameTextBox.Name = "UsernameTextBox"
-        Me.UsernameTextBox.Size = New System.Drawing.Size(100, 20)
-        Me.UsernameTextBox.TabIndex = 0
+        Me.UserNameText.Location = New System.Drawing.Point(39, 56)
+        Me.UserNameText.Name = "UserNameText"
+        Me.UserNameText.Size = New System.Drawing.Size(100, 20)
+        Me.UserNameText.TabIndex = 0
         '
-        'PasswordTextBox
+        'PasswordText
         '
-        Me.PasswordTextBox.Location = New System.Drawing.Point(40, 110)
-        Me.PasswordTextBox.Name = "PasswordTextBox"
-        Me.PasswordTextBox.Size = New System.Drawing.Size(100, 20)
-        Me.PasswordTextBox.TabIndex = 1
+        Me.PasswordText.Location = New System.Drawing.Point(39, 92)
+        Me.PasswordText.Name = "PasswordText"
+        Me.PasswordText.Size = New System.Drawing.Size(100, 20)
+        Me.PasswordText.TabIndex = 1
         '
-        'Label1
+        'UserNameLabel
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(161, Byte))
-        Me.Label1.Location = New System.Drawing.Point(160, 74)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(73, 15)
-        Me.Label1.TabIndex = 2
-        Me.Label1.Text = "Username"
+        Me.UserNameLabel.AutoSize = True
+        Me.UserNameLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.UserNameLabel.Location = New System.Drawing.Point(162, 60)
+        Me.UserNameLabel.Name = "UserNameLabel"
+        Me.UserNameLabel.Size = New System.Drawing.Size(63, 13)
+        Me.UserNameLabel.TabIndex = 2
+        Me.UserNameLabel.Text = "Username"
         '
-        'Label2
+        'PasswordLabel
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(161, Byte))
-        Me.Label2.Location = New System.Drawing.Point(160, 112)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(69, 15)
-        Me.Label2.TabIndex = 3
-        Me.Label2.Text = "Password"
+        Me.PasswordLabel.AutoSize = True
+        Me.PasswordLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(161, Byte))
+        Me.PasswordLabel.Location = New System.Drawing.Point(163, 95)
+        Me.PasswordLabel.Name = "PasswordLabel"
+        Me.PasswordLabel.Size = New System.Drawing.Size(61, 13)
+        Me.PasswordLabel.TabIndex = 3
+        Me.PasswordLabel.Text = "Password"
         '
         'LoginButton
         '
-        Me.LoginButton.Location = New System.Drawing.Point(50, 184)
+        Me.LoginButton.Location = New System.Drawing.Point(176, 205)
         Me.LoginButton.Name = "LoginButton"
         Me.LoginButton.Size = New System.Drawing.Size(75, 23)
         Me.LoginButton.TabIndex = 4
@@ -75,7 +75,7 @@ Partial Class Login
         '
         'RegisterButton
         '
-        Me.RegisterButton.Location = New System.Drawing.Point(163, 184)
+        Me.RegisterButton.Location = New System.Drawing.Point(54, 135)
         Me.RegisterButton.Name = "RegisterButton"
         Me.RegisterButton.Size = New System.Drawing.Size(75, 23)
         Me.RegisterButton.TabIndex = 5
@@ -89,20 +89,20 @@ Partial Class Login
         Me.ClientSize = New System.Drawing.Size(284, 262)
         Me.Controls.Add(Me.RegisterButton)
         Me.Controls.Add(Me.LoginButton)
-        Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.PasswordTextBox)
-        Me.Controls.Add(Me.UsernameTextBox)
+        Me.Controls.Add(Me.PasswordLabel)
+        Me.Controls.Add(Me.UserNameLabel)
+        Me.Controls.Add(Me.PasswordText)
+        Me.Controls.Add(Me.UserNameText)
         Me.Name = "Login"
         Me.Text = "Login"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents UsernameTextBox As System.Windows.Forms.TextBox
-    Friend WithEvents PasswordTextBox As System.Windows.Forms.TextBox
-    Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents Label2 As System.Windows.Forms.Label
+    Friend WithEvents UserNameText As System.Windows.Forms.TextBox
+    Friend WithEvents PasswordText As System.Windows.Forms.TextBox
+    Friend WithEvents UserNameLabel As System.Windows.Forms.Label
+    Friend WithEvents PasswordLabel As System.Windows.Forms.Label
     Friend WithEvents LoginButton As System.Windows.Forms.Button
     Friend WithEvents RegisterButton As System.Windows.Forms.Button
 End Class

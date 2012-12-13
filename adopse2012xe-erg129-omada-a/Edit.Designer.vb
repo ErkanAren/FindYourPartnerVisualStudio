@@ -23,11 +23,13 @@ Partial Class Edit
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container
+        Dim IDLabel As System.Windows.Forms.Label
         Dim OnomaLabel As System.Windows.Forms.Label
         Dim EpithetoLabel As System.Windows.Forms.Label
         Dim Hm_GennisisLabel As System.Windows.Forms.Label
         Dim BarosLabel As System.Windows.Forms.Label
         Dim YpsosLabel As System.Windows.Forms.Label
+        Dim FyloLabel As System.Windows.Forms.Label
         Dim Xrwma_MatiwnLabel As System.Windows.Forms.Label
         Dim Xrwma_MalliwnLabel As System.Windows.Forms.Label
         Dim Hoby1Label As System.Windows.Forms.Label
@@ -37,18 +39,20 @@ Partial Class Edit
         Dim EmailLabel As System.Windows.Forms.Label
         Dim GlwssaLabel As System.Windows.Forms.Label
         Dim Glwssa2Label As System.Windows.Forms.Label
+        Dim TatooLabel As System.Windows.Forms.Label
         Dim ErgasiaLabel As System.Windows.Forms.Label
         Dim PerioxhLabel As System.Windows.Forms.Label
-        Dim TatooLabel1 As System.Windows.Forms.Label
-        Dim FyloLabel1 As System.Windows.Forms.Label
-        Me.EdButton = New System.Windows.Forms.Button
+        Me.PeopleDataSet = New WindowsApplication1.peopleDataSet
+        Me.PeopleBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.PeopleTableAdapter = New WindowsApplication1.peopleDataSetTableAdapters.PeopleTableAdapter
+        Me.TableAdapterManager = New WindowsApplication1.peopleDataSetTableAdapters.TableAdapterManager
+        Me.IDTextBox = New System.Windows.Forms.TextBox
         Me.OnomaTextBox = New System.Windows.Forms.TextBox
         Me.EpithetoTextBox = New System.Windows.Forms.TextBox
         Me.Hm_GennisisTextBox = New System.Windows.Forms.TextBox
-        Me.PeopleBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.PeopleDataSet = New WindowsApplication1.peopleDataSet
         Me.BarosTextBox = New System.Windows.Forms.TextBox
         Me.YpsosTextBox = New System.Windows.Forms.TextBox
+        Me.FyloTextBox = New System.Windows.Forms.TextBox
         Me.Xrwma_MatiwnTextBox = New System.Windows.Forms.TextBox
         Me.Xrwma_MalliwnTextBox = New System.Windows.Forms.TextBox
         Me.Hoby1TextBox = New System.Windows.Forms.TextBox
@@ -56,19 +60,19 @@ Partial Class Edit
         Me.Hoby3TextBox = New System.Windows.Forms.TextBox
         Me.AnazitaTextBox = New System.Windows.Forms.TextBox
         Me.EmailTextBox = New System.Windows.Forms.TextBox
-        Me.PeopleTableAdapter = New WindowsApplication1.peopleDataSetTableAdapters.PeopleTableAdapter
         Me.GlwssaTextBox = New System.Windows.Forms.TextBox
         Me.Glwssa2TextBox = New System.Windows.Forms.TextBox
+        Me.TatooTextBox = New System.Windows.Forms.TextBox
         Me.ErgasiaTextBox = New System.Windows.Forms.TextBox
         Me.PerioxhTextBox = New System.Windows.Forms.TextBox
-        Me.TableAdapterManager = New WindowsApplication1.peopleDataSetTableAdapters.TableAdapterManager
-        Me.TatooCheckBox = New System.Windows.Forms.CheckBox
-        Me.FyloComboBox = New System.Windows.Forms.ComboBox
+        Me.EditBt = New System.Windows.Forms.Button
+        IDLabel = New System.Windows.Forms.Label
         OnomaLabel = New System.Windows.Forms.Label
         EpithetoLabel = New System.Windows.Forms.Label
         Hm_GennisisLabel = New System.Windows.Forms.Label
         BarosLabel = New System.Windows.Forms.Label
         YpsosLabel = New System.Windows.Forms.Label
+        FyloLabel = New System.Windows.Forms.Label
         Xrwma_MatiwnLabel = New System.Windows.Forms.Label
         Xrwma_MalliwnLabel = New System.Windows.Forms.Label
         Hoby1Label = New System.Windows.Forms.Label
@@ -78,292 +82,26 @@ Partial Class Edit
         EmailLabel = New System.Windows.Forms.Label
         GlwssaLabel = New System.Windows.Forms.Label
         Glwssa2Label = New System.Windows.Forms.Label
+        TatooLabel = New System.Windows.Forms.Label
         ErgasiaLabel = New System.Windows.Forms.Label
         PerioxhLabel = New System.Windows.Forms.Label
-        TatooLabel1 = New System.Windows.Forms.Label
-        FyloLabel1 = New System.Windows.Forms.Label
-        CType(Me.PeopleBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PeopleDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PeopleBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'EdButton
-        '
-        Me.EdButton.Location = New System.Drawing.Point(404, 328)
-        Me.EdButton.Name = "EdButton"
-        Me.EdButton.Size = New System.Drawing.Size(75, 23)
-        Me.EdButton.TabIndex = 76
-        Me.EdButton.Text = "Edit"
-        Me.EdButton.UseVisualStyleBackColor = True
-        '
-        'OnomaLabel
-        '
-        OnomaLabel.AutoSize = True
-        OnomaLabel.Location = New System.Drawing.Point(56, 43)
-        OnomaLabel.Name = "OnomaLabel"
-        OnomaLabel.Size = New System.Drawing.Size(44, 13)
-        OnomaLabel.TabIndex = 40
-        OnomaLabel.Text = "Onoma:"
-        '
-        'OnomaTextBox
-        '
-        Me.OnomaTextBox.Location = New System.Drawing.Point(142, 40)
-        Me.OnomaTextBox.Name = "OnomaTextBox"
-        Me.OnomaTextBox.Size = New System.Drawing.Size(100, 20)
-        Me.OnomaTextBox.TabIndex = 41
-        '
-        'EpithetoLabel
-        '
-        EpithetoLabel.AutoSize = True
-        EpithetoLabel.Location = New System.Drawing.Point(56, 69)
-        EpithetoLabel.Name = "EpithetoLabel"
-        EpithetoLabel.Size = New System.Drawing.Size(49, 13)
-        EpithetoLabel.TabIndex = 42
-        EpithetoLabel.Text = "Epitheto:"
-        '
-        'EpithetoTextBox
-        '
-        Me.EpithetoTextBox.Location = New System.Drawing.Point(142, 66)
-        Me.EpithetoTextBox.Name = "EpithetoTextBox"
-        Me.EpithetoTextBox.Size = New System.Drawing.Size(100, 20)
-        Me.EpithetoTextBox.TabIndex = 43
-        '
-        'Hm_GennisisLabel
-        '
-        Hm_GennisisLabel.AutoSize = True
-        Hm_GennisisLabel.Location = New System.Drawing.Point(56, 95)
-        Hm_GennisisLabel.Name = "Hm_GennisisLabel"
-        Hm_GennisisLabel.Size = New System.Drawing.Size(69, 13)
-        Hm_GennisisLabel.TabIndex = 44
-        Hm_GennisisLabel.Text = "Hm Gennisis:"
-        '
-        'Hm_GennisisTextBox
-        '
-        Me.Hm_GennisisTextBox.Location = New System.Drawing.Point(142, 92)
-        Me.Hm_GennisisTextBox.Name = "Hm_GennisisTextBox"
-        Me.Hm_GennisisTextBox.Size = New System.Drawing.Size(100, 20)
-        Me.Hm_GennisisTextBox.TabIndex = 45
-        '
-        'BarosLabel
-        '
-        BarosLabel.AutoSize = True
-        BarosLabel.Location = New System.Drawing.Point(56, 121)
-        BarosLabel.Name = "BarosLabel"
-        BarosLabel.Size = New System.Drawing.Size(37, 13)
-        BarosLabel.TabIndex = 46
-        BarosLabel.Text = "Baros:"
-        '
-        'PeopleBindingSource
-        '
-        Me.PeopleBindingSource.DataMember = "People"
-        Me.PeopleBindingSource.DataSource = Me.PeopleDataSet
         '
         'PeopleDataSet
         '
         Me.PeopleDataSet.DataSetName = "peopleDataSet"
         Me.PeopleDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
-        'BarosTextBox
+        'PeopleBindingSource
         '
-        Me.BarosTextBox.Location = New System.Drawing.Point(142, 118)
-        Me.BarosTextBox.Name = "BarosTextBox"
-        Me.BarosTextBox.Size = New System.Drawing.Size(100, 20)
-        Me.BarosTextBox.TabIndex = 47
-        '
-        'YpsosLabel
-        '
-        YpsosLabel.AutoSize = True
-        YpsosLabel.Location = New System.Drawing.Point(56, 147)
-        YpsosLabel.Name = "YpsosLabel"
-        YpsosLabel.Size = New System.Drawing.Size(39, 13)
-        YpsosLabel.TabIndex = 48
-        YpsosLabel.Text = "Ypsos:"
-        '
-        'YpsosTextBox
-        '
-        Me.YpsosTextBox.Location = New System.Drawing.Point(142, 144)
-        Me.YpsosTextBox.Name = "YpsosTextBox"
-        Me.YpsosTextBox.Size = New System.Drawing.Size(100, 20)
-        Me.YpsosTextBox.TabIndex = 49
-        '
-        'Xrwma_MatiwnLabel
-        '
-        Xrwma_MatiwnLabel.AutoSize = True
-        Xrwma_MatiwnLabel.Location = New System.Drawing.Point(56, 199)
-        Xrwma_MatiwnLabel.Name = "Xrwma_MatiwnLabel"
-        Xrwma_MatiwnLabel.Size = New System.Drawing.Size(79, 13)
-        Xrwma_MatiwnLabel.TabIndex = 52
-        Xrwma_MatiwnLabel.Text = "Xrwma Matiwn:"
-        '
-        'Xrwma_MatiwnTextBox
-        '
-        Me.Xrwma_MatiwnTextBox.Location = New System.Drawing.Point(142, 196)
-        Me.Xrwma_MatiwnTextBox.Name = "Xrwma_MatiwnTextBox"
-        Me.Xrwma_MatiwnTextBox.Size = New System.Drawing.Size(100, 20)
-        Me.Xrwma_MatiwnTextBox.TabIndex = 53
-        '
-        'Xrwma_MalliwnLabel
-        '
-        Xrwma_MalliwnLabel.AutoSize = True
-        Xrwma_MalliwnLabel.Location = New System.Drawing.Point(56, 225)
-        Xrwma_MalliwnLabel.Name = "Xrwma_MalliwnLabel"
-        Xrwma_MalliwnLabel.Size = New System.Drawing.Size(80, 13)
-        Xrwma_MalliwnLabel.TabIndex = 54
-        Xrwma_MalliwnLabel.Text = "Xrwma Malliwn:"
-        '
-        'Xrwma_MalliwnTextBox
-        '
-        Me.Xrwma_MalliwnTextBox.Location = New System.Drawing.Point(142, 222)
-        Me.Xrwma_MalliwnTextBox.Name = "Xrwma_MalliwnTextBox"
-        Me.Xrwma_MalliwnTextBox.Size = New System.Drawing.Size(100, 20)
-        Me.Xrwma_MalliwnTextBox.TabIndex = 55
-        '
-        'Hoby1Label
-        '
-        Hoby1Label.AutoSize = True
-        Hoby1Label.Location = New System.Drawing.Point(293, 45)
-        Hoby1Label.Name = "Hoby1Label"
-        Hoby1Label.Size = New System.Drawing.Size(41, 13)
-        Hoby1Label.TabIndex = 56
-        Hoby1Label.Text = "Hoby1:"
-        '
-        'Hoby1TextBox
-        '
-        Me.Hoby1TextBox.Location = New System.Drawing.Point(379, 42)
-        Me.Hoby1TextBox.Name = "Hoby1TextBox"
-        Me.Hoby1TextBox.Size = New System.Drawing.Size(100, 20)
-        Me.Hoby1TextBox.TabIndex = 57
-        '
-        'Hoby2Label
-        '
-        Hoby2Label.AutoSize = True
-        Hoby2Label.Location = New System.Drawing.Point(293, 71)
-        Hoby2Label.Name = "Hoby2Label"
-        Hoby2Label.Size = New System.Drawing.Size(41, 13)
-        Hoby2Label.TabIndex = 58
-        Hoby2Label.Text = "Hoby2:"
-        '
-        'Hoby2TextBox
-        '
-        Me.Hoby2TextBox.Location = New System.Drawing.Point(379, 68)
-        Me.Hoby2TextBox.Name = "Hoby2TextBox"
-        Me.Hoby2TextBox.Size = New System.Drawing.Size(100, 20)
-        Me.Hoby2TextBox.TabIndex = 59
-        '
-        'Hoby3Label
-        '
-        Hoby3Label.AutoSize = True
-        Hoby3Label.Location = New System.Drawing.Point(293, 97)
-        Hoby3Label.Name = "Hoby3Label"
-        Hoby3Label.Size = New System.Drawing.Size(41, 13)
-        Hoby3Label.TabIndex = 60
-        Hoby3Label.Text = "Hoby3:"
-        '
-        'Hoby3TextBox
-        '
-        Me.Hoby3TextBox.Location = New System.Drawing.Point(379, 94)
-        Me.Hoby3TextBox.Name = "Hoby3TextBox"
-        Me.Hoby3TextBox.Size = New System.Drawing.Size(100, 20)
-        Me.Hoby3TextBox.TabIndex = 61
-        '
-        'AnazitaLabel
-        '
-        AnazitaLabel.AutoSize = True
-        AnazitaLabel.Location = New System.Drawing.Point(293, 123)
-        AnazitaLabel.Name = "AnazitaLabel"
-        AnazitaLabel.Size = New System.Drawing.Size(45, 13)
-        AnazitaLabel.TabIndex = 62
-        AnazitaLabel.Text = "Anazita:"
-        '
-        'AnazitaTextBox
-        '
-        Me.AnazitaTextBox.Location = New System.Drawing.Point(379, 120)
-        Me.AnazitaTextBox.Name = "AnazitaTextBox"
-        Me.AnazitaTextBox.Size = New System.Drawing.Size(100, 20)
-        Me.AnazitaTextBox.TabIndex = 63
-        '
-        'EmailLabel
-        '
-        EmailLabel.AutoSize = True
-        EmailLabel.Location = New System.Drawing.Point(56, 251)
-        EmailLabel.Name = "EmailLabel"
-        EmailLabel.Size = New System.Drawing.Size(34, 13)
-        EmailLabel.TabIndex = 64
-        EmailLabel.Text = "email:"
-        '
-        'EmailTextBox
-        '
-        Me.EmailTextBox.Location = New System.Drawing.Point(142, 248)
-        Me.EmailTextBox.Name = "EmailTextBox"
-        Me.EmailTextBox.Size = New System.Drawing.Size(100, 20)
-        Me.EmailTextBox.TabIndex = 65
+        Me.PeopleBindingSource.DataMember = "People"
+        Me.PeopleBindingSource.DataSource = Me.PeopleDataSet
         '
         'PeopleTableAdapter
         '
         Me.PeopleTableAdapter.ClearBeforeFill = True
-        '
-        'GlwssaLabel
-        '
-        GlwssaLabel.AutoSize = True
-        GlwssaLabel.Location = New System.Drawing.Point(293, 150)
-        GlwssaLabel.Name = "GlwssaLabel"
-        GlwssaLabel.Size = New System.Drawing.Size(44, 13)
-        GlwssaLabel.TabIndex = 66
-        GlwssaLabel.Text = "Glwssa:"
-        '
-        'GlwssaTextBox
-        '
-        Me.GlwssaTextBox.Location = New System.Drawing.Point(379, 147)
-        Me.GlwssaTextBox.Name = "GlwssaTextBox"
-        Me.GlwssaTextBox.Size = New System.Drawing.Size(100, 20)
-        Me.GlwssaTextBox.TabIndex = 67
-        '
-        'Glwssa2Label
-        '
-        Glwssa2Label.AutoSize = True
-        Glwssa2Label.Location = New System.Drawing.Point(293, 176)
-        Glwssa2Label.Name = "Glwssa2Label"
-        Glwssa2Label.Size = New System.Drawing.Size(50, 13)
-        Glwssa2Label.TabIndex = 68
-        Glwssa2Label.Text = "Glwssa2:"
-        '
-        'Glwssa2TextBox
-        '
-        Me.Glwssa2TextBox.Location = New System.Drawing.Point(379, 173)
-        Me.Glwssa2TextBox.Name = "Glwssa2TextBox"
-        Me.Glwssa2TextBox.Size = New System.Drawing.Size(100, 20)
-        Me.Glwssa2TextBox.TabIndex = 69
-        '
-        'ErgasiaLabel
-        '
-        ErgasiaLabel.AutoSize = True
-        ErgasiaLabel.Location = New System.Drawing.Point(293, 228)
-        ErgasiaLabel.Name = "ErgasiaLabel"
-        ErgasiaLabel.Size = New System.Drawing.Size(45, 13)
-        ErgasiaLabel.TabIndex = 72
-        ErgasiaLabel.Text = "Ergasia:"
-        '
-        'ErgasiaTextBox
-        '
-        Me.ErgasiaTextBox.Location = New System.Drawing.Point(379, 225)
-        Me.ErgasiaTextBox.Name = "ErgasiaTextBox"
-        Me.ErgasiaTextBox.Size = New System.Drawing.Size(100, 20)
-        Me.ErgasiaTextBox.TabIndex = 73
-        '
-        'PerioxhLabel
-        '
-        PerioxhLabel.AutoSize = True
-        PerioxhLabel.Location = New System.Drawing.Point(293, 254)
-        PerioxhLabel.Name = "PerioxhLabel"
-        PerioxhLabel.Size = New System.Drawing.Size(45, 13)
-        PerioxhLabel.TabIndex = 74
-        PerioxhLabel.Text = "Perioxh:"
-        '
-        'PerioxhTextBox
-        '
-        Me.PerioxhTextBox.Location = New System.Drawing.Point(379, 251)
-        Me.PerioxhTextBox.Name = "PerioxhTextBox"
-        Me.PerioxhTextBox.Size = New System.Drawing.Size(100, 20)
-        Me.PerioxhTextBox.TabIndex = 75
         '
         'TableAdapterManager
         '
@@ -371,52 +109,346 @@ Partial Class Edit
         Me.TableAdapterManager.PeopleTableAdapter = Me.PeopleTableAdapter
         Me.TableAdapterManager.UpdateOrder = WindowsApplication1.peopleDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         '
-        'TatooLabel1
+        'IDLabel
         '
-        TatooLabel1.AutoSize = True
-        TatooLabel1.Location = New System.Drawing.Point(293, 204)
-        TatooLabel1.Name = "TatooLabel1"
-        TatooLabel1.Size = New System.Drawing.Size(38, 13)
-        TatooLabel1.TabIndex = 76
-        TatooLabel1.Text = "Tatoo:"
+        IDLabel.AutoSize = True
+        IDLabel.Location = New System.Drawing.Point(22, 40)
+        IDLabel.Name = "IDLabel"
+        IDLabel.Size = New System.Drawing.Size(21, 13)
+        IDLabel.TabIndex = 1
+        IDLabel.Text = "ID:"
         '
-        'TatooCheckBox
+        'IDTextBox
         '
-        Me.TatooCheckBox.DataBindings.Add(New System.Windows.Forms.Binding("CheckState", Me.PeopleBindingSource, "Tatoo", True))
-        Me.TatooCheckBox.Location = New System.Drawing.Point(423, 199)
-        Me.TatooCheckBox.Name = "TatooCheckBox"
-        Me.TatooCheckBox.Size = New System.Drawing.Size(32, 24)
-        Me.TatooCheckBox.TabIndex = 77
-        Me.TatooCheckBox.UseVisualStyleBackColor = True
+        Me.IDTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PeopleBindingSource, "ID", True))
+        Me.IDTextBox.Location = New System.Drawing.Point(108, 37)
+        Me.IDTextBox.Name = "IDTextBox"
+        Me.IDTextBox.Size = New System.Drawing.Size(100, 20)
+        Me.IDTextBox.TabIndex = 2
         '
-        'FyloLabel1
+        'OnomaLabel
         '
-        FyloLabel1.AutoSize = True
-        FyloLabel1.Location = New System.Drawing.Point(56, 173)
-        FyloLabel1.Name = "FyloLabel1"
-        FyloLabel1.Size = New System.Drawing.Size(29, 13)
-        FyloLabel1.TabIndex = 77
-        FyloLabel1.Text = "Fylo:"
+        OnomaLabel.AutoSize = True
+        OnomaLabel.Location = New System.Drawing.Point(22, 66)
+        OnomaLabel.Name = "OnomaLabel"
+        OnomaLabel.Size = New System.Drawing.Size(44, 13)
+        OnomaLabel.TabIndex = 3
+        OnomaLabel.Text = "Onoma:"
         '
-        'FyloComboBox
+        'OnomaTextBox
         '
-        Me.FyloComboBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PeopleBindingSource, "Fylo", True))
-        Me.FyloComboBox.FormattingEnabled = True
-        Me.FyloComboBox.Location = New System.Drawing.Point(142, 170)
-        Me.FyloComboBox.Name = "FyloComboBox"
-        Me.FyloComboBox.Size = New System.Drawing.Size(100, 21)
-        Me.FyloComboBox.TabIndex = 78
+        Me.OnomaTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PeopleBindingSource, "Onoma", True))
+        Me.OnomaTextBox.Location = New System.Drawing.Point(108, 63)
+        Me.OnomaTextBox.Name = "OnomaTextBox"
+        Me.OnomaTextBox.Size = New System.Drawing.Size(100, 20)
+        Me.OnomaTextBox.TabIndex = 4
+        '
+        'EpithetoLabel
+        '
+        EpithetoLabel.AutoSize = True
+        EpithetoLabel.Location = New System.Drawing.Point(22, 92)
+        EpithetoLabel.Name = "EpithetoLabel"
+        EpithetoLabel.Size = New System.Drawing.Size(49, 13)
+        EpithetoLabel.TabIndex = 5
+        EpithetoLabel.Text = "Epitheto:"
+        '
+        'EpithetoTextBox
+        '
+        Me.EpithetoTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PeopleBindingSource, "Epitheto", True))
+        Me.EpithetoTextBox.Location = New System.Drawing.Point(108, 89)
+        Me.EpithetoTextBox.Name = "EpithetoTextBox"
+        Me.EpithetoTextBox.Size = New System.Drawing.Size(100, 20)
+        Me.EpithetoTextBox.TabIndex = 6
+        '
+        'Hm_GennisisLabel
+        '
+        Hm_GennisisLabel.AutoSize = True
+        Hm_GennisisLabel.Location = New System.Drawing.Point(22, 118)
+        Hm_GennisisLabel.Name = "Hm_GennisisLabel"
+        Hm_GennisisLabel.Size = New System.Drawing.Size(69, 13)
+        Hm_GennisisLabel.TabIndex = 7
+        Hm_GennisisLabel.Text = "Hm Gennisis:"
+        '
+        'Hm_GennisisTextBox
+        '
+        Me.Hm_GennisisTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PeopleBindingSource, "Hm_Gennisis", True))
+        Me.Hm_GennisisTextBox.Location = New System.Drawing.Point(108, 115)
+        Me.Hm_GennisisTextBox.Name = "Hm_GennisisTextBox"
+        Me.Hm_GennisisTextBox.Size = New System.Drawing.Size(100, 20)
+        Me.Hm_GennisisTextBox.TabIndex = 8
+        '
+        'BarosLabel
+        '
+        BarosLabel.AutoSize = True
+        BarosLabel.Location = New System.Drawing.Point(22, 144)
+        BarosLabel.Name = "BarosLabel"
+        BarosLabel.Size = New System.Drawing.Size(37, 13)
+        BarosLabel.TabIndex = 9
+        BarosLabel.Text = "Baros:"
+        '
+        'BarosTextBox
+        '
+        Me.BarosTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PeopleBindingSource, "Baros", True))
+        Me.BarosTextBox.Location = New System.Drawing.Point(108, 141)
+        Me.BarosTextBox.Name = "BarosTextBox"
+        Me.BarosTextBox.Size = New System.Drawing.Size(100, 20)
+        Me.BarosTextBox.TabIndex = 10
+        '
+        'YpsosLabel
+        '
+        YpsosLabel.AutoSize = True
+        YpsosLabel.Location = New System.Drawing.Point(22, 170)
+        YpsosLabel.Name = "YpsosLabel"
+        YpsosLabel.Size = New System.Drawing.Size(39, 13)
+        YpsosLabel.TabIndex = 11
+        YpsosLabel.Text = "Ypsos:"
+        '
+        'YpsosTextBox
+        '
+        Me.YpsosTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PeopleBindingSource, "Ypsos", True))
+        Me.YpsosTextBox.Location = New System.Drawing.Point(108, 167)
+        Me.YpsosTextBox.Name = "YpsosTextBox"
+        Me.YpsosTextBox.Size = New System.Drawing.Size(100, 20)
+        Me.YpsosTextBox.TabIndex = 12
+        '
+        'FyloLabel
+        '
+        FyloLabel.AutoSize = True
+        FyloLabel.Location = New System.Drawing.Point(22, 196)
+        FyloLabel.Name = "FyloLabel"
+        FyloLabel.Size = New System.Drawing.Size(29, 13)
+        FyloLabel.TabIndex = 13
+        FyloLabel.Text = "Fylo:"
+        '
+        'FyloTextBox
+        '
+        Me.FyloTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PeopleBindingSource, "Fylo", True))
+        Me.FyloTextBox.Location = New System.Drawing.Point(108, 193)
+        Me.FyloTextBox.Name = "FyloTextBox"
+        Me.FyloTextBox.Size = New System.Drawing.Size(100, 20)
+        Me.FyloTextBox.TabIndex = 14
+        '
+        'Xrwma_MatiwnLabel
+        '
+        Xrwma_MatiwnLabel.AutoSize = True
+        Xrwma_MatiwnLabel.Location = New System.Drawing.Point(22, 222)
+        Xrwma_MatiwnLabel.Name = "Xrwma_MatiwnLabel"
+        Xrwma_MatiwnLabel.Size = New System.Drawing.Size(79, 13)
+        Xrwma_MatiwnLabel.TabIndex = 15
+        Xrwma_MatiwnLabel.Text = "Xrwma Matiwn:"
+        '
+        'Xrwma_MatiwnTextBox
+        '
+        Me.Xrwma_MatiwnTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PeopleBindingSource, "Xrwma_Matiwn", True))
+        Me.Xrwma_MatiwnTextBox.Location = New System.Drawing.Point(108, 219)
+        Me.Xrwma_MatiwnTextBox.Name = "Xrwma_MatiwnTextBox"
+        Me.Xrwma_MatiwnTextBox.Size = New System.Drawing.Size(100, 20)
+        Me.Xrwma_MatiwnTextBox.TabIndex = 16
+        '
+        'Xrwma_MalliwnLabel
+        '
+        Xrwma_MalliwnLabel.AutoSize = True
+        Xrwma_MalliwnLabel.Location = New System.Drawing.Point(22, 248)
+        Xrwma_MalliwnLabel.Name = "Xrwma_MalliwnLabel"
+        Xrwma_MalliwnLabel.Size = New System.Drawing.Size(80, 13)
+        Xrwma_MalliwnLabel.TabIndex = 17
+        Xrwma_MalliwnLabel.Text = "Xrwma Malliwn:"
+        '
+        'Xrwma_MalliwnTextBox
+        '
+        Me.Xrwma_MalliwnTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PeopleBindingSource, "Xrwma_Malliwn", True))
+        Me.Xrwma_MalliwnTextBox.Location = New System.Drawing.Point(108, 245)
+        Me.Xrwma_MalliwnTextBox.Name = "Xrwma_MalliwnTextBox"
+        Me.Xrwma_MalliwnTextBox.Size = New System.Drawing.Size(100, 20)
+        Me.Xrwma_MalliwnTextBox.TabIndex = 18
+        '
+        'Hoby1Label
+        '
+        Hoby1Label.AutoSize = True
+        Hoby1Label.Location = New System.Drawing.Point(254, 43)
+        Hoby1Label.Name = "Hoby1Label"
+        Hoby1Label.Size = New System.Drawing.Size(41, 13)
+        Hoby1Label.TabIndex = 19
+        Hoby1Label.Text = "Hoby1:"
+        '
+        'Hoby1TextBox
+        '
+        Me.Hoby1TextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PeopleBindingSource, "Hoby1", True))
+        Me.Hoby1TextBox.Location = New System.Drawing.Point(340, 40)
+        Me.Hoby1TextBox.Name = "Hoby1TextBox"
+        Me.Hoby1TextBox.Size = New System.Drawing.Size(100, 20)
+        Me.Hoby1TextBox.TabIndex = 20
+        '
+        'Hoby2Label
+        '
+        Hoby2Label.AutoSize = True
+        Hoby2Label.Location = New System.Drawing.Point(254, 69)
+        Hoby2Label.Name = "Hoby2Label"
+        Hoby2Label.Size = New System.Drawing.Size(41, 13)
+        Hoby2Label.TabIndex = 21
+        Hoby2Label.Text = "Hoby2:"
+        '
+        'Hoby2TextBox
+        '
+        Me.Hoby2TextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PeopleBindingSource, "Hoby2", True))
+        Me.Hoby2TextBox.Location = New System.Drawing.Point(340, 66)
+        Me.Hoby2TextBox.Name = "Hoby2TextBox"
+        Me.Hoby2TextBox.Size = New System.Drawing.Size(100, 20)
+        Me.Hoby2TextBox.TabIndex = 22
+        '
+        'Hoby3Label
+        '
+        Hoby3Label.AutoSize = True
+        Hoby3Label.Location = New System.Drawing.Point(254, 95)
+        Hoby3Label.Name = "Hoby3Label"
+        Hoby3Label.Size = New System.Drawing.Size(41, 13)
+        Hoby3Label.TabIndex = 23
+        Hoby3Label.Text = "Hoby3:"
+        '
+        'Hoby3TextBox
+        '
+        Me.Hoby3TextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PeopleBindingSource, "Hoby3", True))
+        Me.Hoby3TextBox.Location = New System.Drawing.Point(340, 92)
+        Me.Hoby3TextBox.Name = "Hoby3TextBox"
+        Me.Hoby3TextBox.Size = New System.Drawing.Size(100, 20)
+        Me.Hoby3TextBox.TabIndex = 24
+        '
+        'AnazitaLabel
+        '
+        AnazitaLabel.AutoSize = True
+        AnazitaLabel.Location = New System.Drawing.Point(254, 121)
+        AnazitaLabel.Name = "AnazitaLabel"
+        AnazitaLabel.Size = New System.Drawing.Size(45, 13)
+        AnazitaLabel.TabIndex = 25
+        AnazitaLabel.Text = "Anazita:"
+        '
+        'AnazitaTextBox
+        '
+        Me.AnazitaTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PeopleBindingSource, "Anazita", True))
+        Me.AnazitaTextBox.Location = New System.Drawing.Point(340, 118)
+        Me.AnazitaTextBox.Name = "AnazitaTextBox"
+        Me.AnazitaTextBox.Size = New System.Drawing.Size(100, 20)
+        Me.AnazitaTextBox.TabIndex = 26
+        '
+        'EmailLabel
+        '
+        EmailLabel.AutoSize = True
+        EmailLabel.Location = New System.Drawing.Point(22, 274)
+        EmailLabel.Name = "EmailLabel"
+        EmailLabel.Size = New System.Drawing.Size(34, 13)
+        EmailLabel.TabIndex = 27
+        EmailLabel.Text = "email:"
+        '
+        'EmailTextBox
+        '
+        Me.EmailTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PeopleBindingSource, "email", True))
+        Me.EmailTextBox.Location = New System.Drawing.Point(108, 271)
+        Me.EmailTextBox.Name = "EmailTextBox"
+        Me.EmailTextBox.Size = New System.Drawing.Size(100, 20)
+        Me.EmailTextBox.TabIndex = 28
+        '
+        'GlwssaLabel
+        '
+        GlwssaLabel.AutoSize = True
+        GlwssaLabel.Location = New System.Drawing.Point(254, 148)
+        GlwssaLabel.Name = "GlwssaLabel"
+        GlwssaLabel.Size = New System.Drawing.Size(44, 13)
+        GlwssaLabel.TabIndex = 29
+        GlwssaLabel.Text = "Glwssa:"
+        '
+        'GlwssaTextBox
+        '
+        Me.GlwssaTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PeopleBindingSource, "Glwssa", True))
+        Me.GlwssaTextBox.Location = New System.Drawing.Point(340, 145)
+        Me.GlwssaTextBox.Name = "GlwssaTextBox"
+        Me.GlwssaTextBox.Size = New System.Drawing.Size(100, 20)
+        Me.GlwssaTextBox.TabIndex = 30
+        '
+        'Glwssa2Label
+        '
+        Glwssa2Label.AutoSize = True
+        Glwssa2Label.Location = New System.Drawing.Point(254, 174)
+        Glwssa2Label.Name = "Glwssa2Label"
+        Glwssa2Label.Size = New System.Drawing.Size(50, 13)
+        Glwssa2Label.TabIndex = 31
+        Glwssa2Label.Text = "Glwssa2:"
+        '
+        'Glwssa2TextBox
+        '
+        Me.Glwssa2TextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PeopleBindingSource, "Glwssa2", True))
+        Me.Glwssa2TextBox.Location = New System.Drawing.Point(340, 171)
+        Me.Glwssa2TextBox.Name = "Glwssa2TextBox"
+        Me.Glwssa2TextBox.Size = New System.Drawing.Size(100, 20)
+        Me.Glwssa2TextBox.TabIndex = 32
+        '
+        'TatooLabel
+        '
+        TatooLabel.AutoSize = True
+        TatooLabel.Location = New System.Drawing.Point(254, 200)
+        TatooLabel.Name = "TatooLabel"
+        TatooLabel.Size = New System.Drawing.Size(38, 13)
+        TatooLabel.TabIndex = 33
+        TatooLabel.Text = "Tatoo:"
+        '
+        'TatooTextBox
+        '
+        Me.TatooTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PeopleBindingSource, "Tatoo", True))
+        Me.TatooTextBox.Location = New System.Drawing.Point(340, 197)
+        Me.TatooTextBox.Name = "TatooTextBox"
+        Me.TatooTextBox.Size = New System.Drawing.Size(100, 20)
+        Me.TatooTextBox.TabIndex = 34
+        '
+        'ErgasiaLabel
+        '
+        ErgasiaLabel.AutoSize = True
+        ErgasiaLabel.Location = New System.Drawing.Point(254, 226)
+        ErgasiaLabel.Name = "ErgasiaLabel"
+        ErgasiaLabel.Size = New System.Drawing.Size(45, 13)
+        ErgasiaLabel.TabIndex = 35
+        ErgasiaLabel.Text = "Ergasia:"
+        '
+        'ErgasiaTextBox
+        '
+        Me.ErgasiaTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PeopleBindingSource, "Ergasia", True))
+        Me.ErgasiaTextBox.Location = New System.Drawing.Point(340, 223)
+        Me.ErgasiaTextBox.Name = "ErgasiaTextBox"
+        Me.ErgasiaTextBox.Size = New System.Drawing.Size(100, 20)
+        Me.ErgasiaTextBox.TabIndex = 36
+        '
+        'PerioxhLabel
+        '
+        PerioxhLabel.AutoSize = True
+        PerioxhLabel.Location = New System.Drawing.Point(254, 252)
+        PerioxhLabel.Name = "PerioxhLabel"
+        PerioxhLabel.Size = New System.Drawing.Size(45, 13)
+        PerioxhLabel.TabIndex = 37
+        PerioxhLabel.Text = "Perioxh:"
+        '
+        'PerioxhTextBox
+        '
+        Me.PerioxhTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PeopleBindingSource, "Perioxh", True))
+        Me.PerioxhTextBox.Location = New System.Drawing.Point(340, 249)
+        Me.PerioxhTextBox.Name = "PerioxhTextBox"
+        Me.PerioxhTextBox.Size = New System.Drawing.Size(100, 20)
+        Me.PerioxhTextBox.TabIndex = 38
+        '
+        'EditBt
+        '
+        Me.EditBt.Location = New System.Drawing.Point(413, 315)
+        Me.EditBt.Name = "EditBt"
+        Me.EditBt.Size = New System.Drawing.Size(75, 23)
+        Me.EditBt.TabIndex = 39
+        Me.EditBt.Text = "Edit"
+        Me.EditBt.UseVisualStyleBackColor = True
         '
         'Edit
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(534, 390)
-        Me.Controls.Add(FyloLabel1)
-        Me.Controls.Add(Me.FyloComboBox)
-        Me.Controls.Add(Me.TatooCheckBox)
-        Me.Controls.Add(TatooLabel1)
-        Me.Controls.Add(Me.EdButton)
+        Me.ClientSize = New System.Drawing.Size(534, 362)
+        Me.Controls.Add(Me.EditBt)
+        Me.Controls.Add(IDLabel)
+        Me.Controls.Add(Me.IDTextBox)
         Me.Controls.Add(OnomaLabel)
         Me.Controls.Add(Me.OnomaTextBox)
         Me.Controls.Add(EpithetoLabel)
@@ -427,6 +459,8 @@ Partial Class Edit
         Me.Controls.Add(Me.BarosTextBox)
         Me.Controls.Add(YpsosLabel)
         Me.Controls.Add(Me.YpsosTextBox)
+        Me.Controls.Add(FyloLabel)
+        Me.Controls.Add(Me.FyloTextBox)
         Me.Controls.Add(Xrwma_MatiwnLabel)
         Me.Controls.Add(Me.Xrwma_MatiwnTextBox)
         Me.Controls.Add(Xrwma_MalliwnLabel)
@@ -445,26 +479,31 @@ Partial Class Edit
         Me.Controls.Add(Me.GlwssaTextBox)
         Me.Controls.Add(Glwssa2Label)
         Me.Controls.Add(Me.Glwssa2TextBox)
+        Me.Controls.Add(TatooLabel)
+        Me.Controls.Add(Me.TatooTextBox)
         Me.Controls.Add(ErgasiaLabel)
         Me.Controls.Add(Me.ErgasiaTextBox)
         Me.Controls.Add(PerioxhLabel)
         Me.Controls.Add(Me.PerioxhTextBox)
         Me.Name = "Edit"
         Me.Text = "Edit"
-        CType(Me.PeopleBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PeopleDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PeopleBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents EdButton As System.Windows.Forms.Button
+    Friend WithEvents PeopleDataSet As WindowsApplication1.peopleDataSet
+    Friend WithEvents PeopleBindingSource As System.Windows.Forms.BindingSource
+    Friend WithEvents PeopleTableAdapter As WindowsApplication1.peopleDataSetTableAdapters.PeopleTableAdapter
+    Friend WithEvents TableAdapterManager As WindowsApplication1.peopleDataSetTableAdapters.TableAdapterManager
+    Friend WithEvents IDTextBox As System.Windows.Forms.TextBox
     Friend WithEvents OnomaTextBox As System.Windows.Forms.TextBox
     Friend WithEvents EpithetoTextBox As System.Windows.Forms.TextBox
     Friend WithEvents Hm_GennisisTextBox As System.Windows.Forms.TextBox
-    Friend WithEvents PeopleBindingSource As System.Windows.Forms.BindingSource
-    Friend WithEvents PeopleDataSet As WindowsApplication1.peopleDataSet
     Friend WithEvents BarosTextBox As System.Windows.Forms.TextBox
     Friend WithEvents YpsosTextBox As System.Windows.Forms.TextBox
+    Friend WithEvents FyloTextBox As System.Windows.Forms.TextBox
     Friend WithEvents Xrwma_MatiwnTextBox As System.Windows.Forms.TextBox
     Friend WithEvents Xrwma_MalliwnTextBox As System.Windows.Forms.TextBox
     Friend WithEvents Hoby1TextBox As System.Windows.Forms.TextBox
@@ -472,12 +511,10 @@ Partial Class Edit
     Friend WithEvents Hoby3TextBox As System.Windows.Forms.TextBox
     Friend WithEvents AnazitaTextBox As System.Windows.Forms.TextBox
     Friend WithEvents EmailTextBox As System.Windows.Forms.TextBox
-    Friend WithEvents PeopleTableAdapter As WindowsApplication1.peopleDataSetTableAdapters.PeopleTableAdapter
     Friend WithEvents GlwssaTextBox As System.Windows.Forms.TextBox
     Friend WithEvents Glwssa2TextBox As System.Windows.Forms.TextBox
+    Friend WithEvents TatooTextBox As System.Windows.Forms.TextBox
     Friend WithEvents ErgasiaTextBox As System.Windows.Forms.TextBox
     Friend WithEvents PerioxhTextBox As System.Windows.Forms.TextBox
-    Friend WithEvents TableAdapterManager As WindowsApplication1.peopleDataSetTableAdapters.TableAdapterManager
-    Friend WithEvents TatooCheckBox As System.Windows.Forms.CheckBox
-    Friend WithEvents FyloComboBox As System.Windows.Forms.ComboBox
+    Friend WithEvents EditBt As System.Windows.Forms.Button
 End Class

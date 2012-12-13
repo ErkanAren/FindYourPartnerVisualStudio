@@ -12,8 +12,4 @@
         Me.PeopleTableAdapter.Fill(Me.PeopleDataSet.People)
 
     End Sub
-
-    Private Sub TatooLabel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
-
-    End Sub
 End Class

@@ -1538,7 +1538,7 @@ Namespace peopleDataSetTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Private Sub InitConnection()
             Me._connection = New Global.System.Data.OleDb.OleDbConnection
-            Me._connection.ConnectionString = Global.WindowsApplication1.My.MySettings.Default.peopleConnectionString
+            Me._connection.ConnectionString = Global.WindowsApplication1.My.MySettings.Default.peopleConnectionString1
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
