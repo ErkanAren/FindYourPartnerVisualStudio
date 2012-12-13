@@ -25,3 +25,19 @@ C:\Users\User\Documents\Visual Studio 2008\Projects\Git_google\adopse2012xe-erg1
 C:\Users\User\Documents\Visual Studio 2008\Projects\Git_google\adopse2012xe-erg129-omada-a\adopse2012xe-erg129-omada-a\obj\Debug\WindowsApplication1.Edit.resources
 C:\Users\User\Documents\Visual Studio 2008\Projects\Git_google\adopse2012xe-erg129-omada-a\adopse2012xe-erg129-omada-a\obj\Debug\WindowsApplication1.ProfileForm.resources
 C:\Users\User\Documents\Visual Studio 2008\Projects\Git_google\adopse2012xe-erg129-omada-a\adopse2012xe-erg129-omada-a\obj\Debug\WindowsApplication1.Search.resources
+C:\Users\thrass\Desktop\adopse2012xe-erg129-omada-a\adopse2012xe-erg129-omada-a\bin\Debug\adopse2012xe-erg129-omada-a.exe.config
+C:\Users\thrass\Desktop\adopse2012xe-erg129-omada-a\adopse2012xe-erg129-omada-a\obj\Debug\adopse2012xe-erg129-omada-a.exe
+C:\Users\thrass\Desktop\adopse2012xe-erg129-omada-a\adopse2012xe-erg129-omada-a\obj\Debug\adopse2012xe-erg129-omada-a.xml
+C:\Users\thrass\Desktop\adopse2012xe-erg129-omada-a\adopse2012xe-erg129-omada-a\obj\Debug\adopse2012xe-erg129-omada-a.pdb
+C:\Users\thrass\Desktop\adopse2012xe-erg129-omada-a\adopse2012xe-erg129-omada-a\bin\Debug\people.mdb
+C:\Users\thrass\Desktop\adopse2012xe-erg129-omada-a\adopse2012xe-erg129-omada-a\bin\Debug\adopse2012xe-erg129-omada-a.exe
+C:\Users\thrass\Desktop\adopse2012xe-erg129-omada-a\adopse2012xe-erg129-omada-a\bin\Debug\adopse2012xe-erg129-omada-a.pdb
+C:\Users\thrass\Desktop\adopse2012xe-erg129-omada-a\adopse2012xe-erg129-omada-a\bin\Debug\adopse2012xe-erg129-omada-a.xml
+C:\Users\thrass\Desktop\adopse2012xe-erg129-omada-a\adopse2012xe-erg129-omada-a\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\thrass\Desktop\adopse2012xe-erg129-omada-a\adopse2012xe-erg129-omada-a\obj\Debug\WindowsApplication1.Edit.resources
+C:\Users\thrass\Desktop\adopse2012xe-erg129-omada-a\adopse2012xe-erg129-omada-a\obj\Debug\WindowsApplication1.ProfileForm.resources
+C:\Users\thrass\Desktop\adopse2012xe-erg129-omada-a\adopse2012xe-erg129-omada-a\obj\Debug\WindowsApplication1.Login.resources
+C:\Users\thrass\Desktop\adopse2012xe-erg129-omada-a\adopse2012xe-erg129-omada-a\obj\Debug\WindowsApplication1.RegisterForm.resources
+C:\Users\thrass\Desktop\adopse2012xe-erg129-omada-a\adopse2012xe-erg129-omada-a\obj\Debug\WindowsApplication1.Resources.resources
+C:\Users\thrass\Desktop\adopse2012xe-erg129-omada-a\adopse2012xe-erg129-omada-a\obj\Debug\WindowsApplication1.Search.resources
+C:\Users\thrass\Desktop\adopse2012xe-erg129-omada-a\adopse2012xe-erg129-omada-a\obj\Debug\adopse2012xe-erg129-omada-a.vbproj.GenerateResource.Cache
