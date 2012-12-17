@@ -1,0 +1,16 @@
+C:\Users\Stathis\Desktop\ergasia_ade\adopse2012xe-erg129-omada-a\adopse2012xe-erg129-omada-a\bin\x86\Debug\adopse2012xe-erg129-omada-a.exe.config
+C:\Users\Stathis\Desktop\ergasia_ade\adopse2012xe-erg129-omada-a\adopse2012xe-erg129-omada-a\obj\x86\Debug\adopse2012xe-erg129-omada-a.vbproj.ResolveComReference.cache
+C:\Users\Stathis\Desktop\ergasia_ade\adopse2012xe-erg129-omada-a\adopse2012xe-erg129-omada-a\bin\x86\Debug\people.mdb
+C:\Users\Stathis\Desktop\ergasia_ade\adopse2012xe-erg129-omada-a\adopse2012xe-erg129-omada-a\bin\x86\Debug\adopse2012xe-erg129-omada-a.exe
+C:\Users\Stathis\Desktop\ergasia_ade\adopse2012xe-erg129-omada-a\adopse2012xe-erg129-omada-a\bin\x86\Debug\adopse2012xe-erg129-omada-a.pdb
+C:\Users\Stathis\Desktop\ergasia_ade\adopse2012xe-erg129-omada-a\adopse2012xe-erg129-omada-a\bin\x86\Debug\adopse2012xe-erg129-omada-a.xml
+C:\Users\Stathis\Desktop\ergasia_ade\adopse2012xe-erg129-omada-a\adopse2012xe-erg129-omada-a\obj\x86\Debug\WindowsApplication1.Edit.resources
+C:\Users\Stathis\Desktop\ergasia_ade\adopse2012xe-erg129-omada-a\adopse2012xe-erg129-omada-a\obj\x86\Debug\WindowsApplication1.ProfileForm.resources
+C:\Users\Stathis\Desktop\ergasia_ade\adopse2012xe-erg129-omada-a\adopse2012xe-erg129-omada-a\obj\x86\Debug\WindowsApplication1.Login.resources
+C:\Users\Stathis\Desktop\ergasia_ade\adopse2012xe-erg129-omada-a\adopse2012xe-erg129-omada-a\obj\x86\Debug\WindowsApplication1.RegisterForm.resources
+C:\Users\Stathis\Desktop\ergasia_ade\adopse2012xe-erg129-omada-a\adopse2012xe-erg129-omada-a\obj\x86\Debug\WindowsApplication1.Resources.resources
+C:\Users\Stathis\Desktop\ergasia_ade\adopse2012xe-erg129-omada-a\adopse2012xe-erg129-omada-a\obj\x86\Debug\WindowsApplication1.Search.resources
+C:\Users\Stathis\Desktop\ergasia_ade\adopse2012xe-erg129-omada-a\adopse2012xe-erg129-omada-a\obj\x86\Debug\adopse2012xe-erg129-omada-a.vbproj.GenerateResource.Cache
+C:\Users\Stathis\Desktop\ergasia_ade\adopse2012xe-erg129-omada-a\adopse2012xe-erg129-omada-a\obj\x86\Debug\adopse2012xe-erg129-omada-a.exe
+C:\Users\Stathis\Desktop\ergasia_ade\adopse2012xe-erg129-omada-a\adopse2012xe-erg129-omada-a\obj\x86\Debug\adopse2012xe-erg129-omada-a.xml
+C:\Users\Stathis\Desktop\ergasia_ade\adopse2012xe-erg129-omada-a\adopse2012xe-erg129-omada-a\obj\x86\Debug\adopse2012xe-erg129-omada-a.pdb

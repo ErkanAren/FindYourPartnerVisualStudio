@@ -42,7 +42,6 @@ Partial Class RegisterForm
         Dim TatooLabel As System.Windows.Forms.Label
         Dim ErgasiaLabel As System.Windows.Forms.Label
         Dim PerioxhLabel As System.Windows.Forms.Label
-        Dim PasswordLabel As System.Windows.Forms.Label
         Me.RgButton = New System.Windows.Forms.Button
         Me.PeopleDataSet = New WindowsApplication1.peopleDataSet
         Me.PeopleBindingSource = New System.Windows.Forms.BindingSource(Me.components)
@@ -67,28 +66,6 @@ Partial Class RegisterForm
         Me.TatooTextBox = New System.Windows.Forms.TextBox
         Me.ErgasiaTextBox = New System.Windows.Forms.TextBox
         Me.PerioxhTextBox = New System.Windows.Forms.TextBox
-        Me.PasswordTextBox = New System.Windows.Forms.TextBox
-        Me.PeopleDataGridView = New System.Windows.Forms.DataGridView
-        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.DataGridViewTextBoxColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.DataGridViewTextBoxColumn7 = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.DataGridViewTextBoxColumn8 = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.DataGridViewTextBoxColumn9 = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.DataGridViewTextBoxColumn10 = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.DataGridViewTextBoxColumn11 = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.DataGridViewTextBoxColumn12 = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.DataGridViewTextBoxColumn13 = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.DataGridViewTextBoxColumn14 = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.DataGridViewTextBoxColumn15 = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.DataGridViewTextBoxColumn16 = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.DataGridViewTextBoxColumn17 = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.DataGridViewTextBoxColumn18 = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.DataGridViewTextBoxColumn19 = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.DataGridViewTextBoxColumn20 = New System.Windows.Forms.DataGridViewTextBoxColumn
         IDLabel = New System.Windows.Forms.Label
         OnomaLabel = New System.Windows.Forms.Label
         EpithetoLabel = New System.Windows.Forms.Label
@@ -108,10 +85,8 @@ Partial Class RegisterForm
         TatooLabel = New System.Windows.Forms.Label
         ErgasiaLabel = New System.Windows.Forms.Label
         PerioxhLabel = New System.Windows.Forms.Label
-        PasswordLabel = New System.Windows.Forms.Label
         CType(Me.PeopleDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PeopleBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PeopleDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'IDLabel
@@ -126,7 +101,7 @@ Partial Class RegisterForm
         'OnomaLabel
         '
         OnomaLabel.AutoSize = True
-        OnomaLabel.Location = New System.Drawing.Point(16, 95)
+        OnomaLabel.Location = New System.Drawing.Point(16, 68)
         OnomaLabel.Name = "OnomaLabel"
         OnomaLabel.Size = New System.Drawing.Size(44, 13)
         OnomaLabel.TabIndex = 4
@@ -135,7 +110,7 @@ Partial Class RegisterForm
         'EpithetoLabel
         '
         EpithetoLabel.AutoSize = True
-        EpithetoLabel.Location = New System.Drawing.Point(16, 121)
+        EpithetoLabel.Location = New System.Drawing.Point(16, 94)
         EpithetoLabel.Name = "EpithetoLabel"
         EpithetoLabel.Size = New System.Drawing.Size(49, 13)
         EpithetoLabel.TabIndex = 6
@@ -144,7 +119,7 @@ Partial Class RegisterForm
         'Hm_GennisisLabel
         '
         Hm_GennisisLabel.AutoSize = True
-        Hm_GennisisLabel.Location = New System.Drawing.Point(16, 147)
+        Hm_GennisisLabel.Location = New System.Drawing.Point(16, 120)
         Hm_GennisisLabel.Name = "Hm_GennisisLabel"
         Hm_GennisisLabel.Size = New System.Drawing.Size(69, 13)
         Hm_GennisisLabel.TabIndex = 8
@@ -153,7 +128,7 @@ Partial Class RegisterForm
         'BarosLabel
         '
         BarosLabel.AutoSize = True
-        BarosLabel.Location = New System.Drawing.Point(16, 173)
+        BarosLabel.Location = New System.Drawing.Point(16, 146)
         BarosLabel.Name = "BarosLabel"
         BarosLabel.Size = New System.Drawing.Size(37, 13)
         BarosLabel.TabIndex = 10
@@ -162,7 +137,7 @@ Partial Class RegisterForm
         'YpsosLabel
         '
         YpsosLabel.AutoSize = True
-        YpsosLabel.Location = New System.Drawing.Point(16, 199)
+        YpsosLabel.Location = New System.Drawing.Point(16, 172)
         YpsosLabel.Name = "YpsosLabel"
         YpsosLabel.Size = New System.Drawing.Size(39, 13)
         YpsosLabel.TabIndex = 12
@@ -171,7 +146,7 @@ Partial Class RegisterForm
         'FyloLabel
         '
         FyloLabel.AutoSize = True
-        FyloLabel.Location = New System.Drawing.Point(222, 277)
+        FyloLabel.Location = New System.Drawing.Point(16, 198)
         FyloLabel.Name = "FyloLabel"
         FyloLabel.Size = New System.Drawing.Size(29, 13)
         FyloLabel.TabIndex = 14
@@ -325,7 +300,7 @@ Partial Class RegisterForm
         'OnomaTextBox
         '
         Me.OnomaTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PeopleBindingSource, "Onoma", True))
-        Me.OnomaTextBox.Location = New System.Drawing.Point(102, 92)
+        Me.OnomaTextBox.Location = New System.Drawing.Point(102, 65)
         Me.OnomaTextBox.Name = "OnomaTextBox"
         Me.OnomaTextBox.Size = New System.Drawing.Size(100, 20)
         Me.OnomaTextBox.TabIndex = 5
@@ -333,7 +308,7 @@ Partial Class RegisterForm
         'EpithetoTextBox
         '
         Me.EpithetoTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PeopleBindingSource, "Epitheto", True))
-        Me.EpithetoTextBox.Location = New System.Drawing.Point(102, 118)
+        Me.EpithetoTextBox.Location = New System.Drawing.Point(102, 91)
         Me.EpithetoTextBox.Name = "EpithetoTextBox"
         Me.EpithetoTextBox.Size = New System.Drawing.Size(100, 20)
         Me.EpithetoTextBox.TabIndex = 7
@@ -341,7 +316,7 @@ Partial Class RegisterForm
         'Hm_GennisisTextBox
         '
         Me.Hm_GennisisTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PeopleBindingSource, "Hm_Gennisis", True))
-        Me.Hm_GennisisTextBox.Location = New System.Drawing.Point(102, 144)
+        Me.Hm_GennisisTextBox.Location = New System.Drawing.Point(102, 117)
         Me.Hm_GennisisTextBox.Name = "Hm_GennisisTextBox"
         Me.Hm_GennisisTextBox.Size = New System.Drawing.Size(100, 20)
         Me.Hm_GennisisTextBox.TabIndex = 9
@@ -349,7 +324,7 @@ Partial Class RegisterForm
         'BarosTextBox
         '
         Me.BarosTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PeopleBindingSource, "Baros", True))
-        Me.BarosTextBox.Location = New System.Drawing.Point(102, 170)
+        Me.BarosTextBox.Location = New System.Drawing.Point(102, 143)
         Me.BarosTextBox.Name = "BarosTextBox"
         Me.BarosTextBox.Size = New System.Drawing.Size(100, 20)
         Me.BarosTextBox.TabIndex = 11
@@ -357,7 +332,7 @@ Partial Class RegisterForm
         'YpsosTextBox
         '
         Me.YpsosTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PeopleBindingSource, "Ypsos", True))
-        Me.YpsosTextBox.Location = New System.Drawing.Point(102, 196)
+        Me.YpsosTextBox.Location = New System.Drawing.Point(102, 169)
         Me.YpsosTextBox.Name = "YpsosTextBox"
         Me.YpsosTextBox.Size = New System.Drawing.Size(100, 20)
         Me.YpsosTextBox.TabIndex = 13
@@ -365,7 +340,7 @@ Partial Class RegisterForm
         'FyloTextBox
         '
         Me.FyloTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PeopleBindingSource, "Fylo", True))
-        Me.FyloTextBox.Location = New System.Drawing.Point(308, 274)
+        Me.FyloTextBox.Location = New System.Drawing.Point(102, 195)
         Me.FyloTextBox.Name = "FyloTextBox"
         Me.FyloTextBox.Size = New System.Drawing.Size(100, 20)
         Me.FyloTextBox.TabIndex = 15
@@ -466,162 +441,11 @@ Partial Class RegisterForm
         Me.PerioxhTextBox.Size = New System.Drawing.Size(100, 20)
         Me.PerioxhTextBox.TabIndex = 39
         '
-        'PasswordLabel
-        '
-        PasswordLabel.AutoSize = True
-        PasswordLabel.Location = New System.Drawing.Point(17, 69)
-        PasswordLabel.Name = "PasswordLabel"
-        PasswordLabel.Size = New System.Drawing.Size(56, 13)
-        PasswordLabel.TabIndex = 39
-        PasswordLabel.Text = "Password:"
-        '
-        'PasswordTextBox
-        '
-        Me.PasswordTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PeopleBindingSource, "Password", True))
-        Me.PasswordTextBox.Location = New System.Drawing.Point(102, 65)
-        Me.PasswordTextBox.Name = "PasswordTextBox"
-        Me.PasswordTextBox.Size = New System.Drawing.Size(100, 20)
-        Me.PasswordTextBox.TabIndex = 40
-        '
-        'PeopleDataGridView
-        '
-        Me.PeopleDataGridView.AutoGenerateColumns = False
-        Me.PeopleDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.PeopleDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5, Me.DataGridViewTextBoxColumn6, Me.DataGridViewTextBoxColumn7, Me.DataGridViewTextBoxColumn8, Me.DataGridViewTextBoxColumn9, Me.DataGridViewTextBoxColumn10, Me.DataGridViewTextBoxColumn11, Me.DataGridViewTextBoxColumn12, Me.DataGridViewTextBoxColumn13, Me.DataGridViewTextBoxColumn14, Me.DataGridViewTextBoxColumn15, Me.DataGridViewTextBoxColumn16, Me.DataGridViewTextBoxColumn17, Me.DataGridViewTextBoxColumn18, Me.DataGridViewTextBoxColumn19, Me.DataGridViewTextBoxColumn20})
-        Me.PeopleDataGridView.DataSource = Me.PeopleBindingSource
-        Me.PeopleDataGridView.Location = New System.Drawing.Point(20, 369)
-        Me.PeopleDataGridView.Name = "PeopleDataGridView"
-        Me.PeopleDataGridView.Size = New System.Drawing.Size(597, 220)
-        Me.PeopleDataGridView.TabIndex = 41
-        '
-        'DataGridViewTextBoxColumn1
-        '
-        Me.DataGridViewTextBoxColumn1.DataPropertyName = "ID"
-        Me.DataGridViewTextBoxColumn1.HeaderText = "ID"
-        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
-        '
-        'DataGridViewTextBoxColumn2
-        '
-        Me.DataGridViewTextBoxColumn2.DataPropertyName = "Password"
-        Me.DataGridViewTextBoxColumn2.HeaderText = "Password"
-        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
-        '
-        'DataGridViewTextBoxColumn3
-        '
-        Me.DataGridViewTextBoxColumn3.DataPropertyName = "Onoma"
-        Me.DataGridViewTextBoxColumn3.HeaderText = "Onoma"
-        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
-        '
-        'DataGridViewTextBoxColumn4
-        '
-        Me.DataGridViewTextBoxColumn4.DataPropertyName = "Epitheto"
-        Me.DataGridViewTextBoxColumn4.HeaderText = "Epitheto"
-        Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
-        '
-        'DataGridViewTextBoxColumn5
-        '
-        Me.DataGridViewTextBoxColumn5.DataPropertyName = "Hm_Gennisis"
-        Me.DataGridViewTextBoxColumn5.HeaderText = "Hm_Gennisis"
-        Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
-        '
-        'DataGridViewTextBoxColumn6
-        '
-        Me.DataGridViewTextBoxColumn6.DataPropertyName = "Baros"
-        Me.DataGridViewTextBoxColumn6.HeaderText = "Baros"
-        Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
-        '
-        'DataGridViewTextBoxColumn7
-        '
-        Me.DataGridViewTextBoxColumn7.DataPropertyName = "Ypsos"
-        Me.DataGridViewTextBoxColumn7.HeaderText = "Ypsos"
-        Me.DataGridViewTextBoxColumn7.Name = "DataGridViewTextBoxColumn7"
-        '
-        'DataGridViewTextBoxColumn8
-        '
-        Me.DataGridViewTextBoxColumn8.DataPropertyName = "Fylo"
-        Me.DataGridViewTextBoxColumn8.HeaderText = "Fylo"
-        Me.DataGridViewTextBoxColumn8.Name = "DataGridViewTextBoxColumn8"
-        '
-        'DataGridViewTextBoxColumn9
-        '
-        Me.DataGridViewTextBoxColumn9.DataPropertyName = "Xrwma_Matiwn"
-        Me.DataGridViewTextBoxColumn9.HeaderText = "Xrwma_Matiwn"
-        Me.DataGridViewTextBoxColumn9.Name = "DataGridViewTextBoxColumn9"
-        '
-        'DataGridViewTextBoxColumn10
-        '
-        Me.DataGridViewTextBoxColumn10.DataPropertyName = "Xrwma_Malliwn"
-        Me.DataGridViewTextBoxColumn10.HeaderText = "Xrwma_Malliwn"
-        Me.DataGridViewTextBoxColumn10.Name = "DataGridViewTextBoxColumn10"
-        '
-        'DataGridViewTextBoxColumn11
-        '
-        Me.DataGridViewTextBoxColumn11.DataPropertyName = "Hoby1"
-        Me.DataGridViewTextBoxColumn11.HeaderText = "Hoby1"
-        Me.DataGridViewTextBoxColumn11.Name = "DataGridViewTextBoxColumn11"
-        '
-        'DataGridViewTextBoxColumn12
-        '
-        Me.DataGridViewTextBoxColumn12.DataPropertyName = "Hoby2"
-        Me.DataGridViewTextBoxColumn12.HeaderText = "Hoby2"
-        Me.DataGridViewTextBoxColumn12.Name = "DataGridViewTextBoxColumn12"
-        '
-        'DataGridViewTextBoxColumn13
-        '
-        Me.DataGridViewTextBoxColumn13.DataPropertyName = "Hoby3"
-        Me.DataGridViewTextBoxColumn13.HeaderText = "Hoby3"
-        Me.DataGridViewTextBoxColumn13.Name = "DataGridViewTextBoxColumn13"
-        '
-        'DataGridViewTextBoxColumn14
-        '
-        Me.DataGridViewTextBoxColumn14.DataPropertyName = "Anazita"
-        Me.DataGridViewTextBoxColumn14.HeaderText = "Anazita"
-        Me.DataGridViewTextBoxColumn14.Name = "DataGridViewTextBoxColumn14"
-        '
-        'DataGridViewTextBoxColumn15
-        '
-        Me.DataGridViewTextBoxColumn15.DataPropertyName = "email"
-        Me.DataGridViewTextBoxColumn15.HeaderText = "email"
-        Me.DataGridViewTextBoxColumn15.Name = "DataGridViewTextBoxColumn15"
-        '
-        'DataGridViewTextBoxColumn16
-        '
-        Me.DataGridViewTextBoxColumn16.DataPropertyName = "Glwssa"
-        Me.DataGridViewTextBoxColumn16.HeaderText = "Glwssa"
-        Me.DataGridViewTextBoxColumn16.Name = "DataGridViewTextBoxColumn16"
-        '
-        'DataGridViewTextBoxColumn17
-        '
-        Me.DataGridViewTextBoxColumn17.DataPropertyName = "Glwssa2"
-        Me.DataGridViewTextBoxColumn17.HeaderText = "Glwssa2"
-        Me.DataGridViewTextBoxColumn17.Name = "DataGridViewTextBoxColumn17"
-        '
-        'DataGridViewTextBoxColumn18
-        '
-        Me.DataGridViewTextBoxColumn18.DataPropertyName = "Tatoo"
-        Me.DataGridViewTextBoxColumn18.HeaderText = "Tatoo"
-        Me.DataGridViewTextBoxColumn18.Name = "DataGridViewTextBoxColumn18"
-        '
-        'DataGridViewTextBoxColumn19
-        '
-        Me.DataGridViewTextBoxColumn19.DataPropertyName = "Ergasia"
-        Me.DataGridViewTextBoxColumn19.HeaderText = "Ergasia"
-        Me.DataGridViewTextBoxColumn19.Name = "DataGridViewTextBoxColumn19"
-        '
-        'DataGridViewTextBoxColumn20
-        '
-        Me.DataGridViewTextBoxColumn20.DataPropertyName = "Perioxh"
-        Me.DataGridViewTextBoxColumn20.HeaderText = "Perioxh"
-        Me.DataGridViewTextBoxColumn20.Name = "DataGridViewTextBoxColumn20"
-        '
         'RegisterForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(637, 616)
-        Me.Controls.Add(Me.PeopleDataGridView)
-        Me.Controls.Add(PasswordLabel)
-        Me.Controls.Add(Me.PasswordTextBox)
+        Me.ClientSize = New System.Drawing.Size(534, 362)
         Me.Controls.Add(IDLabel)
         Me.Controls.Add(Me.IDTextBox)
         Me.Controls.Add(OnomaLabel)
@@ -665,7 +489,6 @@ Partial Class RegisterForm
         Me.Text = "Register"
         CType(Me.PeopleDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PeopleBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PeopleDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -694,26 +517,4 @@ Partial Class RegisterForm
     Friend WithEvents TatooTextBox As System.Windows.Forms.TextBox
     Friend WithEvents ErgasiaTextBox As System.Windows.Forms.TextBox
     Friend WithEvents PerioxhTextBox As System.Windows.Forms.TextBox
-    Friend WithEvents PasswordTextBox As System.Windows.Forms.TextBox
-    Friend WithEvents PeopleDataGridView As System.Windows.Forms.DataGridView
-    Friend WithEvents DataGridViewTextBoxColumn1 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn2 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn3 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn4 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn5 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn6 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn7 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn8 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn9 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn10 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn11 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn12 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn13 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn14 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn15 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn16 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn17 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn18 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn19 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn20 As System.Windows.Forms.DataGridViewTextBoxColumn
 End Class

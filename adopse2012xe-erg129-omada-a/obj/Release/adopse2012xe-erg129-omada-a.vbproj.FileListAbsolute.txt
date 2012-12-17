@@ -1,0 +1,9 @@
+C:\Users\thrass\Desktop\adopse2012xe-erg129-omada-a\adopse2012xe-erg129-omada-a\obj\Release\ResolveAssemblyReference.cache
+C:\Users\thrass\Desktop\adopse2012xe-erg129-omada-a\adopse2012xe-erg129-omada-a\obj\Release\WindowsApplication1.Edit.resources
+C:\Users\thrass\Desktop\adopse2012xe-erg129-omada-a\adopse2012xe-erg129-omada-a\obj\Release\WindowsApplication1.ProfileForm.resources
+C:\Users\thrass\Desktop\adopse2012xe-erg129-omada-a\adopse2012xe-erg129-omada-a\obj\Release\WindowsApplication1.Login.resources
+C:\Users\thrass\Desktop\adopse2012xe-erg129-omada-a\adopse2012xe-erg129-omada-a\obj\Release\WindowsApplication1.RegisterForm.resources
+C:\Users\thrass\Desktop\adopse2012xe-erg129-omada-a\adopse2012xe-erg129-omada-a\obj\Release\WindowsApplication1.Resources.resources
+C:\Users\thrass\Desktop\adopse2012xe-erg129-omada-a\adopse2012xe-erg129-omada-a\obj\Release\WindowsApplication1.Search.resources
+C:\Users\thrass\Desktop\adopse2012xe-erg129-omada-a\adopse2012xe-erg129-omada-a\obj\Release\adopse2012xe-erg129-omada-a.vbproj.GenerateResource.Cache
+C:\Users\thrass\Desktop\adopse2012xe-erg129-omada-a\adopse2012xe-erg129-omada-a\bin\Release\adopse2012xe-erg129-omada-a.exe.config
