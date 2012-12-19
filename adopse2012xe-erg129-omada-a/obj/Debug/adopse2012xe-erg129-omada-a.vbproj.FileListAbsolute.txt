@@ -94,3 +94,10 @@ C:\Users\thrass\Desktop\ergasia ade\ergasia_ade\adopse2012xe-erg129-omada-a\adop
 C:\Users\thrass\Desktop\ergasia ade\ergasia_ade\adopse2012xe-erg129-omada-a\adopse2012xe-erg129-omada-a\obj\Debug\WindowsApplication1.Search.resources
 C:\Users\thrass\Desktop\ergasia ade\ergasia_ade\adopse2012xe-erg129-omada-a\adopse2012xe-erg129-omada-a\obj\Debug\adopse2012xe-erg129-omada-a.vbproj.GenerateResource.Cache
 C:\Users\thrass\Desktop\adopse2012xe-erg129-omada-a\adopse2012xe-erg129-omada-a\obj\Debug\adopse2012xe-erg129-omada-a.vbproj.ResolveComReference.cache
+C:\Users\User\Documents\Visual Studio 2008\Projects\Git_google\adopse2012xe-erg129-omada-a\adopse2012xe-erg129-omada-a\obj\Debug\adopse2012xe-erg129-omada-a.vbproj.ResolveComReference.cache
+C:\Users\User\Documents\Visual Studio 2008\Projects\Git_google\adopse2012xe-erg129-omada-a\adopse2012xe-erg129-omada-a\bin\Debug\Register.vb
+C:\Users\User\Documents\Visual Studio 2008\Projects\Git_google\adopse2012xe-erg129-omada-a\adopse2012xe-erg129-omada-a\bin\Debug\Edit.resx
+C:\Users\User\Documents\Visual Studio 2008\Projects\Git_google\adopse2012xe-erg129-omada-a\adopse2012xe-erg129-omada-a\bin\Debug\Register.resx
+C:\Users\User\Documents\Visual Studio 2008\Projects\Git_google\adopse2012xe-erg129-omada-a\adopse2012xe-erg129-omada-a\bin\Debug\Edit.Designer.vb
+C:\Users\User\Documents\Visual Studio 2008\Projects\Git_google\adopse2012xe-erg129-omada-a\adopse2012xe-erg129-omada-a\bin\Debug\Edit.vb
+C:\Users\User\Documents\Visual Studio 2008\Projects\Git_google\adopse2012xe-erg129-omada-a\adopse2012xe-erg129-omada-a\bin\Debug\Register.Designer.vb

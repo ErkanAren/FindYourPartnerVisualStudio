@@ -17,7 +17,6 @@
         Me.Validate()
         Me.PeopleBindingSource.EndEdit()
         Me.TableAdapterManager.UpdateAll(Me.PeopleDataSet)
-        Me.Close()
-        ProfileForm.Show()
+        
     End Sub
 End Class

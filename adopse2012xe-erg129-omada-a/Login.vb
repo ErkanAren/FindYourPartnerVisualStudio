@@ -1,6 +1,25 @@
 ﻿Imports System.Data.OleDb
 
 Public Class Login
+    Public Shared ID As String
+    Public Shared username1 As String
+    Public Shared epitheto1 As String
+    Public Shared hmergen1 As Integer
+    Public Shared perioxh1 As String
+    Public Shared ergasia1 As String
+    Public Shared onoma1 As String
+    Public Shared baros As Integer
+    Public Shared ypsos As Integer
+    Public Shared xr_maliwn As String
+    Public Shared xr_matiwn As String
+    Public Shared hoby1 As String
+    Public Shared hoby2 As String
+    Public Shared hoby3 As String
+    Public Shared fylo As String
+    Public Shared anazita As String
+    Public Shared glwssa1 As String
+    Public Shared glwssa2 As String
+    Public Shared tatoo As String
 
 
 
@@ -8,6 +27,7 @@ Public Class Login
         'Me.Close()
         RegisterForm.ShowDialog()
 
+       
 
     End Sub
 
@@ -37,6 +57,25 @@ Public Class Login
             If User.BOF = False And User.EOF = False Then
                 userdb = User.Fields("email").Value.ToString
                 passdb = User.Fields("Password").Value.ToString
+                username1 = userdb
+                ID = User.Fields("ID").Value.ToString
+                onoma1 = User.Fields("Onoma").Value.ToString
+                epitheto1 = User.Fields("Epitheto").Value.ToString
+                ergasia1 = User.Fields("Ergasia").Value.ToString
+                perioxh1 = User.Fields("Perioxh").Value.ToString
+                hmergen1 = User.Fields("Hm_Gennisis").Value.ToString
+                fylo = User.Fields("Fylo").Value.ToString
+                baros = User.Fields("Baros").Value.ToString
+                ypsos = User.Fields("Ypsos").Value.ToString
+                xr_maliwn = User.Fields("Xrwma_Malliwn").Value.ToString
+                xr_matiwn = User.Fields("Xrwma_Matiwn").Value.ToString
+                hoby1 = User.Fields("Hoby1").Value.ToString
+                hoby2 = User.Fields("Hoby2").Value.ToString
+                hoby3 = User.Fields("Hoby3").Value.ToString
+                anazita = User.Fields("Anazita").Value.ToString
+                glwssa1 = User.Fields("Glwssa").Value.ToString
+                glwssa2 = User.Fields("Glwssa2").Value.ToString
+                tatoo = User.Fields("Tatoo").Value.ToString
 
                 If userdb <> UserNameText.Text Then
                     User.MoveNext()
