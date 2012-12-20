@@ -24,29 +24,34 @@ Public Class Search
         '  Dim con As New SqlConnection("Data Source = '" & Application.StartupPath & "\people.mdb'; prInitial Catalog = people;")
         '  Dim cmd As New SqlCommand("SELECT Onoma FROM people WHERE Baros = 49")
         '  con.Open()
-        Dim arr As String()
-        ReDim arr(5)
-        Dim query As String = "SELECT Onoma FROM people WHERE Baros<55"
+
+        ' Dim users_krit_baros As String()()
+        ' ReDim users_krit_baros(5)(2)
+        '  For i = 0 To 5
+        '   users_krit_baros(i)(1) = 0
+        ' Next
+        Dim querybaros1 As String = "SELECT Onoma,Epitheto,Ypsos FROM people WHERE Baros<=55"
+        Dim querybaros2 As String = "SELECT Onoma,Epitheto,Ypsos FROM people WHERE Baros>55 AND Baros<=65"
+        Dim querybaros3 As String = "SELECT Onoma,Epitheto,Ypsos FROM people WHERE Baros>65 AND Baros<=75"
+        Dim querybaros4 As String = "SELECT Onoma,Epitheto,Ypsos FROM people WHERE Baros>75 AND Baros<=85"
+        Dim querybaros5 As String = "SELECT Onoma,Epitheto,Ypsos FROM people WHERE Baros>85 AND Baros<=95"
+        Dim querybaros6 As String = "SELECT Onoma,Epitheto,Ypsos FROM people WHERE Baros>95"
         Dim cmd As New OleDbCommand
         Dim cn As OleDbConnection = New OleDbConnection
         cn.ConnectionString = My.Settings.peopleConnectionString
         cn.Open()
         cmd.Connection = cn
-        Dim myadapt As OleDbDataAdapter = New OleDbDataAdapter(query, cmd.Connection.ConnectionString())
+        Dim myadapt As OleDbDataAdapter ' = New OleDbDataAdapter(querybaros1, cmd.Connection.ConnectionString())
         Dim temprow As DataRow
         Dim ds As DataSet = New DataSet
-        myadapt.Fill(ds, "people")
-        Dim i As Integer = 0
-        For Each temprow In ds.Tables("people").Rows
+        ' myadapt.Fill(ds, "people")
 
-            arr(i) = (temprow.Item("Onoma").ToString)
-            i += 1
-        Next
 
-        For j = 0 To arr.Length
-            MessageBox.Show(arr(j))
-        Next j
-        onoma_xr = (ds.Tables(0).Rows(0).Item(0))
+
+        ' For j = 0 To arr.Length
+        'MessageBox.Show(arr(j))
+        '  Next j
+        '  onoma_xr = (ds.Tables(0).Rows(0).Item(0))
         'Catch ex As Exception
         'MessageBox.Show("haiii")
         ' End Try
@@ -63,9 +68,90 @@ Public Class Search
         End If
 
 
-        If Barosbox.SelectedItem <> "" Then
-            ar_krit = ar_krit + 1
-            pet_krit += 1
+        If Barosbox.SelectedItem <> "" Then ' ean einai epilegmeno to kritirio baros
+            ar_krit = ar_krit + 1 ' ayksanei twn arithmo twn epilegmenwn kritiriwn kai..
+            If Barosbox.SelectedIndex = 0 Then 'ean exei epilexthei to prwto item toy kritiriou baros
+                myadapt = New OleDbDataAdapter(querybaros1, cmd.Connection.ConnectionString())
+                myadapt.Fill(ds, "people")
+                Dim i As Integer = 0
+                For Each temprow In ds.Tables("people").Rows
+                    MessageBox.Show("1 - " & (temprow.Item("Onoma").ToString) & " - " & (temprow.Item("Epitheto").ToString))
+                    '   users_krit_baros(i)(0) = (temprow.Item("Onoma").ToString)
+
+                    ' If arr(i).Length <> 0 Then
+                    '  users_krit_baros(i)(1) += 1
+                    'End If
+
+                Next
+
+            ElseIf Barosbox.SelectedIndex = 1 Then 'ean exei epilexthei to deytero item toy kritiriou baros
+                myadapt = New OleDbDataAdapter(querybaros2, cmd.Connection.ConnectionString())
+                myadapt.Fill(ds, "people")
+                Dim i As Integer = 0
+                For Each temprow In ds.Tables("people").Rows
+                    MessageBox.Show("2 - " & (temprow.Item("Onoma").ToString) & " - " & (temprow.Item("Epitheto").ToString))
+                    '  users_krit_baros(i)(0) = (temprow.Item("Onoma").ToString)
+
+                    ' If arr(i).Length <> 0 Then
+                    '  users_krit_baros(i)(1) += 1
+                    'End If
+
+                Next
+            ElseIf Barosbox.SelectedIndex = 2 Then 'ean exei epilexthei to trito item toy kritiriou baros
+                myadapt = New OleDbDataAdapter(querybaros3, cmd.Connection.ConnectionString())
+                myadapt.Fill(ds, "people")
+                Dim i As Integer = 0
+                For Each temprow In ds.Tables("people").Rows
+                    MessageBox.Show("3 - " & (temprow.Item("Onoma").ToString) & " - " & (temprow.Item("Epitheto").ToString))
+                    '   users_krit_baros(i)(0) = (temprow.Item("Onoma").ToString)
+
+                    ' If arr(i).Length <> 0 Then
+                    '  users_krit_baros(i)(1) += 1
+                    'End If
+
+                Next
+            ElseIf Barosbox.SelectedIndex = 3 Then 'ean exei epilexthei to tetarto item toy kritiriou baros
+                myadapt = New OleDbDataAdapter(querybaros4, cmd.Connection.ConnectionString())
+                myadapt.Fill(ds, "people")
+                Dim i As Integer = 0
+                For Each temprow In ds.Tables("people").Rows
+                    MessageBox.Show("4 - " & (temprow.Item("Onoma").ToString) & " - " & (temprow.Item("Epitheto").ToString))
+                    '   users_krit_baros(i)(0) = (temprow.Item("Onoma").ToString)
+
+                    ' If arr(i).Length <> 0 Then
+                    '  users_krit_baros(i)(1) += 1
+                    'End If
+
+                Next
+            ElseIf Barosbox.SelectedIndex = 4 Then 'ean exei epilexthei to pempto item toy kritiriou baros
+                myadapt = New OleDbDataAdapter(querybaros5, cmd.Connection.ConnectionString())
+                myadapt.Fill(ds, "people")
+                Dim i As Integer = 0
+                For Each temprow In ds.Tables("people").Rows
+                    MessageBox.Show("5 - " & ((temprow.Item("Onoma").ToString)) & " - " & (temprow.Item("Epitheto").ToString) & ((temprow.Item("Ypsos")).ToString))
+                    '   users_krit_baros(i)(0) = (temprow.Item("Onoma").ToString)
+
+                    ' If arr(i).Length <> 0 Then
+                    '  users_krit_baros(i)(1) += 1
+                    'End If
+
+                Next
+            ElseIf Barosbox.SelectedIndex = 5 Then 'ean exei epilexthei to ekto item toy kritiriou baros
+                myadapt = New OleDbDataAdapter(querybaros6, cmd.Connection.ConnectionString())
+                myadapt.Fill(ds, "people")
+                Dim i As Integer = 0
+                For Each temprow In ds.Tables("people").Rows
+                    MessageBox.Show("6 - " & (temprow.Item("Onoma").ToString) & " - " & (temprow.Item("Epitheto").ToString))
+                    '   users_krit_baros(i)(0) = (temprow.Item("Onoma").ToString)
+
+                    ' If arr(i).Length <> 0 Then
+                    ' users_krit_baros(i)(1) += 1
+                    'End If
+
+                Next
+            End If
+
+
         End If
         If Ypsosbox.SelectedText <> "" Then
             ar_krit = ar_krit + 1

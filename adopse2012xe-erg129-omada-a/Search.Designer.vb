@@ -346,7 +346,7 @@ Partial Class Search
         'Barosbox
         '
         Me.Barosbox.FormattingEnabled = True
-        Me.Barosbox.Items.AddRange(New Object() {"0    έως    55", "60    έως    65", "70    έως    75", "80    έως    85", "90    έως    95", "100  έως    105"})
+        Me.Barosbox.Items.AddRange(New Object() {"0    έως    55", "56    έως    65", "66    έως    75", "76    έως    85", "86    έως    95", ">=96"})
         Me.Barosbox.Location = New System.Drawing.Point(125, 96)
         Me.Barosbox.Name = "Barosbox"
         Me.Barosbox.Size = New System.Drawing.Size(100, 21)
