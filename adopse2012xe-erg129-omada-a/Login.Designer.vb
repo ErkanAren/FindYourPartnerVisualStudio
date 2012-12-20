@@ -36,6 +36,7 @@ Partial Class Login
         Me.UserNameText.Name = "UserNameText"
         Me.UserNameText.Size = New System.Drawing.Size(100, 20)
         Me.UserNameText.TabIndex = 0
+        Me.UserNameText.Text = "lima@gmail.com"
         '
         'PasswordText
         '
@@ -43,6 +44,7 @@ Partial Class Login
         Me.PasswordText.Name = "PasswordText"
         Me.PasswordText.Size = New System.Drawing.Size(100, 20)
         Me.PasswordText.TabIndex = 1
+        Me.PasswordText.Text = "16"
         '
         'UserNameLabel
         '

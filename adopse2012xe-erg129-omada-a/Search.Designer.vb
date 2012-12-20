@@ -47,14 +47,13 @@ Partial Class Search
         Me.GroupBox1 = New System.Windows.Forms.GroupBox
         Me.MaleCheck = New System.Windows.Forms.CheckBox
         Me.FemaleCheck = New System.Windows.Forms.CheckBox
-        Me.TatooCheck = New System.Windows.Forms.CheckBox
+        Me.TatooCheckYes = New System.Windows.Forms.CheckBox
         Me.WomanCheck = New System.Windows.Forms.CheckBox
         Me.ManCheck = New System.Windows.Forms.CheckBox
         Me.Xrmalbox = New System.Windows.Forms.ComboBox
         Me.Xrmatbox = New System.Windows.Forms.ComboBox
         Me.Ypsosbox = New System.Windows.Forms.ComboBox
         Me.Barosbox = New System.Windows.Forms.ComboBox
-        Me.Hmbox = New System.Windows.Forms.ComboBox
         Me.OnomaTextBox = New System.Windows.Forms.TextBox
         Me.Hoby1TextBox = New System.Windows.Forms.TextBox
         Me.Hoby2TextBox = New System.Windows.Forms.TextBox
@@ -63,6 +62,10 @@ Partial Class Search
         Me.Glwssa2TextBox = New System.Windows.Forms.TextBox
         Me.ErgasiaTextBox = New System.Windows.Forms.TextBox
         Me.PerioxhTextBox = New System.Windows.Forms.TextBox
+        Me.TatooCheckNo = New System.Windows.Forms.CheckBox
+        Me.HmGenApo = New System.Windows.Forms.TextBox
+        Me.HmGenEws = New System.Windows.Forms.TextBox
+        Me.Label1 = New System.Windows.Forms.Label
         OnomaLabel = New System.Windows.Forms.Label
         Hm_GennisisLabel = New System.Windows.Forms.Label
         BarosLabel = New System.Windows.Forms.Label
@@ -287,14 +290,15 @@ Partial Class Search
         Me.FemaleCheck.Text = "FEMALE"
         Me.FemaleCheck.UseVisualStyleBackColor = True
         '
-        'TatooCheck
+        'TatooCheckYes
         '
-        Me.TatooCheck.AutoSize = True
-        Me.TatooCheck.Location = New System.Drawing.Point(387, 193)
-        Me.TatooCheck.Name = "TatooCheck"
-        Me.TatooCheck.Size = New System.Drawing.Size(15, 14)
-        Me.TatooCheck.TabIndex = 82
-        Me.TatooCheck.UseVisualStyleBackColor = True
+        Me.TatooCheckYes.AutoSize = True
+        Me.TatooCheckYes.Location = New System.Drawing.Point(346, 192)
+        Me.TatooCheckYes.Name = "TatooCheckYes"
+        Me.TatooCheckYes.Size = New System.Drawing.Size(47, 17)
+        Me.TatooCheckYes.TabIndex = 82
+        Me.TatooCheckYes.Text = "YES"
+        Me.TatooCheckYes.UseVisualStyleBackColor = True
         '
         'WomanCheck
         '
@@ -351,15 +355,6 @@ Partial Class Search
         Me.Barosbox.Name = "Barosbox"
         Me.Barosbox.Size = New System.Drawing.Size(100, 21)
         Me.Barosbox.TabIndex = 76
-        '
-        'Hmbox
-        '
-        Me.Hmbox.FormattingEnabled = True
-        Me.Hmbox.Items.AddRange(New Object() {"1940  έως   1945", "1950  έως   1955", "1960  έως   1965", "1970  έως   1975", "1980  έως   1985", "1990  έως   1995"})
-        Me.Hmbox.Location = New System.Drawing.Point(125, 67)
-        Me.Hmbox.Name = "Hmbox"
-        Me.Hmbox.Size = New System.Drawing.Size(100, 21)
-        Me.Hmbox.TabIndex = 75
         '
         'OnomaTextBox
         '
@@ -425,20 +420,58 @@ Partial Class Search
         Me.PerioxhTextBox.Size = New System.Drawing.Size(100, 20)
         Me.PerioxhTextBox.TabIndex = 74
         '
+        'TatooCheckNo
+        '
+        Me.TatooCheckNo.AutoSize = True
+        Me.TatooCheckNo.Location = New System.Drawing.Point(399, 192)
+        Me.TatooCheckNo.Name = "TatooCheckNo"
+        Me.TatooCheckNo.Size = New System.Drawing.Size(42, 17)
+        Me.TatooCheckNo.TabIndex = 86
+        Me.TatooCheckNo.Text = "NO"
+        Me.TatooCheckNo.UseVisualStyleBackColor = True
+        '
+        'HmGenApo
+        '
+        Me.HmGenApo.Location = New System.Drawing.Point(125, 72)
+        Me.HmGenApo.Name = "HmGenApo"
+        Me.HmGenApo.Size = New System.Drawing.Size(38, 20)
+        Me.HmGenApo.TabIndex = 87
+        Me.HmGenApo.Text = "1980"
+        '
+        'HmGenEws
+        '
+        Me.HmGenEws.Location = New System.Drawing.Point(188, 72)
+        Me.HmGenEws.Name = "HmGenEws"
+        Me.HmGenEws.Size = New System.Drawing.Size(37, 20)
+        Me.HmGenEws.TabIndex = 88
+        Me.HmGenEws.Text = "1990"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(166, 75)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(23, 13)
+        Me.Label1.TabIndex = 89
+        Me.Label1.Text = "To:"
+        '
         'Search
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(534, 362)
+        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.HmGenEws)
+        Me.Controls.Add(Me.HmGenApo)
+        Me.Controls.Add(Me.TatooCheckNo)
         Me.Controls.Add(Me.GroupBox1)
-        Me.Controls.Add(Me.TatooCheck)
+        Me.Controls.Add(Me.TatooCheckYes)
         Me.Controls.Add(Me.WomanCheck)
         Me.Controls.Add(Me.ManCheck)
         Me.Controls.Add(Me.Xrmalbox)
         Me.Controls.Add(Me.Xrmatbox)
         Me.Controls.Add(Me.Ypsosbox)
         Me.Controls.Add(Me.Barosbox)
-        Me.Controls.Add(Me.Hmbox)
         Me.Controls.Add(OnomaLabel)
         Me.Controls.Add(Me.OnomaTextBox)
         Me.Controls.Add(Hm_GennisisLabel)
@@ -482,14 +515,13 @@ Partial Class Search
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
     Friend WithEvents MaleCheck As System.Windows.Forms.CheckBox
     Friend WithEvents FemaleCheck As System.Windows.Forms.CheckBox
-    Friend WithEvents TatooCheck As System.Windows.Forms.CheckBox
+    Friend WithEvents TatooCheckYes As System.Windows.Forms.CheckBox
     Friend WithEvents WomanCheck As System.Windows.Forms.CheckBox
     Friend WithEvents ManCheck As System.Windows.Forms.CheckBox
     Friend WithEvents Xrmalbox As System.Windows.Forms.ComboBox
     Friend WithEvents Xrmatbox As System.Windows.Forms.ComboBox
     Friend WithEvents Ypsosbox As System.Windows.Forms.ComboBox
     Friend WithEvents Barosbox As System.Windows.Forms.ComboBox
-    Friend WithEvents Hmbox As System.Windows.Forms.ComboBox
     Friend WithEvents OnomaTextBox As System.Windows.Forms.TextBox
     Friend WithEvents Hoby1TextBox As System.Windows.Forms.TextBox
     Friend WithEvents Hoby2TextBox As System.Windows.Forms.TextBox
@@ -498,4 +530,8 @@ Partial Class Search
     Friend WithEvents Glwssa2TextBox As System.Windows.Forms.TextBox
     Friend WithEvents ErgasiaTextBox As System.Windows.Forms.TextBox
     Friend WithEvents PerioxhTextBox As System.Windows.Forms.TextBox
+    Friend WithEvents TatooCheckNo As System.Windows.Forms.CheckBox
+    Friend WithEvents HmGenApo As System.Windows.Forms.TextBox
+    Friend WithEvents HmGenEws As System.Windows.Forms.TextBox
+    Friend WithEvents Label1 As System.Windows.Forms.Label
 End Class
