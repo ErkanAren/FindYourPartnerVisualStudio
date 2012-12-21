@@ -13,39 +13,93 @@
         ' Next
 
         'SYGXWNEYSI PINAKWN DEMO
-        Dim i As Integer = 0
-        Do
-            For Each j In Search.users_krit_baros
-                If Search.all_users(i, 2) = Search.users_krit_baros(j, 2) Then
-                    Search.all_users(i, 1) += 1
-                End If
-            Next
-            For Each j In Search.users_krit_tat
-                If Search.all_users(i, 2) = Search.users_krit_tat(j, 2) Then
-                    Search.all_users(i, 1) += 1
-                End If
-            Next
-            For Each j In Search.users_krit_hmgen
-                If Search.all_users(i, 2) = Search.users_krit_hmgen(j, 2) Then
-                    Search.all_users(i, 1) += 1
-                End If
-            Next
-            i += 1
-        Loop Until new_table(i, 2) = ""
 
-        onoma1.Text = new_table(i, 0)
-        pr_num_l1.Text = (16 / Search.ar_krit) * 6.25 * new_table(i, 1)
-        pr_num = (16 / Search.ar_krit) * 6.25 * new_table(i, 1)
+        For j = 0 To Search.db_count
+
+            If Search.users_krit_hmgen(j, 0) <> "" Then
+                '    MessageBox.Show("Search.users_krit_tat(j, 0)= " & Search.users_krit_hmgen(j, 0))
+
+            End If
+
+            '  If Search.all_users(i, 0) = Search.users_krit_baros(j, 0) Then
+            'Search.all_users(i, 1) += 1
+            'End If
+
+        Next
+
+
+        Dim i As Integer = 0
+        If (Search.kritirio_varos_selected = True) Then
+            Do Until Search.all_users(i, 0) = ""
+                For j = 0 To Search.db_count
+                    If Search.users_krit_baros(j, 0) = "" Then
+                        ' MessageBox.Show("Search.users_krit_baros(j, 0)= " & Search.users_krit_baros(j, 0) & "- Search.all_users(i, 0)= " & Search.all_users(i, 0))
+                    Else
+                        If Search.all_users(i, 1) = Search.users_krit_baros(j, 1) Then
+                            Search.all_users(i, 2) += 1
+                        End If
+
+                    End If
+
+                Next
+
+                i += 1
+            Loop
+        End If
+
+        If Search.kritirio_hmgen_selected = True Then
+            i = 0
+            Do Until Search.all_users(i, 0) = ""
+
+                For j = 0 To Search.db_count
+                    If Search.users_krit_hmgen(j, 0) = "" Then
+
+                    Else
+                        'MessageBox.Show("Search.users_krit_tat(j, 0)= " & Search.users_krit_tat(j, 0) & "- Search.all_users(i, 2)= " & Search.all_users(i, 0))
+                        If Search.all_users(i, 1) = Search.users_krit_hmgen(j, 1) Then
+                            Search.all_users(i, 2) += 1
+                            MessageBox.Show("kritirio_hmgen_selected me onoma = " & Search.users_krit_hmgen(j, 0))
+                        End If
+                    End If
+                Next
+                i += 1
+            Loop
+
+        End If
+
+        If Search.kritirio_tat_selected = True Then
+            i = 0
+
+            Do Until Search.all_users(i, 0) = ""
+                For j = 0 To Search.db_count
+                    If Search.users_krit_tat(j, 0) = "" Then
+
+                    Else
+                        'MessageBox.Show("Search.users_krit_hmgen(j, 0)= " & Search.users_krit_hmgen(j, 0) & "- Search.all_users(i, 0)= " & Search.all_users(i, 0))
+                        If Search.all_users(i, 1) = Search.users_krit_tat(j, 1) Then
+                            Search.all_users(i, 2) += 1
+
+                        End If
+                    End If
+                Next
+                i += 1
+            Loop
+
+        End If
+        MessageBox.Show("Ar_krit= " & Search.ar_krit & ", Petiximena krit= " & Search.all_users(2, 2) & ",Onoma= " & Search.all_users(2, 0))
+        onoma1.Text = Search.all_users(0, 0)
+        pr_num_l1.Text = (16 / Search.ar_krit) * 6.25 * Search.all_users(0, 2)
+        pr_num = (16 / Search.ar_krit) * 6.25 * Search.all_users(0, 2)
         ProgressBar1.Value = pr_num
 
-        onoma2.Text = new_table(i, 0)
-        pr_num_l2.Text = (16 / Search.ar_krit) * 6.25 * new_table(i, 1)
-        pr_num = (16 / Search.ar_krit) * 6.25 * new_table(i, 1)
+        onoma2.Text = Search.all_users(1, 0)
+        pr_num_l2.Text = (16 / Search.ar_krit) * 6.25 * Search.all_users(1, 2)
+        pr_num = (16 / Search.ar_krit) * 6.25 * Search.all_users(1, 2)
         ProgressBar2.Value = pr_num
 
-        onoma3.Text = new_table(i, 0)
-        pr_num_l3.Text = (16 / Search.ar_krit) * 6.25 * new_table(i, 1)
-        pr_num = (16 / Search.ar_krit) * 6.25 * new_table(i, 1)
+        onoma3.Text = Search.all_users(2, 0)
+        pr_num_l3.Text = (16 / Search.ar_krit) * 6.25 * Search.all_users(2, 2)
+        pr_num = (16 / Search.ar_krit) * 6.25 * Search.all_users(2, 2)
         ProgressBar3.Value = pr_num
         ' Label1.Text = Search.users_krit_hmgen(0, 0)
         '  ProgressBar1.Value = (16 / Search.ar_krit) * 6.25 * Search.users_krit_hmgen(0, 1)
