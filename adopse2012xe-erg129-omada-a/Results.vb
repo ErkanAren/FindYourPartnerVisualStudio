@@ -6,6 +6,8 @@
         Dim pr_num As Double
         Dim new_table As String(,)
         ReDim new_table(Search.db_count, 3)
+        Dim max As Integer(,)
+        ReDim max(5, 2)
         ' For k = 0 To Search.db_count
         'new_table(k, 0) = Search.all_users(k, 0)
         ' new_table(k, 1) = Search.all_users(k, 1)
@@ -84,23 +86,65 @@
                 Next
                 i += 1
             Loop
+          
+
+
+            For i = 0 To Search.db_count
+                new_table(i, 0) = Search.all_users(i, 0)
+                new_table(i, 1) = Search.all_users(i, 1)
+                new_table(i, 2) = Search.all_users(i, 2)
+            Next
+            Dim th As Integer
+            For th = 0 To 5
+                max(th, 1) = 0
+                max(th, 0) = 0
+            Next
+
+
+            For th = 0 To 5
+                For k = 0 To Search.db_count
+
+                    If max(th, 1) < new_table(k, 2) Then
+
+                        max(th, 0) = k
+                        max(th, 1) = new_table(k, 2)
+                        new_table(k, 2) = 0
+                    End If
+                Next
+            Next
+
 
         End If
+
         MessageBox.Show("Ar_krit= " & Search.ar_krit & ", Petiximena krit= " & Search.all_users(2, 2) & ",Onoma= " & Search.all_users(2, 0))
-        onoma1.Text = Search.all_users(0, 0)
-        pr_num_l1.Text = (16 / Search.ar_krit) * 6.25 * Search.all_users(0, 2)
-        pr_num = (16 / Search.ar_krit) * 6.25 * Search.all_users(0, 2)
+
+
+
+        onoma1.Text = Search.all_users(max(0, 0), 0)
+        pr_num_l1.Text = (16 / Search.ar_krit) * 6.25 * Search.all_users(max(0, 0), 2)
+        pr_num = (16 / Search.ar_krit) * 6.25 * Search.all_users(max(0, 0), 2)
         ProgressBar1.Value = pr_num
 
-        onoma2.Text = Search.all_users(1, 0)
-        pr_num_l2.Text = (16 / Search.ar_krit) * 6.25 * Search.all_users(1, 2)
-        pr_num = (16 / Search.ar_krit) * 6.25 * Search.all_users(1, 2)
+        onoma2.Text = Search.all_users(max(1, 0), 0)
+        pr_num_l2.Text = (16 / Search.ar_krit) * 6.25 * Search.all_users(max(1, 0), 2)
+        pr_num = (16 / Search.ar_krit) * 6.25 * Search.all_users(max(1, 0), 2)
         ProgressBar2.Value = pr_num
 
-        onoma3.Text = Search.all_users(2, 0)
-        pr_num_l3.Text = (16 / Search.ar_krit) * 6.25 * Search.all_users(2, 2)
-        pr_num = (16 / Search.ar_krit) * 6.25 * Search.all_users(2, 2)
+        onoma3.Text = Search.all_users(max(2, 0), 0)
+        pr_num_l3.Text = (16 / Search.ar_krit) * 6.25 * Search.all_users(max(2, 0), 2)
+        pr_num = (16 / Search.ar_krit) * 6.25 * Search.all_users(max(2, 0), 2)
         ProgressBar3.Value = pr_num
+
+        onoma4.Text = Search.all_users(max(3, 0), 0)
+        pr_num_l4.Text = (16 / Search.ar_krit) * 6.25 * Search.all_users(max(3, 0), 2)
+        pr_num = (16 / Search.ar_krit) * 6.25 * Search.all_users(max(3, 0), 2)
+        ProgressBar4.Value = pr_num
+
+        onoma5.Text = Search.all_users(max(4, 0), 0)
+        pr_num_l5.Text = (16 / Search.ar_krit) * 6.25 * Search.all_users(max(4, 0), 2)
+        pr_num = (16 / Search.ar_krit) * 6.25 * Search.all_users(max(4, 0), 2)
+        ProgressBar5.Value = pr_num
+
         ' Label1.Text = Search.users_krit_hmgen(0, 0)
         '  ProgressBar1.Value = (16 / Search.ar_krit) * 6.25 * Search.users_krit_hmgen(0, 1)
         ' Label2.Text = (16 / Search.ar_krit) * 6.25 * Search.users_krit_hmgen(0, 1)
@@ -110,4 +154,13 @@
         ' Label1.Text = Search.onoma_xr
         ' ProgressBar1.Value = pr_num
     End Sub
+    Private Function BubbleSort(ByVal ar(,)) As Array
+        Dim intx As Integer, inty As Integer, inttemp As Integer
+        For intx = 0 To ar.Length - 1
+            For inty = 0 To ar.Length - 2 - intx
+
+            Next
+        Next
+        Return ar
+    End Function
 End Class
