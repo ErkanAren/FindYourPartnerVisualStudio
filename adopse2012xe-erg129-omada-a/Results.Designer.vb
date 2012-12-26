@@ -37,6 +37,7 @@ Partial Class Results
         Me.pr_num_l5 = New System.Windows.Forms.Label
         Me.ProgressBar4 = New System.Windows.Forms.ProgressBar
         Me.ProgressBar5 = New System.Windows.Forms.ProgressBar
+        Me.CloseButton = New System.Windows.Forms.Button
         Me.SuspendLayout()
         '
         'ProgressBar1
@@ -164,11 +165,21 @@ Partial Class Results
         Me.ProgressBar5.Size = New System.Drawing.Size(100, 23)
         Me.ProgressBar5.TabIndex = 16
         '
+        'CloseButton
+        '
+        Me.CloseButton.Location = New System.Drawing.Point(197, 227)
+        Me.CloseButton.Name = "CloseButton"
+        Me.CloseButton.Size = New System.Drawing.Size(75, 23)
+        Me.CloseButton.TabIndex = 17
+        Me.CloseButton.Text = "Close"
+        Me.CloseButton.UseVisualStyleBackColor = True
+        '
         'Results
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(284, 262)
+        Me.Controls.Add(Me.CloseButton)
         Me.Controls.Add(Me.ProgressBar5)
         Me.Controls.Add(Me.ProgressBar4)
         Me.Controls.Add(Me.pr_num_l5)
@@ -205,4 +216,5 @@ Partial Class Results
     Friend WithEvents pr_num_l5 As System.Windows.Forms.Label
     Friend WithEvents ProgressBar4 As System.Windows.Forms.ProgressBar
     Friend WithEvents ProgressBar5 As System.Windows.Forms.ProgressBar
+    Friend WithEvents CloseButton As System.Windows.Forms.Button
 End Class

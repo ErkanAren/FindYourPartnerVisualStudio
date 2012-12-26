@@ -88,33 +88,33 @@
             Loop
           
 
-
-            For i = 0 To Search.db_count
-                new_table(i, 0) = Search.all_users(i, 0)
-                new_table(i, 1) = Search.all_users(i, 1)
-                new_table(i, 2) = Search.all_users(i, 2)
-            Next
-            Dim th As Integer
-            For th = 0 To 5
-                max(th, 1) = 0
-                max(th, 0) = 0
-            Next
-
-
-            For th = 0 To 5
-                For k = 0 To Search.db_count
-
-                    If max(th, 1) < new_table(k, 2) Then
-
-                        max(th, 0) = k
-                        max(th, 1) = new_table(k, 2)
-                        new_table(k, 2) = 0
-                    End If
-                Next
-            Next
-
-
         End If
+        For i = 0 To Search.db_count
+            new_table(i, 0) = Search.all_users(i, 0)
+            new_table(i, 1) = Search.all_users(i, 1)
+            new_table(i, 2) = Search.all_users(i, 2)
+        Next
+        Dim th As Integer
+        For th = 0 To 5
+            max(th, 1) = 0
+            max(th, 0) = 0
+        Next
+
+
+        For th = 0 To 5
+            For k = 0 To Search.db_count
+
+                If max(th, 1) < new_table(k, 2) Then
+
+                    max(th, 0) = k
+                    max(th, 1) = new_table(k, 2)
+                    new_table(k, 2) = 0
+                End If
+            Next
+        Next
+
+
+
 
         MessageBox.Show("Ar_krit= " & Search.ar_krit & ", Petiximena krit= " & Search.all_users(2, 2) & ",Onoma= " & Search.all_users(2, 0))
 
@@ -154,13 +154,36 @@
         ' Label1.Text = Search.onoma_xr
         ' ProgressBar1.Value = pr_num
     End Sub
-    Private Function BubbleSort(ByVal ar(,)) As Array
-        Dim intx As Integer, inty As Integer, inttemp As Integer
-        For intx = 0 To ar.Length - 1
-            For inty = 0 To ar.Length - 2 - intx
+   
+
+    Private Sub CloseButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CloseButton.Click
+        Search.ar_krit = 0
+        For i = 0 To Search.db_count
+            'Search.all_users(i, 0) = ""
+            '  Search.all_users(i, 1) = ""
+            Search.all_users(i, 2) = 0
+
+        Next
+        Me.Close()
+    End Sub
+    Private Sub Form_FormClosing(ByVal sender As Object, ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
+        Dim response As MsgBoxResult
+        response = MsgBox("Do you want to close?", MsgBoxStyle.Question + MsgBoxStyle.YesNo, "Confirm")
+        If response = MsgBoxResult.Yes Then
+            Search.ar_krit = 0
+            For i = 0 To Search.db_count
+                'Search.all_users(i, 0) = ""
+                '  Search.all_users(i, 1) = ""
+                Search.all_users(i, 2) = 0
 
             Next
-        Next
-        Return ar
-    End Function
+            Me.Dispose()
+        ElseIf response = MsgBoxResult.No Then
+
+            e.Cancel = True
+            Exit Sub
+        End If
+
+    End Sub
+
 End Class
