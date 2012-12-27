@@ -16,18 +16,18 @@
 
         'SYGXWNEYSI PINAKWN DEMO
 
-        For j = 0 To Search.db_count
+        ' For j = 0 To Search.db_count
 
-            If Search.users_krit_hmgen(j, 0) <> "" Then
-                '    MessageBox.Show("Search.users_krit_tat(j, 0)= " & Search.users_krit_hmgen(j, 0))
+        'If Search.users_krit_hmgen(j, 0) <> "" Then
+        '    MessageBox.Show("Search.users_krit_tat(j, 0)= " & Search.users_krit_hmgen(j, 0))
 
-            End If
+        '  End If
 
-            '  If Search.all_users(i, 0) = Search.users_krit_baros(j, 0) Then
-            'Search.all_users(i, 1) += 1
-            'End If
+        '  If Search.all_users(i, 0) = Search.users_krit_baros(j, 0) Then
+        'Search.all_users(i, 1) += 1
+        'End If
 
-        Next
+        ' Next
 
 
         Dim i As Integer = 0
@@ -59,8 +59,10 @@
                     Else
                         'MessageBox.Show("Search.users_krit_tat(j, 0)= " & Search.users_krit_tat(j, 0) & "- Search.all_users(i, 2)= " & Search.all_users(i, 0))
                         If Search.all_users(i, 1) = Search.users_krit_hmgen(j, 1) Then
+
                             Search.all_users(i, 2) += 1
-                            MessageBox.Show("kritirio_hmgen_selected me onoma = " & Search.users_krit_hmgen(j, 0))
+                            ' MessageBox.Show("kritirio_hmgen_selected me onoma = " & Search.users_krit_hmgen(j, 0))
+                            ' MessageBox.Show("all users me onoma = " & Search.all_users(i, 0))
                         End If
                     End If
                 Next
@@ -86,13 +88,74 @@
                 Next
                 i += 1
             Loop
-          
 
         End If
+
+
+        If Search.kritirio_ypsos_selected = True Then
+            i = 0
+
+            Do Until Search.all_users(i, 0) = ""
+                For j = 0 To Search.db_count
+                    If Search.users_krit_ypsos(j, 0) = "" Then
+
+                    Else
+
+                        If Search.all_users(i, 1) = Search.users_krit_ypsos(j, 1) Then
+                            Search.all_users(i, 2) += 1
+
+                        End If
+                    End If
+                Next
+                i += 1
+            Loop
+
+        End If
+
+        If Search.kritirio_xrmat_selected = True Then
+            i = 0
+
+            Do Until Search.all_users(i, 0) = ""
+                For j = 0 To Search.db_count
+                    If Search.users_krit_xr_mat(j, 0) = "" Then
+
+                    Else
+
+                        If Search.all_users(i, 1) = Search.users_krit_xr_mat(j, 1) Then
+                            Search.all_users(i, 2) += 1
+
+                        End If
+                    End If
+                Next
+                i += 1
+            Loop
+
+        End If
+        If Search.kritirio_onoma_selected = True Then
+            i = 0
+
+            Do Until Search.all_users(i, 0) = ""
+                For j = 0 To Search.db_count
+                    If Search.users_krit_onoma(j, 0) = "" Then
+
+                    Else
+
+                        If Search.all_users(i, 1) = Search.users_krit_onoma(j, 1) Then
+                            Search.all_users(i, 2) += 1
+
+                        End If
+                    End If
+                Next
+                i += 1
+            Loop
+
+        End If
+
         For i = 0 To Search.db_count
             new_table(i, 0) = Search.all_users(i, 0)
             new_table(i, 1) = Search.all_users(i, 1)
             new_table(i, 2) = Search.all_users(i, 2)
+
         Next
         Dim th As Integer
         For th = 0 To 5
@@ -116,7 +179,7 @@
 
 
 
-        MessageBox.Show("Ar_krit= " & Search.ar_krit & ", Petiximena krit= " & Search.all_users(2, 2) & ",Onoma= " & Search.all_users(2, 0))
+        '   MessageBox.Show("Ar_krit= " & Search.ar_krit & ", Petiximena krit= " & Search.all_users(2, 2) & ",Onoma= " & Search.all_users(2, 0))
 
 
 
@@ -145,6 +208,13 @@
         pr_num = (16 / Search.ar_krit) * 6.25 * Search.all_users(max(4, 0), 2)
         ProgressBar5.Value = pr_num
 
+
+
+        For i = 0 To Search.db_count 'clear the new table
+            new_table(i, 0) = ""
+            new_table(i, 1) = ""
+            new_table(i, 2) = 0
+        Next
         ' Label1.Text = Search.users_krit_hmgen(0, 0)
         '  ProgressBar1.Value = (16 / Search.ar_krit) * 6.25 * Search.users_krit_hmgen(0, 1)
         ' Label2.Text = (16 / Search.ar_krit) * 6.25 * Search.users_krit_hmgen(0, 1)
@@ -154,9 +224,9 @@
         ' Label1.Text = Search.onoma_xr
         ' ProgressBar1.Value = pr_num
     End Sub
-   
 
-    Private Sub CloseButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CloseButton.Click
+
+    Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CloseButton.Click
         Search.ar_krit = 0
         For i = 0 To Search.db_count
             'Search.all_users(i, 0) = ""
@@ -166,6 +236,9 @@
         Next
         Me.Close()
     End Sub
+
+
+
     Private Sub Form_FormClosing(ByVal sender As Object, ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
         Dim response As MsgBoxResult
         response = MsgBox("Do you want to close?", MsgBoxStyle.Question + MsgBoxStyle.YesNo, "Confirm")

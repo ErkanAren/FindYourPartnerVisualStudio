@@ -26,7 +26,6 @@ Partial Class Search
         Dim OnomaLabel As System.Windows.Forms.Label
         Dim Hm_GennisisLabel As System.Windows.Forms.Label
         Dim BarosLabel As System.Windows.Forms.Label
-        Dim YpsosLabel As System.Windows.Forms.Label
         Dim FyloLabel As System.Windows.Forms.Label
         Dim Xrwma_MatiwnLabel As System.Windows.Forms.Label
         Dim Xrwma_MalliwnLabel As System.Windows.Forms.Label
@@ -39,6 +38,7 @@ Partial Class Search
         Dim TatooLabel As System.Windows.Forms.Label
         Dim ErgasiaLabel As System.Windows.Forms.Label
         Dim PerioxhLabel As System.Windows.Forms.Label
+        Dim YpsosLabel As System.Windows.Forms.Label
         Me.PeopleDataSet = New WindowsApplication1.peopleDataSet
         Me.PeopleBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.PeopleTableAdapter = New WindowsApplication1.peopleDataSetTableAdapters.PeopleTableAdapter
@@ -52,7 +52,6 @@ Partial Class Search
         Me.ManCheck = New System.Windows.Forms.CheckBox
         Me.Xrmalbox = New System.Windows.Forms.ComboBox
         Me.Xrmatbox = New System.Windows.Forms.ComboBox
-        Me.Ypsosbox = New System.Windows.Forms.ComboBox
         Me.Barosbox = New System.Windows.Forms.ComboBox
         Me.OnomaTextBox = New System.Windows.Forms.TextBox
         Me.Hoby1TextBox = New System.Windows.Forms.TextBox
@@ -66,10 +65,12 @@ Partial Class Search
         Me.HmGenApo = New System.Windows.Forms.TextBox
         Me.HmGenEws = New System.Windows.Forms.TextBox
         Me.Label1 = New System.Windows.Forms.Label
+        Me.YpsosEws = New System.Windows.Forms.TextBox
+        Me.Label2 = New System.Windows.Forms.Label
+        Me.ypsosApo = New System.Windows.Forms.TextBox
         OnomaLabel = New System.Windows.Forms.Label
         Hm_GennisisLabel = New System.Windows.Forms.Label
         BarosLabel = New System.Windows.Forms.Label
-        YpsosLabel = New System.Windows.Forms.Label
         FyloLabel = New System.Windows.Forms.Label
         Xrwma_MatiwnLabel = New System.Windows.Forms.Label
         Xrwma_MalliwnLabel = New System.Windows.Forms.Label
@@ -82,6 +83,7 @@ Partial Class Search
         TatooLabel = New System.Windows.Forms.Label
         ErgasiaLabel = New System.Windows.Forms.Label
         PerioxhLabel = New System.Windows.Forms.Label
+        YpsosLabel = New System.Windows.Forms.Label
         CType(Me.PeopleDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PeopleBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
@@ -113,15 +115,6 @@ Partial Class Search
         BarosLabel.Size = New System.Drawing.Size(37, 13)
         BarosLabel.TabIndex = 54
         BarosLabel.Text = "Baros:"
-        '
-        'YpsosLabel
-        '
-        YpsosLabel.AutoSize = True
-        YpsosLabel.Location = New System.Drawing.Point(39, 124)
-        YpsosLabel.Name = "YpsosLabel"
-        YpsosLabel.Size = New System.Drawing.Size(39, 13)
-        YpsosLabel.TabIndex = 55
-        YpsosLabel.Text = "Ypsos:"
         '
         'FyloLabel
         '
@@ -338,15 +331,6 @@ Partial Class Search
         Me.Xrmatbox.Size = New System.Drawing.Size(100, 21)
         Me.Xrmatbox.TabIndex = 78
         '
-        'Ypsosbox
-        '
-        Me.Ypsosbox.FormattingEnabled = True
-        Me.Ypsosbox.Items.AddRange(New Object() {"150   έως   155", "160   έως   165", "170   έως   175", "180   έως   185", "190   έως   195", "200   έως   210", " "})
-        Me.Ypsosbox.Location = New System.Drawing.Point(125, 123)
-        Me.Ypsosbox.Name = "Ypsosbox"
-        Me.Ypsosbox.Size = New System.Drawing.Size(100, 21)
-        Me.Ypsosbox.TabIndex = 77
-        '
         'Barosbox
         '
         Me.Barosbox.FormattingEnabled = True
@@ -455,11 +439,47 @@ Partial Class Search
         Me.Label1.TabIndex = 89
         Me.Label1.Text = "To:"
         '
+        'YpsosEws
+        '
+        Me.YpsosEws.Location = New System.Drawing.Point(189, 124)
+        Me.YpsosEws.Name = "YpsosEws"
+        Me.YpsosEws.Size = New System.Drawing.Size(38, 20)
+        Me.YpsosEws.TabIndex = 96
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(167, 127)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(23, 13)
+        Me.Label2.TabIndex = 95
+        Me.Label2.Text = "To:"
+        '
+        'ypsosApo
+        '
+        Me.ypsosApo.Location = New System.Drawing.Point(126, 124)
+        Me.ypsosApo.Name = "ypsosApo"
+        Me.ypsosApo.Size = New System.Drawing.Size(38, 20)
+        Me.ypsosApo.TabIndex = 94
+        '
+        'YpsosLabel
+        '
+        YpsosLabel.AutoSize = True
+        YpsosLabel.Location = New System.Drawing.Point(40, 124)
+        YpsosLabel.Name = "YpsosLabel"
+        YpsosLabel.Size = New System.Drawing.Size(39, 13)
+        YpsosLabel.TabIndex = 93
+        YpsosLabel.Text = "Ypsos:"
+        '
         'Search
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(534, 362)
+        Me.Controls.Add(Me.YpsosEws)
+        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.ypsosApo)
+        Me.Controls.Add(YpsosLabel)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.HmGenEws)
         Me.Controls.Add(Me.HmGenApo)
@@ -470,13 +490,11 @@ Partial Class Search
         Me.Controls.Add(Me.ManCheck)
         Me.Controls.Add(Me.Xrmalbox)
         Me.Controls.Add(Me.Xrmatbox)
-        Me.Controls.Add(Me.Ypsosbox)
         Me.Controls.Add(Me.Barosbox)
         Me.Controls.Add(OnomaLabel)
         Me.Controls.Add(Me.OnomaTextBox)
         Me.Controls.Add(Hm_GennisisLabel)
         Me.Controls.Add(BarosLabel)
-        Me.Controls.Add(YpsosLabel)
         Me.Controls.Add(FyloLabel)
         Me.Controls.Add(Xrwma_MatiwnLabel)
         Me.Controls.Add(Xrwma_MalliwnLabel)
@@ -520,7 +538,6 @@ Partial Class Search
     Friend WithEvents ManCheck As System.Windows.Forms.CheckBox
     Friend WithEvents Xrmalbox As System.Windows.Forms.ComboBox
     Friend WithEvents Xrmatbox As System.Windows.Forms.ComboBox
-    Friend WithEvents Ypsosbox As System.Windows.Forms.ComboBox
     Friend WithEvents Barosbox As System.Windows.Forms.ComboBox
     Friend WithEvents OnomaTextBox As System.Windows.Forms.TextBox
     Friend WithEvents Hoby1TextBox As System.Windows.Forms.TextBox
@@ -534,4 +551,7 @@ Partial Class Search
     Friend WithEvents HmGenApo As System.Windows.Forms.TextBox
     Friend WithEvents HmGenEws As System.Windows.Forms.TextBox
     Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents YpsosEws As System.Windows.Forms.TextBox
+    Friend WithEvents Label2 As System.Windows.Forms.Label
+    Friend WithEvents ypsosApo As System.Windows.Forms.TextBox
 End Class
