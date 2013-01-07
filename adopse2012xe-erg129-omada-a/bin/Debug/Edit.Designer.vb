@@ -23,6 +23,7 @@ Partial Class Edit
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Edit))
         Dim Hoby1Label As System.Windows.Forms.Label
         Dim Hoby2Label As System.Windows.Forms.Label
         Dim Hoby3Label As System.Windows.Forms.Label
@@ -46,6 +47,7 @@ Partial Class Edit
         Me.PeopleBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.PeopleTableAdapter = New WindowsApplication1.peopleDataSetTableAdapters.PeopleTableAdapter
         Me.TableAdapterManager = New WindowsApplication1.peopleDataSetTableAdapters.TableAdapterManager
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox
         Me.EditBt = New System.Windows.Forms.Button
         Me.IDTextBox = New System.Windows.Forms.TextBox
         Me.OnomaTextBox = New System.Windows.Forms.TextBox
@@ -87,6 +89,7 @@ Partial Class Edit
         Label10 = New System.Windows.Forms.Label
         CType(Me.PeopleDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PeopleBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'PeopleDataSet
@@ -109,343 +112,377 @@ Partial Class Edit
         Me.TableAdapterManager.PeopleTableAdapter = Me.PeopleTableAdapter
         Me.TableAdapterManager.UpdateOrder = WindowsApplication1.peopleDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(5, 15)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(69, 66)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
+        Me.PictureBox1.TabIndex = 99
+        Me.PictureBox1.TabStop = False
+        '
         'Hoby1Label
         '
         Hoby1Label.AutoSize = True
-        Hoby1Label.Location = New System.Drawing.Point(286, 37)
+        Hoby1Label.Location = New System.Drawing.Point(326, 42)
         Hoby1Label.Name = "Hoby1Label"
         Hoby1Label.Size = New System.Drawing.Size(59, 13)
-        Hoby1Label.TabIndex = 89
+        Hoby1Label.TabIndex = 90
         Hoby1Label.Text = "Hobby - 1 :"
         '
         'Hoby2Label
         '
         Hoby2Label.AutoSize = True
-        Hoby2Label.Location = New System.Drawing.Point(286, 63)
+        Hoby2Label.Location = New System.Drawing.Point(326, 68)
         Hoby2Label.Name = "Hoby2Label"
         Hoby2Label.Size = New System.Drawing.Size(59, 13)
-        Hoby2Label.TabIndex = 90
+        Hoby2Label.TabIndex = 91
         Hoby2Label.Text = "Hobby - 2 :"
         '
         'Hoby3Label
         '
         Hoby3Label.AutoSize = True
-        Hoby3Label.Location = New System.Drawing.Point(286, 90)
+        Hoby3Label.Location = New System.Drawing.Point(326, 95)
         Hoby3Label.Name = "Hoby3Label"
         Hoby3Label.Size = New System.Drawing.Size(59, 13)
-        Hoby3Label.TabIndex = 91
+        Hoby3Label.TabIndex = 92
         Hoby3Label.Text = "Hobby - 3 :"
         '
         'AnazitaLabel
         '
         AnazitaLabel.AutoSize = True
-        AnazitaLabel.Location = New System.Drawing.Point(287, 116)
+        AnazitaLabel.Location = New System.Drawing.Point(327, 121)
         AnazitaLabel.Name = "AnazitaLabel"
         AnazitaLabel.Size = New System.Drawing.Size(57, 13)
-        AnazitaLabel.TabIndex = 92
+        AnazitaLabel.TabIndex = 93
         AnazitaLabel.Text = "Αναζήτα :"
         '
         'GlwssaLabel
         '
         GlwssaLabel.AutoSize = True
-        GlwssaLabel.Location = New System.Drawing.Point(289, 142)
+        GlwssaLabel.Location = New System.Drawing.Point(329, 147)
         GlwssaLabel.Name = "GlwssaLabel"
         GlwssaLabel.Size = New System.Drawing.Size(56, 13)
-        GlwssaLabel.TabIndex = 93
+        GlwssaLabel.TabIndex = 94
         GlwssaLabel.Text = "Γλωσσά : "
         '
         'Glwssa2Label
         '
         Glwssa2Label.AutoSize = True
-        Glwssa2Label.Location = New System.Drawing.Point(274, 168)
+        Glwssa2Label.Location = New System.Drawing.Point(314, 173)
         Glwssa2Label.Name = "Glwssa2Label"
         Glwssa2Label.Size = New System.Drawing.Size(68, 13)
-        Glwssa2Label.TabIndex = 94
+        Glwssa2Label.TabIndex = 95
         Glwssa2Label.Text = "Γλωσσά - 2 :"
         '
         'TatooLabel
         '
         TatooLabel.AutoSize = True
-        TatooLabel.Location = New System.Drawing.Point(301, 194)
+        TatooLabel.Location = New System.Drawing.Point(341, 199)
         TatooLabel.Name = "TatooLabel"
         TatooLabel.Size = New System.Drawing.Size(41, 13)
-        TatooLabel.TabIndex = 95
+        TatooLabel.TabIndex = 96
         TatooLabel.Text = "Tatoo :"
         '
         'ErgasiaLabel
         '
         ErgasiaLabel.AutoSize = True
-        ErgasiaLabel.Location = New System.Drawing.Point(287, 219)
+        ErgasiaLabel.Location = New System.Drawing.Point(327, 224)
         ErgasiaLabel.Name = "ErgasiaLabel"
         ErgasiaLabel.Size = New System.Drawing.Size(55, 13)
-        ErgasiaLabel.TabIndex = 96
+        ErgasiaLabel.TabIndex = 97
         ErgasiaLabel.Text = "Εργασία :"
         '
         'PerioxhLabel
         '
         PerioxhLabel.AutoSize = True
-        PerioxhLabel.Location = New System.Drawing.Point(289, 245)
+        PerioxhLabel.Location = New System.Drawing.Point(329, 250)
         PerioxhLabel.Name = "PerioxhLabel"
         PerioxhLabel.Size = New System.Drawing.Size(53, 13)
-        PerioxhLabel.TabIndex = 97
+        PerioxhLabel.TabIndex = 98
         PerioxhLabel.Text = "Περιοχή :"
         '
         'Label1
         '
         Label1.AutoSize = True
-        Label1.Location = New System.Drawing.Point(92, 33)
+        Label1.Location = New System.Drawing.Point(152, 37)
         Label1.Name = "Label1"
         Label1.Size = New System.Drawing.Size(24, 13)
-        Label1.TabIndex = 79
+        Label1.TabIndex = 80
         Label1.Text = "ID :"
         '
         'Label2
         '
         Label2.AutoSize = True
-        Label2.Location = New System.Drawing.Point(69, 59)
+        Label2.Location = New System.Drawing.Point(129, 63)
         Label2.Name = "Label2"
         Label2.Size = New System.Drawing.Size(47, 13)
-        Label2.TabIndex = 80
+        Label2.TabIndex = 81
         Label2.Text = "Όνομα :"
         '
         'Label3
         '
         Label3.AutoSize = True
-        Label3.Location = New System.Drawing.Point(62, 82)
+        Label3.Location = New System.Drawing.Point(122, 86)
         Label3.Name = "Label3"
         Label3.Size = New System.Drawing.Size(55, 13)
-        Label3.TabIndex = 81
+        Label3.TabIndex = 82
         Label3.Text = "Επίθετο  :"
         '
         'Label4
         '
         Label4.AutoSize = True
-        Label4.Location = New System.Drawing.Point(35, 111)
+        Label4.Location = New System.Drawing.Point(95, 115)
         Label4.Name = "Label4"
         Label4.Size = New System.Drawing.Size(81, 13)
-        Label4.TabIndex = 82
+        Label4.TabIndex = 83
         Label4.Text = "Ημ. γέννησης :"
         '
         'Label5
         '
         Label5.AutoSize = True
-        Label5.Location = New System.Drawing.Point(72, 141)
+        Label5.Location = New System.Drawing.Point(132, 145)
         Label5.Name = "Label5"
         Label5.Size = New System.Drawing.Size(44, 13)
-        Label5.TabIndex = 83
+        Label5.TabIndex = 84
         Label5.Text = "Βάρος :"
         '
         'Label6
         '
         Label6.AutoSize = True
-        Label6.Location = New System.Drawing.Point(74, 163)
+        Label6.Location = New System.Drawing.Point(134, 167)
         Label6.Name = "Label6"
         Label6.Size = New System.Drawing.Size(42, 13)
-        Label6.TabIndex = 84
+        Label6.TabIndex = 85
         Label6.Text = "Ύψος :"
         '
         'Label7
         '
         Label7.AutoSize = True
-        Label7.Location = New System.Drawing.Point(76, 189)
+        Label7.Location = New System.Drawing.Point(136, 193)
         Label7.Name = "Label7"
         Label7.Size = New System.Drawing.Size(40, 13)
-        Label7.TabIndex = 85
+        Label7.TabIndex = 86
         Label7.Text = "Φύλο :"
         '
         'Label8
         '
         Label8.AutoSize = True
-        Label8.Location = New System.Drawing.Point(45, 215)
+        Label8.Location = New System.Drawing.Point(105, 219)
         Label8.Name = "Label8"
         Label8.Size = New System.Drawing.Size(76, 13)
-        Label8.TabIndex = 86
+        Label8.TabIndex = 87
         Label8.Text = "Χρ. Ματιών :  "
         '
         'Label9
         '
         Label9.AutoSize = True
-        Label9.Location = New System.Drawing.Point(40, 241)
+        Label9.Location = New System.Drawing.Point(100, 245)
         Label9.Name = "Label9"
         Label9.Size = New System.Drawing.Size(74, 13)
-        Label9.TabIndex = 87
+        Label9.TabIndex = 88
         Label9.Text = "Χρ. Μαλλιών :"
         '
         'Label10
         '
         Label10.AutoSize = True
-        Label10.Location = New System.Drawing.Point(73, 267)
+        Label10.Location = New System.Drawing.Point(133, 271)
         Label10.Name = "Label10"
         Label10.Size = New System.Drawing.Size(41, 13)
-        Label10.TabIndex = 88
+        Label10.TabIndex = 89
         Label10.Text = "E-mail :"
         '
         'EditBt
         '
-        Me.EditBt.Location = New System.Drawing.Point(424, 309)
+        Me.EditBt.BackgroundImage = CType(resources.GetObject("EditBt.BackgroundImage"), System.Drawing.Image)
+        Me.EditBt.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.EditBt.ForeColor = System.Drawing.SystemColors.Info
+        Me.EditBt.Location = New System.Drawing.Point(444, 313)
         Me.EditBt.Name = "EditBt"
-        Me.EditBt.Size = New System.Drawing.Size(75, 23)
-        Me.EditBt.TabIndex = 78
+        Me.EditBt.Size = New System.Drawing.Size(85, 34)
+        Me.EditBt.TabIndex = 79
         Me.EditBt.Text = "Edit"
         Me.EditBt.UseVisualStyleBackColor = True
         '
         'IDTextBox
         '
+        Me.IDTextBox.BackColor = System.Drawing.SystemColors.Info
         Me.IDTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PeopleBindingSource, "ID", True))
-        Me.IDTextBox.Location = New System.Drawing.Point(119, 31)
+        Me.IDTextBox.Location = New System.Drawing.Point(179, 35)
         Me.IDTextBox.Name = "IDTextBox"
         Me.IDTextBox.Size = New System.Drawing.Size(100, 20)
-        Me.IDTextBox.TabIndex = 59
+        Me.IDTextBox.TabIndex = 60
         '
         'OnomaTextBox
         '
+        Me.OnomaTextBox.BackColor = System.Drawing.SystemColors.Info
         Me.OnomaTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PeopleBindingSource, "Onoma", True))
-        Me.OnomaTextBox.Location = New System.Drawing.Point(119, 57)
+        Me.OnomaTextBox.Location = New System.Drawing.Point(179, 61)
         Me.OnomaTextBox.Name = "OnomaTextBox"
         Me.OnomaTextBox.Size = New System.Drawing.Size(100, 20)
-        Me.OnomaTextBox.TabIndex = 60
+        Me.OnomaTextBox.TabIndex = 61
         '
         'EpithetoTextBox
         '
+        Me.EpithetoTextBox.BackColor = System.Drawing.SystemColors.Info
         Me.EpithetoTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PeopleBindingSource, "Epitheto", True))
-        Me.EpithetoTextBox.Location = New System.Drawing.Point(119, 83)
+        Me.EpithetoTextBox.Location = New System.Drawing.Point(179, 87)
         Me.EpithetoTextBox.Name = "EpithetoTextBox"
         Me.EpithetoTextBox.Size = New System.Drawing.Size(100, 20)
-        Me.EpithetoTextBox.TabIndex = 61
+        Me.EpithetoTextBox.TabIndex = 62
         '
         'Hm_GennisisTextBox
         '
+        Me.Hm_GennisisTextBox.BackColor = System.Drawing.SystemColors.Info
         Me.Hm_GennisisTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PeopleBindingSource, "Hm_Gennisis", True))
-        Me.Hm_GennisisTextBox.Location = New System.Drawing.Point(119, 109)
+        Me.Hm_GennisisTextBox.Location = New System.Drawing.Point(179, 113)
         Me.Hm_GennisisTextBox.Name = "Hm_GennisisTextBox"
         Me.Hm_GennisisTextBox.Size = New System.Drawing.Size(100, 20)
-        Me.Hm_GennisisTextBox.TabIndex = 62
+        Me.Hm_GennisisTextBox.TabIndex = 63
         '
         'BarosTextBox
         '
+        Me.BarosTextBox.BackColor = System.Drawing.SystemColors.Info
         Me.BarosTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PeopleBindingSource, "Baros", True))
-        Me.BarosTextBox.Location = New System.Drawing.Point(119, 135)
+        Me.BarosTextBox.Location = New System.Drawing.Point(179, 139)
         Me.BarosTextBox.Name = "BarosTextBox"
         Me.BarosTextBox.Size = New System.Drawing.Size(100, 20)
-        Me.BarosTextBox.TabIndex = 63
+        Me.BarosTextBox.TabIndex = 64
         '
         'YpsosTextBox
         '
+        Me.YpsosTextBox.BackColor = System.Drawing.SystemColors.Info
         Me.YpsosTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PeopleBindingSource, "Ypsos", True))
-        Me.YpsosTextBox.Location = New System.Drawing.Point(119, 161)
+        Me.YpsosTextBox.Location = New System.Drawing.Point(179, 165)
         Me.YpsosTextBox.Name = "YpsosTextBox"
         Me.YpsosTextBox.Size = New System.Drawing.Size(100, 20)
-        Me.YpsosTextBox.TabIndex = 64
+        Me.YpsosTextBox.TabIndex = 65
         '
         'FyloTextBox
         '
+        Me.FyloTextBox.BackColor = System.Drawing.SystemColors.Info
         Me.FyloTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PeopleBindingSource, "Fylo", True))
-        Me.FyloTextBox.Location = New System.Drawing.Point(119, 187)
+        Me.FyloTextBox.Location = New System.Drawing.Point(179, 191)
         Me.FyloTextBox.Name = "FyloTextBox"
         Me.FyloTextBox.Size = New System.Drawing.Size(100, 20)
-        Me.FyloTextBox.TabIndex = 65
+        Me.FyloTextBox.TabIndex = 66
         '
         'Xrwma_MatiwnTextBox
         '
+        Me.Xrwma_MatiwnTextBox.BackColor = System.Drawing.SystemColors.Info
         Me.Xrwma_MatiwnTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PeopleBindingSource, "Xrwma_Matiwn", True))
-        Me.Xrwma_MatiwnTextBox.Location = New System.Drawing.Point(119, 213)
+        Me.Xrwma_MatiwnTextBox.Location = New System.Drawing.Point(179, 217)
         Me.Xrwma_MatiwnTextBox.Name = "Xrwma_MatiwnTextBox"
         Me.Xrwma_MatiwnTextBox.Size = New System.Drawing.Size(100, 20)
-        Me.Xrwma_MatiwnTextBox.TabIndex = 66
+        Me.Xrwma_MatiwnTextBox.TabIndex = 67
         '
         'Xrwma_MalliwnTextBox
         '
+        Me.Xrwma_MalliwnTextBox.BackColor = System.Drawing.SystemColors.Info
         Me.Xrwma_MalliwnTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PeopleBindingSource, "Xrwma_Malliwn", True))
-        Me.Xrwma_MalliwnTextBox.Location = New System.Drawing.Point(119, 239)
+        Me.Xrwma_MalliwnTextBox.Location = New System.Drawing.Point(179, 243)
         Me.Xrwma_MalliwnTextBox.Name = "Xrwma_MalliwnTextBox"
         Me.Xrwma_MalliwnTextBox.Size = New System.Drawing.Size(100, 20)
-        Me.Xrwma_MalliwnTextBox.TabIndex = 67
+        Me.Xrwma_MalliwnTextBox.TabIndex = 68
         '
         'Hoby1TextBox
         '
+        Me.Hoby1TextBox.BackColor = System.Drawing.SystemColors.Info
         Me.Hoby1TextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PeopleBindingSource, "Hoby1", True))
-        Me.Hoby1TextBox.Location = New System.Drawing.Point(351, 34)
+        Me.Hoby1TextBox.Location = New System.Drawing.Point(391, 39)
         Me.Hoby1TextBox.Name = "Hoby1TextBox"
         Me.Hoby1TextBox.Size = New System.Drawing.Size(100, 20)
-        Me.Hoby1TextBox.TabIndex = 68
+        Me.Hoby1TextBox.TabIndex = 69
         '
         'Hoby2TextBox
         '
+        Me.Hoby2TextBox.BackColor = System.Drawing.SystemColors.Info
         Me.Hoby2TextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PeopleBindingSource, "Hoby2", True))
-        Me.Hoby2TextBox.Location = New System.Drawing.Point(351, 60)
+        Me.Hoby2TextBox.Location = New System.Drawing.Point(391, 65)
         Me.Hoby2TextBox.Name = "Hoby2TextBox"
         Me.Hoby2TextBox.Size = New System.Drawing.Size(100, 20)
-        Me.Hoby2TextBox.TabIndex = 69
+        Me.Hoby2TextBox.TabIndex = 70
         '
         'Hoby3TextBox
         '
+        Me.Hoby3TextBox.BackColor = System.Drawing.SystemColors.Info
         Me.Hoby3TextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PeopleBindingSource, "Hoby3", True))
-        Me.Hoby3TextBox.Location = New System.Drawing.Point(351, 86)
+        Me.Hoby3TextBox.Location = New System.Drawing.Point(391, 91)
         Me.Hoby3TextBox.Name = "Hoby3TextBox"
         Me.Hoby3TextBox.Size = New System.Drawing.Size(100, 20)
-        Me.Hoby3TextBox.TabIndex = 70
+        Me.Hoby3TextBox.TabIndex = 71
         '
         'AnazitaTextBox
         '
+        Me.AnazitaTextBox.BackColor = System.Drawing.SystemColors.Info
         Me.AnazitaTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PeopleBindingSource, "Anazita", True))
-        Me.AnazitaTextBox.Location = New System.Drawing.Point(351, 112)
+        Me.AnazitaTextBox.Location = New System.Drawing.Point(391, 117)
         Me.AnazitaTextBox.Name = "AnazitaTextBox"
         Me.AnazitaTextBox.Size = New System.Drawing.Size(100, 20)
-        Me.AnazitaTextBox.TabIndex = 71
+        Me.AnazitaTextBox.TabIndex = 72
         '
         'EmailTextBox
         '
+        Me.EmailTextBox.BackColor = System.Drawing.SystemColors.Info
         Me.EmailTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PeopleBindingSource, "email", True))
-        Me.EmailTextBox.Location = New System.Drawing.Point(119, 265)
+        Me.EmailTextBox.Location = New System.Drawing.Point(179, 269)
         Me.EmailTextBox.Name = "EmailTextBox"
         Me.EmailTextBox.Size = New System.Drawing.Size(100, 20)
-        Me.EmailTextBox.TabIndex = 72
+        Me.EmailTextBox.TabIndex = 73
         '
         'GlwssaTextBox
         '
+        Me.GlwssaTextBox.BackColor = System.Drawing.SystemColors.Info
         Me.GlwssaTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PeopleBindingSource, "Glwssa", True))
-        Me.GlwssaTextBox.Location = New System.Drawing.Point(351, 139)
+        Me.GlwssaTextBox.Location = New System.Drawing.Point(391, 144)
         Me.GlwssaTextBox.Name = "GlwssaTextBox"
         Me.GlwssaTextBox.Size = New System.Drawing.Size(100, 20)
-        Me.GlwssaTextBox.TabIndex = 73
+        Me.GlwssaTextBox.TabIndex = 74
         '
         'Glwssa2TextBox
         '
+        Me.Glwssa2TextBox.BackColor = System.Drawing.SystemColors.Info
         Me.Glwssa2TextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PeopleBindingSource, "Glwssa2", True))
-        Me.Glwssa2TextBox.Location = New System.Drawing.Point(351, 165)
+        Me.Glwssa2TextBox.Location = New System.Drawing.Point(391, 170)
         Me.Glwssa2TextBox.Name = "Glwssa2TextBox"
         Me.Glwssa2TextBox.Size = New System.Drawing.Size(100, 20)
-        Me.Glwssa2TextBox.TabIndex = 74
+        Me.Glwssa2TextBox.TabIndex = 75
         '
         'TatooTextBox
         '
+        Me.TatooTextBox.BackColor = System.Drawing.SystemColors.Info
         Me.TatooTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PeopleBindingSource, "Tatoo", True))
-        Me.TatooTextBox.Location = New System.Drawing.Point(351, 191)
+        Me.TatooTextBox.Location = New System.Drawing.Point(391, 196)
         Me.TatooTextBox.Name = "TatooTextBox"
         Me.TatooTextBox.Size = New System.Drawing.Size(100, 20)
-        Me.TatooTextBox.TabIndex = 75
+        Me.TatooTextBox.TabIndex = 76
         '
         'ErgasiaTextBox
         '
+        Me.ErgasiaTextBox.BackColor = System.Drawing.SystemColors.Info
         Me.ErgasiaTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PeopleBindingSource, "Ergasia", True))
-        Me.ErgasiaTextBox.Location = New System.Drawing.Point(351, 217)
+        Me.ErgasiaTextBox.Location = New System.Drawing.Point(391, 222)
         Me.ErgasiaTextBox.Name = "ErgasiaTextBox"
         Me.ErgasiaTextBox.Size = New System.Drawing.Size(100, 20)
-        Me.ErgasiaTextBox.TabIndex = 76
+        Me.ErgasiaTextBox.TabIndex = 77
         '
         'PerioxhTextBox
         '
+        Me.PerioxhTextBox.BackColor = System.Drawing.SystemColors.Info
         Me.PerioxhTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PeopleBindingSource, "Perioxh", True))
-        Me.PerioxhTextBox.Location = New System.Drawing.Point(351, 243)
+        Me.PerioxhTextBox.Location = New System.Drawing.Point(391, 248)
         Me.PerioxhTextBox.Name = "PerioxhTextBox"
         Me.PerioxhTextBox.Size = New System.Drawing.Size(100, 20)
-        Me.PerioxhTextBox.TabIndex = 77
+        Me.PerioxhTextBox.TabIndex = 78
         '
         'Edit
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(534, 362)
+        Me.BackColor = System.Drawing.Color.White
+        Me.ClientSize = New System.Drawing.Size(567, 376)
+        Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Hoby1Label)
         Me.Controls.Add(Hoby2Label)
         Me.Controls.Add(Hoby3Label)
@@ -489,6 +526,7 @@ Partial Class Edit
         Me.Text = "Edit"
         CType(Me.PeopleDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PeopleBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -497,6 +535,7 @@ Partial Class Edit
     Friend WithEvents PeopleBindingSource As System.Windows.Forms.BindingSource
     Friend WithEvents PeopleTableAdapter As WindowsApplication1.peopleDataSetTableAdapters.PeopleTableAdapter
     Friend WithEvents TableAdapterManager As WindowsApplication1.peopleDataSetTableAdapters.TableAdapterManager
+    Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
     Friend WithEvents EditBt As System.Windows.Forms.Button
     Friend WithEvents IDTextBox As System.Windows.Forms.TextBox
     Friend WithEvents OnomaTextBox As System.Windows.Forms.TextBox

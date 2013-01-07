@@ -56,8 +56,8 @@ Public Class Search
 
     Private Sub Search_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
 
-        Dim all_dbusers As String = "SELECT Onoma,ID FROM people"
-        ReDim all_users(db_count, 3)
+        Dim all_dbusers As String = "SELECT * FROM people"
+        ReDim all_users(db_count, 19)
         Dim cmd2 As New OleDbCommand
         Dim cn2 As OleDbConnection = New OleDbConnection
         cn2.ConnectionString = My.Settings.peopleConnectionString
@@ -71,6 +71,22 @@ Public Class Search
             all_users(k, 0) = ""
             all_users(k, 1) = ""
             all_users(k, 2) = 0
+            all_users(k, 3) = ""
+            all_users(k, 4) = 0
+            all_users(k, 5) = 0
+            all_users(k, 6) = 0
+            all_users(k, 7) = ""
+            all_users(k, 8) = ""
+            all_users(k, 9) = ""
+            all_users(k, 10) = ""
+            all_users(k, 11) = ""
+            all_users(k, 12) = ""
+            all_users(k, 13) = ""
+            all_users(k, 14) = ""
+            all_users(k, 15) = ""
+            all_users(k, 16) = ""
+            all_users(k, 17) = ""
+            all_users(k, 18) = ""
         Next
         myadapt2 = New OleDbDataAdapter(all_dbusers, cmd2.Connection.ConnectionString())
         myadapt2.Fill(ds2, "people")
@@ -79,6 +95,22 @@ Public Class Search
 
             all_users(i, 0) = temprow2.Item("Onoma").ToString
             all_users(i, 1) = temprow2.Item("ID").ToString
+            all_users(i, 3) = temprow2.Item("Epitheto").ToString
+            all_users(i, 4) = temprow2.Item("Hm_Gennisis").ToString
+            all_users(i, 5) = temprow2.Item("Baros").ToString
+            all_users(i, 6) = temprow2.Item("Ypsos").ToString
+            all_users(i, 7) = temprow2.Item("Xrwma_Matiwn").ToString
+            all_users(i, 8) = temprow2.Item("Xrwma_Malliwn").ToString
+            all_users(i, 9) = temprow2.Item("Hoby1").ToString
+            all_users(i, 10) = temprow2.Item("Hoby2").ToString
+            all_users(i, 11) = temprow2.Item("Hoby3").ToString
+            all_users(i, 12) = temprow2.Item("Anazita").ToString
+            all_users(i, 13) = temprow2.Item("email").ToString
+            all_users(i, 14) = temprow2.Item("Glwssa").ToString
+            all_users(i, 15) = temprow2.Item("Glwssa2").ToString
+            all_users(i, 16) = temprow2.Item("Tatoo").ToString
+            all_users(i, 17) = temprow2.Item("Ergasia").ToString
+            all_users(i, 18) = temprow2.Item("Perioxh").ToString
             i += 1
 
 

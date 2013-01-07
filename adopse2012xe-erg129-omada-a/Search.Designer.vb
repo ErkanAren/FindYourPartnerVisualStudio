@@ -23,6 +23,7 @@ Partial Class Search
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Search))
         Dim Label9 As System.Windows.Forms.Label
         Dim Label10 As System.Windows.Forms.Label
         Dim Label11 As System.Windows.Forms.Label
@@ -43,6 +44,7 @@ Partial Class Search
         Me.PeopleBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.PeopleTableAdapter = New WindowsApplication1.peopleDataSetTableAdapters.PeopleTableAdapter
         Me.TableAdapterManager = New WindowsApplication1.peopleDataSetTableAdapters.TableAdapterManager
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox
         Me.GroupBox3 = New System.Windows.Forms.GroupBox
         Me.NoRadioButton = New System.Windows.Forms.RadioButton
         Me.YesRadioButton = New System.Windows.Forms.RadioButton
@@ -88,6 +90,7 @@ Partial Class Search
         Label6 = New System.Windows.Forms.Label
         CType(Me.PeopleDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PeopleBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox3.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -113,14 +116,24 @@ Partial Class Search
         Me.TableAdapterManager.PeopleTableAdapter = Me.PeopleTableAdapter
         Me.TableAdapterManager.UpdateOrder = WindowsApplication1.peopleDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(22, 27)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(69, 66)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
+        Me.PictureBox1.TabIndex = 151
+        Me.PictureBox1.TabStop = False
+        '
         'GroupBox3
         '
         Me.GroupBox3.Controls.Add(Me.NoRadioButton)
         Me.GroupBox3.Controls.Add(Me.YesRadioButton)
-        Me.GroupBox3.Location = New System.Drawing.Point(118, 246)
+        Me.GroupBox3.Location = New System.Drawing.Point(209, 267)
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.Size = New System.Drawing.Size(139, 35)
-        Me.GroupBox3.TabIndex = 149
+        Me.GroupBox3.TabIndex = 150
         Me.GroupBox3.TabStop = False
         '
         'NoRadioButton
@@ -149,10 +162,10 @@ Partial Class Search
         '
         Me.GroupBox2.Controls.Add(Me.WomanRadioButton)
         Me.GroupBox2.Controls.Add(Me.ManRadioButton)
-        Me.GroupBox2.Location = New System.Drawing.Point(357, 115)
+        Me.GroupBox2.Location = New System.Drawing.Point(448, 136)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(145, 35)
-        Me.GroupBox2.TabIndex = 148
+        Me.GroupBox2.TabIndex = 149
         Me.GroupBox2.TabStop = False
         '
         'WomanRadioButton
@@ -169,7 +182,7 @@ Partial Class Search
         'ManRadioButton
         '
         Me.ManRadioButton.AutoSize = True
-        Me.ManRadioButton.Location = New System.Drawing.Point(16, 16)
+        Me.ManRadioButton.Location = New System.Drawing.Point(16, 12)
         Me.ManRadioButton.Name = "ManRadioButton"
         Me.ManRadioButton.Size = New System.Drawing.Size(49, 17)
         Me.ManRadioButton.TabIndex = 0
@@ -181,10 +194,10 @@ Partial Class Search
         '
         Me.GroupBox1.Controls.Add(Me.FemaleRadioButton)
         Me.GroupBox1.Controls.Add(Me.MaleRadioButton)
-        Me.GroupBox1.Location = New System.Drawing.Point(117, 146)
+        Me.GroupBox1.Location = New System.Drawing.Point(208, 167)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(145, 35)
-        Me.GroupBox1.TabIndex = 147
+        Me.GroupBox1.TabIndex = 148
         Me.GroupBox1.TabStop = False
         '
         'FemaleRadioButton
@@ -212,292 +225,310 @@ Partial Class Search
         'Label9
         '
         Label9.AutoSize = True
-        Label9.Location = New System.Drawing.Point(293, 31)
+        Label9.Location = New System.Drawing.Point(384, 52)
         Label9.Name = "Label9"
         Label9.Size = New System.Drawing.Size(59, 13)
-        Label9.TabIndex = 138
+        Label9.TabIndex = 139
         Label9.Text = "Hobby - 1 :"
         '
         'Label10
         '
         Label10.AutoSize = True
-        Label10.Location = New System.Drawing.Point(293, 62)
+        Label10.Location = New System.Drawing.Point(384, 83)
         Label10.Name = "Label10"
         Label10.Size = New System.Drawing.Size(59, 13)
-        Label10.TabIndex = 139
+        Label10.TabIndex = 140
         Label10.Text = "Hobby - 2 :"
         '
         'Label11
         '
         Label11.AutoSize = True
-        Label11.Location = New System.Drawing.Point(293, 94)
+        Label11.Location = New System.Drawing.Point(384, 115)
         Label11.Name = "Label11"
         Label11.Size = New System.Drawing.Size(59, 13)
-        Label11.TabIndex = 140
+        Label11.TabIndex = 141
         Label11.Text = "Hobby - 3 :"
         '
         'Label12
         '
         Label12.AutoSize = True
-        Label12.Location = New System.Drawing.Point(294, 126)
+        Label12.Location = New System.Drawing.Point(385, 147)
         Label12.Name = "Label12"
         Label12.Size = New System.Drawing.Size(57, 13)
-        Label12.TabIndex = 141
+        Label12.TabIndex = 142
         Label12.Text = "Αναζήτα :"
         '
         'Label13
         '
         Label13.AutoSize = True
-        Label13.Location = New System.Drawing.Point(296, 163)
+        Label13.Location = New System.Drawing.Point(387, 184)
         Label13.Name = "Label13"
         Label13.Size = New System.Drawing.Size(56, 13)
-        Label13.TabIndex = 142
+        Label13.TabIndex = 143
         Label13.Text = "Γλωσσά : "
         '
         'Label14
         '
         Label14.AutoSize = True
-        Label14.Location = New System.Drawing.Point(281, 196)
+        Label14.Location = New System.Drawing.Point(372, 217)
         Label14.Name = "Label14"
         Label14.Size = New System.Drawing.Size(68, 13)
-        Label14.TabIndex = 143
+        Label14.TabIndex = 144
         Label14.Text = "Γλωσσά - 2 :"
         '
         'Label15
         '
         Label15.AutoSize = True
-        Label15.Location = New System.Drawing.Point(69, 254)
+        Label15.Location = New System.Drawing.Point(160, 275)
         Label15.Name = "Label15"
         Label15.Size = New System.Drawing.Size(41, 13)
-        Label15.TabIndex = 144
+        Label15.TabIndex = 145
         Label15.Text = "Tatoo :"
         '
         'Label16
         '
         Label16.AutoSize = True
-        Label16.Location = New System.Drawing.Point(294, 229)
+        Label16.Location = New System.Drawing.Point(385, 250)
         Label16.Name = "Label16"
         Label16.Size = New System.Drawing.Size(55, 13)
-        Label16.TabIndex = 145
+        Label16.TabIndex = 146
         Label16.Text = "Εργασία :"
         '
         'Label17
         '
         Label17.AutoSize = True
-        Label17.Location = New System.Drawing.Point(296, 261)
+        Label17.Location = New System.Drawing.Point(387, 282)
         Label17.Name = "Label17"
         Label17.Size = New System.Drawing.Size(53, 13)
-        Label17.TabIndex = 146
+        Label17.TabIndex = 147
         Label17.Text = "Περιοχή :"
         '
         'Label7
         '
         Label7.AutoSize = True
-        Label7.Location = New System.Drawing.Point(38, 191)
+        Label7.Location = New System.Drawing.Point(129, 212)
         Label7.Name = "Label7"
         Label7.Size = New System.Drawing.Size(76, 13)
-        Label7.TabIndex = 136
+        Label7.TabIndex = 137
         Label7.Text = "Χρ. Ματιών :  "
         '
         'Label8
         '
         Label8.AutoSize = True
-        Label8.Location = New System.Drawing.Point(37, 222)
+        Label8.Location = New System.Drawing.Point(128, 243)
         Label8.Name = "Label8"
         Label8.Size = New System.Drawing.Size(74, 13)
-        Label8.TabIndex = 137
+        Label8.TabIndex = 138
         Label8.Text = "Χρ. Μαλλιών :"
         '
         'FyloLabel
         '
         FyloLabel.AutoSize = True
-        FyloLabel.Location = New System.Drawing.Point(71, 160)
+        FyloLabel.Location = New System.Drawing.Point(162, 181)
         FyloLabel.Name = "FyloLabel"
         FyloLabel.Size = New System.Drawing.Size(40, 13)
-        FyloLabel.TabIndex = 135
+        FyloLabel.TabIndex = 136
         FyloLabel.Text = "Φύλο :"
         '
         'Label3
         '
         Label3.AutoSize = True
-        Label3.Location = New System.Drawing.Point(66, 35)
+        Label3.Location = New System.Drawing.Point(157, 56)
         Label3.Name = "Label3"
         Label3.Size = New System.Drawing.Size(47, 13)
-        Label3.TabIndex = 131
+        Label3.TabIndex = 132
         Label3.Text = "Όνομα :"
         '
         'Label4
         '
         Label4.AutoSize = True
-        Label4.Location = New System.Drawing.Point(32, 67)
+        Label4.Location = New System.Drawing.Point(123, 88)
         Label4.Name = "Label4"
         Label4.Size = New System.Drawing.Size(81, 13)
-        Label4.TabIndex = 132
+        Label4.TabIndex = 133
         Label4.Text = "Ημ. γέννησης :"
         '
         'Label5
         '
         Label5.AutoSize = True
-        Label5.Location = New System.Drawing.Point(69, 94)
+        Label5.Location = New System.Drawing.Point(160, 115)
         Label5.Name = "Label5"
         Label5.Size = New System.Drawing.Size(44, 13)
-        Label5.TabIndex = 133
+        Label5.TabIndex = 134
         Label5.Text = "Βάρος :"
         '
         'Label6
         '
         Label6.AutoSize = True
-        Label6.Location = New System.Drawing.Point(71, 122)
+        Label6.Location = New System.Drawing.Point(162, 143)
         Label6.Name = "Label6"
         Label6.Size = New System.Drawing.Size(42, 13)
-        Label6.TabIndex = 134
+        Label6.TabIndex = 135
         Label6.Text = "Ύψος :"
         '
         'YpsosEws
         '
-        Me.YpsosEws.Location = New System.Drawing.Point(183, 119)
+        Me.YpsosEws.BackColor = System.Drawing.SystemColors.Info
+        Me.YpsosEws.Location = New System.Drawing.Point(274, 140)
         Me.YpsosEws.Name = "YpsosEws"
         Me.YpsosEws.Size = New System.Drawing.Size(38, 20)
-        Me.YpsosEws.TabIndex = 130
+        Me.YpsosEws.TabIndex = 131
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(161, 122)
+        Me.Label2.Location = New System.Drawing.Point(252, 143)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(23, 13)
-        Me.Label2.TabIndex = 129
+        Me.Label2.TabIndex = 130
         Me.Label2.Text = "To:"
         '
         'ypsosApo
         '
-        Me.ypsosApo.Location = New System.Drawing.Point(120, 119)
+        Me.ypsosApo.BackColor = System.Drawing.SystemColors.Info
+        Me.ypsosApo.Location = New System.Drawing.Point(211, 140)
         Me.ypsosApo.Name = "ypsosApo"
         Me.ypsosApo.Size = New System.Drawing.Size(38, 20)
-        Me.ypsosApo.TabIndex = 128
+        Me.ypsosApo.TabIndex = 129
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(161, 68)
+        Me.Label1.Location = New System.Drawing.Point(252, 89)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(23, 13)
-        Me.Label1.TabIndex = 127
+        Me.Label1.TabIndex = 128
         Me.Label1.Text = "To:"
         '
         'HmGenEws
         '
-        Me.HmGenEws.Location = New System.Drawing.Point(183, 65)
+        Me.HmGenEws.BackColor = System.Drawing.SystemColors.Info
+        Me.HmGenEws.Location = New System.Drawing.Point(274, 86)
         Me.HmGenEws.Name = "HmGenEws"
         Me.HmGenEws.Size = New System.Drawing.Size(37, 20)
-        Me.HmGenEws.TabIndex = 126
+        Me.HmGenEws.TabIndex = 127
         Me.HmGenEws.Text = "1990"
         '
         'HmGenApo
         '
-        Me.HmGenApo.Location = New System.Drawing.Point(120, 65)
+        Me.HmGenApo.BackColor = System.Drawing.SystemColors.Info
+        Me.HmGenApo.Location = New System.Drawing.Point(211, 86)
         Me.HmGenApo.Name = "HmGenApo"
         Me.HmGenApo.Size = New System.Drawing.Size(38, 20)
-        Me.HmGenApo.TabIndex = 125
+        Me.HmGenApo.TabIndex = 126
         Me.HmGenApo.Text = "1980"
         '
         'Xrmalbox
         '
+        Me.Xrmalbox.BackColor = System.Drawing.SystemColors.Info
         Me.Xrmalbox.FormattingEnabled = True
         Me.Xrmalbox.Items.AddRange(New Object() {"BLONDE", "BROWN", "BLACK", "RED"})
-        Me.Xrmalbox.Location = New System.Drawing.Point(120, 219)
+        Me.Xrmalbox.Location = New System.Drawing.Point(211, 240)
         Me.Xrmalbox.Name = "Xrmalbox"
         Me.Xrmalbox.Size = New System.Drawing.Size(100, 21)
-        Me.Xrmalbox.TabIndex = 124
+        Me.Xrmalbox.TabIndex = 125
         '
         'Xrmatbox
         '
+        Me.Xrmatbox.BackColor = System.Drawing.SystemColors.Info
         Me.Xrmatbox.FormattingEnabled = True
         Me.Xrmatbox.Items.AddRange(New Object() {"BLUE", "BROWN", "BLACK", "GREEN", "HAZEL"})
-        Me.Xrmatbox.Location = New System.Drawing.Point(120, 187)
+        Me.Xrmatbox.Location = New System.Drawing.Point(211, 208)
         Me.Xrmatbox.Name = "Xrmatbox"
         Me.Xrmatbox.Size = New System.Drawing.Size(100, 21)
-        Me.Xrmatbox.TabIndex = 123
+        Me.Xrmatbox.TabIndex = 124
         '
         'Barosbox
         '
+        Me.Barosbox.BackColor = System.Drawing.SystemColors.Info
         Me.Barosbox.FormattingEnabled = True
         Me.Barosbox.Items.AddRange(New Object() {"0    έως    55", "56    έως    65", "66    έως    75", "76    έως    85", "86    έως    95", ">=96"})
-        Me.Barosbox.Location = New System.Drawing.Point(120, 91)
+        Me.Barosbox.Location = New System.Drawing.Point(211, 112)
         Me.Barosbox.Name = "Barosbox"
         Me.Barosbox.Size = New System.Drawing.Size(100, 21)
-        Me.Barosbox.TabIndex = 122
+        Me.Barosbox.TabIndex = 123
         '
         'OnomaTextBox
         '
+        Me.OnomaTextBox.BackColor = System.Drawing.SystemColors.Info
         Me.OnomaTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PeopleBindingSource, "Onoma", True))
-        Me.OnomaTextBox.Location = New System.Drawing.Point(120, 32)
+        Me.OnomaTextBox.Location = New System.Drawing.Point(211, 53)
         Me.OnomaTextBox.Name = "OnomaTextBox"
         Me.OnomaTextBox.Size = New System.Drawing.Size(100, 20)
-        Me.OnomaTextBox.TabIndex = 114
+        Me.OnomaTextBox.TabIndex = 115
         '
         'Hoby1TextBox
         '
+        Me.Hoby1TextBox.BackColor = System.Drawing.SystemColors.Info
         Me.Hoby1TextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PeopleBindingSource, "Hoby1", True))
-        Me.Hoby1TextBox.Location = New System.Drawing.Point(358, 28)
+        Me.Hoby1TextBox.Location = New System.Drawing.Point(449, 49)
         Me.Hoby1TextBox.Name = "Hoby1TextBox"
         Me.Hoby1TextBox.Size = New System.Drawing.Size(100, 20)
-        Me.Hoby1TextBox.TabIndex = 115
+        Me.Hoby1TextBox.TabIndex = 116
         '
         'Hoby2TextBox
         '
+        Me.Hoby2TextBox.BackColor = System.Drawing.SystemColors.Info
         Me.Hoby2TextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PeopleBindingSource, "Hoby2", True))
-        Me.Hoby2TextBox.Location = New System.Drawing.Point(358, 59)
+        Me.Hoby2TextBox.Location = New System.Drawing.Point(449, 80)
         Me.Hoby2TextBox.Name = "Hoby2TextBox"
         Me.Hoby2TextBox.Size = New System.Drawing.Size(100, 20)
-        Me.Hoby2TextBox.TabIndex = 116
+        Me.Hoby2TextBox.TabIndex = 117
         '
         'Hoby3TextBox
         '
+        Me.Hoby3TextBox.BackColor = System.Drawing.SystemColors.Info
         Me.Hoby3TextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PeopleBindingSource, "Hoby3", True))
-        Me.Hoby3TextBox.Location = New System.Drawing.Point(358, 91)
+        Me.Hoby3TextBox.Location = New System.Drawing.Point(449, 112)
         Me.Hoby3TextBox.Name = "Hoby3TextBox"
         Me.Hoby3TextBox.Size = New System.Drawing.Size(100, 20)
-        Me.Hoby3TextBox.TabIndex = 117
+        Me.Hoby3TextBox.TabIndex = 118
         '
         'GlwssaTextBox
         '
+        Me.GlwssaTextBox.BackColor = System.Drawing.SystemColors.Info
         Me.GlwssaTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PeopleBindingSource, "Glwssa", True))
-        Me.GlwssaTextBox.Location = New System.Drawing.Point(358, 159)
+        Me.GlwssaTextBox.Location = New System.Drawing.Point(449, 180)
         Me.GlwssaTextBox.Name = "GlwssaTextBox"
         Me.GlwssaTextBox.Size = New System.Drawing.Size(100, 20)
-        Me.GlwssaTextBox.TabIndex = 118
+        Me.GlwssaTextBox.TabIndex = 119
         '
         'Glwssa2TextBox
         '
+        Me.Glwssa2TextBox.BackColor = System.Drawing.SystemColors.Info
         Me.Glwssa2TextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PeopleBindingSource, "Glwssa2", True))
-        Me.Glwssa2TextBox.Location = New System.Drawing.Point(358, 192)
+        Me.Glwssa2TextBox.Location = New System.Drawing.Point(449, 213)
         Me.Glwssa2TextBox.Name = "Glwssa2TextBox"
         Me.Glwssa2TextBox.Size = New System.Drawing.Size(100, 20)
-        Me.Glwssa2TextBox.TabIndex = 119
+        Me.Glwssa2TextBox.TabIndex = 120
         '
         'ErgasiaTextBox
         '
+        Me.ErgasiaTextBox.BackColor = System.Drawing.SystemColors.Info
         Me.ErgasiaTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PeopleBindingSource, "Ergasia", True))
-        Me.ErgasiaTextBox.Location = New System.Drawing.Point(358, 225)
+        Me.ErgasiaTextBox.Location = New System.Drawing.Point(449, 246)
         Me.ErgasiaTextBox.Name = "ErgasiaTextBox"
         Me.ErgasiaTextBox.Size = New System.Drawing.Size(100, 20)
-        Me.ErgasiaTextBox.TabIndex = 120
+        Me.ErgasiaTextBox.TabIndex = 121
         '
         'PerioxhTextBox
         '
+        Me.PerioxhTextBox.BackColor = System.Drawing.SystemColors.Info
         Me.PerioxhTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PeopleBindingSource, "Perioxh", True))
-        Me.PerioxhTextBox.Location = New System.Drawing.Point(358, 258)
+        Me.PerioxhTextBox.Location = New System.Drawing.Point(449, 279)
         Me.PerioxhTextBox.Name = "PerioxhTextBox"
         Me.PerioxhTextBox.Size = New System.Drawing.Size(100, 20)
-        Me.PerioxhTextBox.TabIndex = 121
+        Me.PerioxhTextBox.TabIndex = 122
         '
         'SrBt
         '
-        Me.SrBt.Location = New System.Drawing.Point(399, 311)
+        Me.SrBt.BackgroundImage = CType(resources.GetObject("SrBt.BackgroundImage"), System.Drawing.Image)
+        Me.SrBt.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.SrBt.ForeColor = System.Drawing.SystemColors.Info
+        Me.SrBt.Location = New System.Drawing.Point(502, 340)
         Me.SrBt.Name = "SrBt"
-        Me.SrBt.Size = New System.Drawing.Size(75, 23)
-        Me.SrBt.TabIndex = 113
+        Me.SrBt.Size = New System.Drawing.Size(85, 33)
+        Me.SrBt.TabIndex = 114
         Me.SrBt.Text = "Search"
         Me.SrBt.UseVisualStyleBackColor = True
         '
@@ -505,7 +536,9 @@ Partial Class Search
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(534, 362)
+        Me.BackColor = System.Drawing.Color.White
+        Me.ClientSize = New System.Drawing.Size(614, 401)
+        Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
@@ -547,6 +580,7 @@ Partial Class Search
         Me.Text = "Search"
         CType(Me.PeopleDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PeopleBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
@@ -561,6 +595,7 @@ Partial Class Search
     Friend WithEvents PeopleBindingSource As System.Windows.Forms.BindingSource
     Friend WithEvents PeopleTableAdapter As WindowsApplication1.peopleDataSetTableAdapters.PeopleTableAdapter
     Friend WithEvents TableAdapterManager As WindowsApplication1.peopleDataSetTableAdapters.TableAdapterManager
+    Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
     Friend WithEvents GroupBox3 As System.Windows.Forms.GroupBox
     Friend WithEvents NoRadioButton As System.Windows.Forms.RadioButton
     Friend WithEvents YesRadioButton As System.Windows.Forms.RadioButton

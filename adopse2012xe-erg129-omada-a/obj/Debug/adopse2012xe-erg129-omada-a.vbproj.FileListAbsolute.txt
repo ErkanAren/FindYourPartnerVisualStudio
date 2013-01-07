@@ -126,3 +126,27 @@ H:\panch repository\adopse2012xe-erg129-omada-a\adopse2012xe-erg129-omada-a\bin\
 H:\panch repository\adopse2012xe-erg129-omada-a\adopse2012xe-erg129-omada-a\bin\Debug\adopse2012xe-erg129-omada-a.xml
 H:\panch repository\adopse2012xe-erg129-omada-a\adopse2012xe-erg129-omada-a\obj\Debug\WindowsApplication1.Results.resources
 C:\Users\User\Documents\Visual Studio 2008\Projects\Git_google\adopse2012xe-erg129-omada-a\adopse2012xe-erg129-omada-a\obj\Debug\WindowsApplication1.Results.resources
+C:\GitOzgur\adopse2012xe-erg129-omada-a\adopse2012xe-erg129-omada-a\bin\Debug\adopse2012xe-erg129-omada-a.exe.config
+C:\GitOzgur\adopse2012xe-erg129-omada-a\adopse2012xe-erg129-omada-a\obj\Debug\adopse2012xe-erg129-omada-a.vbproj.ResolveComReference.cache
+C:\GitOzgur\adopse2012xe-erg129-omada-a\adopse2012xe-erg129-omada-a\obj\Debug\adopse2012xe-erg129-omada-a.exe
+C:\GitOzgur\adopse2012xe-erg129-omada-a\adopse2012xe-erg129-omada-a\obj\Debug\adopse2012xe-erg129-omada-a.xml
+C:\GitOzgur\adopse2012xe-erg129-omada-a\adopse2012xe-erg129-omada-a\obj\Debug\adopse2012xe-erg129-omada-a.pdb
+C:\GitOzgur\adopse2012xe-erg129-omada-a\adopse2012xe-erg129-omada-a\bin\Debug\Edit.resx
+C:\GitOzgur\adopse2012xe-erg129-omada-a\adopse2012xe-erg129-omada-a\bin\Debug\Register.resx
+C:\GitOzgur\adopse2012xe-erg129-omada-a\adopse2012xe-erg129-omada-a\bin\Debug\Edit.Designer.vb
+C:\GitOzgur\adopse2012xe-erg129-omada-a\adopse2012xe-erg129-omada-a\bin\Debug\Edit.vb
+C:\GitOzgur\adopse2012xe-erg129-omada-a\adopse2012xe-erg129-omada-a\bin\Debug\Register.Designer.vb
+C:\GitOzgur\adopse2012xe-erg129-omada-a\adopse2012xe-erg129-omada-a\bin\Debug\Register.vb
+C:\GitOzgur\adopse2012xe-erg129-omada-a\adopse2012xe-erg129-omada-a\bin\Debug\people.mdb
+C:\GitOzgur\adopse2012xe-erg129-omada-a\adopse2012xe-erg129-omada-a\bin\Debug\adopse2012xe-erg129-omada-a.exe
+C:\GitOzgur\adopse2012xe-erg129-omada-a\adopse2012xe-erg129-omada-a\bin\Debug\adopse2012xe-erg129-omada-a.pdb
+C:\GitOzgur\adopse2012xe-erg129-omada-a\adopse2012xe-erg129-omada-a\bin\Debug\adopse2012xe-erg129-omada-a.xml
+C:\GitOzgur\adopse2012xe-erg129-omada-a\adopse2012xe-erg129-omada-a\obj\Debug\ResolveAssemblyReference.cache
+C:\GitOzgur\adopse2012xe-erg129-omada-a\adopse2012xe-erg129-omada-a\obj\Debug\WindowsApplication1.Edit.resources
+C:\GitOzgur\adopse2012xe-erg129-omada-a\adopse2012xe-erg129-omada-a\obj\Debug\WindowsApplication1.ProfileForm.resources
+C:\GitOzgur\adopse2012xe-erg129-omada-a\adopse2012xe-erg129-omada-a\obj\Debug\WindowsApplication1.Login.resources
+C:\GitOzgur\adopse2012xe-erg129-omada-a\adopse2012xe-erg129-omada-a\obj\Debug\WindowsApplication1.RegisterForm.resources
+C:\GitOzgur\adopse2012xe-erg129-omada-a\adopse2012xe-erg129-omada-a\obj\Debug\WindowsApplication1.Resources.resources
+C:\GitOzgur\adopse2012xe-erg129-omada-a\adopse2012xe-erg129-omada-a\obj\Debug\WindowsApplication1.Results.resources
+C:\GitOzgur\adopse2012xe-erg129-omada-a\adopse2012xe-erg129-omada-a\obj\Debug\WindowsApplication1.Search.resources
+C:\GitOzgur\adopse2012xe-erg129-omada-a\adopse2012xe-erg129-omada-a\obj\Debug\adopse2012xe-erg129-omada-a.vbproj.GenerateResource.Cache

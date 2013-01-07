@@ -27,7 +27,7 @@ Public Class Login
         'Me.Close()
         RegisterForm.ShowDialog()
 
-       
+
 
     End Sub
 
@@ -115,10 +115,10 @@ Public Class Login
         End If
 
 
-        
+
     End Sub
 
-    
+
 
     Private Sub Login_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
 

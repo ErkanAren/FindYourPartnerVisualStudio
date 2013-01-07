@@ -5,7 +5,7 @@
         ' For i = 0 To 5
         Dim pr_num As Double
         Dim new_table As String(,)
-        ReDim new_table(Search.db_count, 3)
+        ReDim new_table(Search.db_count, 4)
         Dim max As Integer(,)
         ReDim max(5, 2)
 
@@ -348,7 +348,7 @@
             new_table(i, 0) = Search.all_users(i, 0)
             new_table(i, 1) = Search.all_users(i, 1)
             new_table(i, 2) = Search.all_users(i, 2)
-
+            new_table(i, 3) = Search.all_users(i, 3)
         Next
         Dim th As Integer
         For th = 0 To 5
@@ -374,33 +374,63 @@
 
         '   MessageBox.Show("Ar_krit= " & Search.ar_krit & ", Petiximena krit= " & Search.all_users(2, 2) & ",Onoma= " & Search.all_users(2, 0))
 
+        If Search.all_users(max(0, 0), 2) <> 0 Then
+            onoma1.Visible = True
+            pr_num_l1.Visible = True
+            ProgressBar1.Visible = True
+            Label1.Visible = True
+            onoma1.Text = Search.all_users(max(0, 0), 0) & " " & Search.all_users(max(0, 0), 3)
+            pr_num = CInt((16 / Search.ar_krit) * 6.25 * Search.all_users(max(0, 0), 2))
+            pr_num_l1.Text = pr_num
+            ProgressBar1.Value = pr_num
+        Else
+            dontmatch.Visible = True
+        End If
+
+        If Search.all_users(max(1, 0), 2) <> 0 Then
+            onoma2.Visible = True
+            pr_num_l2.Visible = True
+            ProgressBar2.Visible = True
+            Label2.Visible = True
+            onoma2.Text = Search.all_users(max(1, 0), 0) & " " & Search.all_users(max(1, 0), 3)
+            pr_num = CInt((16 / Search.ar_krit) * 6.25 * Search.all_users(max(1, 0), 2))
+            pr_num_l2.Text = pr_num
+            ProgressBar2.Value = pr_num
+        End If
+
+        If Search.all_users(max(2, 0), 2) <> 0 Then
+            onoma3.Visible = True
+            pr_num_l3.Visible = True
+            ProgressBar3.Visible = True
+            Label3.Visible = True
+            onoma3.Text = Search.all_users(max(2, 0), 0) & " " & Search.all_users(max(2, 0), 3)
+            pr_num = CInt((16 / Search.ar_krit) * 6.25 * Search.all_users(max(2, 0), 2))
+            pr_num_l3.Text = pr_num
+            ProgressBar3.Value = pr_num
+        End If
 
 
-        onoma1.Text = Search.all_users(max(0, 0), 0)
-        pr_num_l1.Text = (16 / Search.ar_krit) * 6.25 * Search.all_users(max(0, 0), 2)
-        pr_num = (16 / Search.ar_krit) * 6.25 * Search.all_users(max(0, 0), 2)
-        ProgressBar1.Value = pr_num
+        If Search.all_users(max(3, 0), 2) <> 0 Then
+            onoma4.Visible = True
+            pr_num_l4.Visible = True
+            ProgressBar4.Visible = True
+            Label4.Visible = True
+            onoma4.Text = Search.all_users(max(3, 0), 0) & " " & Search.all_users(max(3, 0), 3)
+            pr_num = CInt((16 / Search.ar_krit) * 6.25 * Search.all_users(max(3, 0), 2))
+            pr_num_l4.Text = pr_num
+            ProgressBar4.Value = pr_num
+        End If
 
-        onoma2.Text = Search.all_users(max(1, 0), 0)
-        pr_num_l2.Text = (16 / Search.ar_krit) * 6.25 * Search.all_users(max(1, 0), 2)
-        pr_num = (16 / Search.ar_krit) * 6.25 * Search.all_users(max(1, 0), 2)
-        ProgressBar2.Value = pr_num
-
-        onoma3.Text = Search.all_users(max(2, 0), 0)
-        pr_num_l3.Text = (16 / Search.ar_krit) * 6.25 * Search.all_users(max(2, 0), 2)
-        pr_num = (16 / Search.ar_krit) * 6.25 * Search.all_users(max(2, 0), 2)
-        ProgressBar3.Value = pr_num
-
-        onoma4.Text = Search.all_users(max(3, 0), 0)
-        pr_num_l4.Text = (16 / Search.ar_krit) * 6.25 * Search.all_users(max(3, 0), 2)
-        pr_num = (16 / Search.ar_krit) * 6.25 * Search.all_users(max(3, 0), 2)
-        ProgressBar4.Value = pr_num
-
-        onoma5.Text = Search.all_users(max(4, 0), 0)
-        pr_num_l5.Text = (16 / Search.ar_krit) * 6.25 * Search.all_users(max(4, 0), 2)
-        pr_num = (16 / Search.ar_krit) * 6.25 * Search.all_users(max(4, 0), 2)
-        ProgressBar5.Value = pr_num
-
+        If Search.all_users(max(4, 0), 2) <> 0 Then
+            onoma5.Visible = True
+            pr_num_l5.Visible = True
+            ProgressBar5.Visible = True
+            Label5.Visible = True
+            onoma5.Text = Search.all_users(max(4, 0), 0) & " " & Search.all_users(max(4, 0), 3)
+            pr_num = CInt((16 / Search.ar_krit) * 6.25 * Search.all_users(max(4, 0), 2))
+            pr_num_l5.Text = pr_num
+            ProgressBar5.Value = pr_num
+        End If
 
 
         For i = 0 To Search.db_count 'clear the new table
