@@ -22,167 +22,177 @@ Partial Class ProfileForm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.NameLb = New System.Windows.Forms.Label
-        Me.EpihetoLb = New System.Windows.Forms.Label
-        Me.HmLb = New System.Windows.Forms.Label
-        Me.PerioxhLb = New System.Windows.Forms.Label
-        Me.OnomaShow = New System.Windows.Forms.Label
-        Me.EpithetoShow = New System.Windows.Forms.Label
-        Me.HmShow = New System.Windows.Forms.Label
-        Me.PerioxhShow = New System.Windows.Forms.Label
-        Me.EditButton = New System.Windows.Forms.Button
-        Me.LogoutButton = New System.Windows.Forms.Button
-        Me.SearchButton = New System.Windows.Forms.Button
-        Me.ErgasiaLb = New System.Windows.Forms.Label
-        Me.ErgasiaShow = New System.Windows.Forms.Label
-        Me.EmLb = New System.Windows.Forms.Label
+        Dim OnomaLabel As System.Windows.Forms.Label
+        Dim EpithetoLabel As System.Windows.Forms.Label
+        Dim Hm_GennisisLabel As System.Windows.Forms.Label
+        Dim EmailLabel As System.Windows.Forms.Label
+        Dim ErgasiaLabel As System.Windows.Forms.Label
+        Dim PerioxhLabel As System.Windows.Forms.Label
         Me.EmShow = New System.Windows.Forms.Label
+        Me.ErgasiaShow = New System.Windows.Forms.Label
+        Me.SearchButton = New System.Windows.Forms.Button
+        Me.LogoutButton = New System.Windows.Forms.Button
+        Me.EditButton = New System.Windows.Forms.Button
+        Me.PerioxhShow = New System.Windows.Forms.Label
+        Me.HmShow = New System.Windows.Forms.Label
+        Me.EpithetoShow = New System.Windows.Forms.Label
+        Me.OnomaShow = New System.Windows.Forms.Label
+        OnomaLabel = New System.Windows.Forms.Label
+        EpithetoLabel = New System.Windows.Forms.Label
+        Hm_GennisisLabel = New System.Windows.Forms.Label
+        EmailLabel = New System.Windows.Forms.Label
+        ErgasiaLabel = New System.Windows.Forms.Label
+        PerioxhLabel = New System.Windows.Forms.Label
         Me.SuspendLayout()
         '
-        'NameLb
+        'OnomaLabel
         '
-        Me.NameLb.AutoSize = True
-        Me.NameLb.Location = New System.Drawing.Point(40, 58)
-        Me.NameLb.Name = "NameLb"
-        Me.NameLb.Size = New System.Drawing.Size(50, 13)
-        Me.NameLb.TabIndex = 0
-        Me.NameLb.Text = "Onoma : "
+        OnomaLabel.AutoSize = True
+        OnomaLabel.Location = New System.Drawing.Point(65, 46)
+        OnomaLabel.Name = "OnomaLabel"
+        OnomaLabel.Size = New System.Drawing.Size(47, 13)
+        OnomaLabel.TabIndex = 53
+        OnomaLabel.Text = "Όνομα :"
         '
-        'EpihetoLb
+        'EpithetoLabel
         '
-        Me.EpihetoLb.AutoSize = True
-        Me.EpihetoLb.Location = New System.Drawing.Point(40, 85)
-        Me.EpihetoLb.Name = "EpihetoLb"
-        Me.EpihetoLb.Size = New System.Drawing.Size(52, 13)
-        Me.EpihetoLb.TabIndex = 1
-        Me.EpihetoLb.Text = "Epitheto :"
+        EpithetoLabel.AutoSize = True
+        EpithetoLabel.Location = New System.Drawing.Point(58, 73)
+        EpithetoLabel.Name = "EpithetoLabel"
+        EpithetoLabel.Size = New System.Drawing.Size(54, 13)
+        EpithetoLabel.TabIndex = 54
+        EpithetoLabel.Text = "Επιθέτω :"
         '
-        'HmLb
+        'Hm_GennisisLabel
         '
-        Me.HmLb.AutoSize = True
-        Me.HmLb.Location = New System.Drawing.Point(40, 113)
-        Me.HmLb.Name = "HmLb"
-        Me.HmLb.Size = New System.Drawing.Size(72, 13)
-        Me.HmLb.TabIndex = 2
-        Me.HmLb.Text = "Hm Gennisis :"
+        Hm_GennisisLabel.AutoSize = True
+        Hm_GennisisLabel.Location = New System.Drawing.Point(31, 101)
+        Hm_GennisisLabel.Name = "Hm_GennisisLabel"
+        Hm_GennisisLabel.Size = New System.Drawing.Size(81, 13)
+        Hm_GennisisLabel.TabIndex = 55
+        Hm_GennisisLabel.Text = "Ημ. γέννησης :"
         '
-        'PerioxhLb
+        'EmailLabel
         '
-        Me.PerioxhLb.AutoSize = True
-        Me.PerioxhLb.Location = New System.Drawing.Point(40, 141)
-        Me.PerioxhLb.Name = "PerioxhLb"
-        Me.PerioxhLb.Size = New System.Drawing.Size(48, 13)
-        Me.PerioxhLb.TabIndex = 3
-        Me.PerioxhLb.Text = "Perioxh :"
+        EmailLabel.AutoSize = True
+        EmailLabel.Location = New System.Drawing.Point(71, 179)
+        EmailLabel.Name = "EmailLabel"
+        EmailLabel.Size = New System.Drawing.Size(41, 13)
+        EmailLabel.TabIndex = 56
+        EmailLabel.Text = "E-mail :"
         '
-        'OnomaShow
+        'ErgasiaLabel
         '
-        Me.OnomaShow.AutoSize = True
-        Me.OnomaShow.Location = New System.Drawing.Point(118, 58)
-        Me.OnomaShow.Name = "OnomaShow"
-        Me.OnomaShow.Size = New System.Drawing.Size(10, 13)
-        Me.OnomaShow.TabIndex = 4
-        Me.OnomaShow.Text = "-"
+        ErgasiaLabel.AutoSize = True
+        ErgasiaLabel.Location = New System.Drawing.Point(57, 154)
+        ErgasiaLabel.Name = "ErgasiaLabel"
+        ErgasiaLabel.Size = New System.Drawing.Size(55, 13)
+        ErgasiaLabel.TabIndex = 57
+        ErgasiaLabel.Text = "Εργασία :"
         '
-        'EpithetoShow
+        'PerioxhLabel
         '
-        Me.EpithetoShow.AutoSize = True
-        Me.EpithetoShow.Location = New System.Drawing.Point(118, 85)
-        Me.EpithetoShow.Name = "EpithetoShow"
-        Me.EpithetoShow.Size = New System.Drawing.Size(10, 13)
-        Me.EpithetoShow.TabIndex = 5
-        Me.EpithetoShow.Text = "-"
-        '
-        'HmShow
-        '
-        Me.HmShow.AutoSize = True
-        Me.HmShow.Location = New System.Drawing.Point(118, 113)
-        Me.HmShow.Name = "HmShow"
-        Me.HmShow.Size = New System.Drawing.Size(10, 13)
-        Me.HmShow.TabIndex = 6
-        Me.HmShow.Text = "-"
-        '
-        'PerioxhShow
-        '
-        Me.PerioxhShow.AutoSize = True
-        Me.PerioxhShow.Location = New System.Drawing.Point(118, 141)
-        Me.PerioxhShow.Name = "PerioxhShow"
-        Me.PerioxhShow.Size = New System.Drawing.Size(10, 13)
-        Me.PerioxhShow.TabIndex = 7
-        Me.PerioxhShow.Text = "-"
-        '
-        'EditButton
-        '
-        Me.EditButton.Location = New System.Drawing.Point(43, 315)
-        Me.EditButton.Name = "EditButton"
-        Me.EditButton.Size = New System.Drawing.Size(75, 23)
-        Me.EditButton.TabIndex = 8
-        Me.EditButton.Text = "Edit Profile"
-        Me.EditButton.UseVisualStyleBackColor = True
-        '
-        'LogoutButton
-        '
-        Me.LogoutButton.Location = New System.Drawing.Point(429, 315)
-        Me.LogoutButton.Name = "LogoutButton"
-        Me.LogoutButton.Size = New System.Drawing.Size(75, 23)
-        Me.LogoutButton.TabIndex = 9
-        Me.LogoutButton.Text = "Logout"
-        Me.LogoutButton.UseVisualStyleBackColor = True
-        '
-        'SearchButton
-        '
-        Me.SearchButton.Location = New System.Drawing.Point(429, 48)
-        Me.SearchButton.Name = "SearchButton"
-        Me.SearchButton.Size = New System.Drawing.Size(75, 23)
-        Me.SearchButton.TabIndex = 10
-        Me.SearchButton.Text = "Search"
-        Me.SearchButton.UseVisualStyleBackColor = True
-        '
-        'ErgasiaLb
-        '
-        Me.ErgasiaLb.AutoSize = True
-        Me.ErgasiaLb.Location = New System.Drawing.Point(40, 166)
-        Me.ErgasiaLb.Name = "ErgasiaLb"
-        Me.ErgasiaLb.Size = New System.Drawing.Size(48, 13)
-        Me.ErgasiaLb.TabIndex = 11
-        Me.ErgasiaLb.Text = "Ergasia :"
-        '
-        'ErgasiaShow
-        '
-        Me.ErgasiaShow.AutoSize = True
-        Me.ErgasiaShow.Location = New System.Drawing.Point(121, 166)
-        Me.ErgasiaShow.Name = "ErgasiaShow"
-        Me.ErgasiaShow.Size = New System.Drawing.Size(10, 13)
-        Me.ErgasiaShow.TabIndex = 12
-        Me.ErgasiaShow.Text = "-"
-        '
-        'EmLb
-        '
-        Me.EmLb.AutoSize = True
-        Me.EmLb.Location = New System.Drawing.Point(40, 191)
-        Me.EmLb.Name = "EmLb"
-        Me.EmLb.Size = New System.Drawing.Size(41, 13)
-        Me.EmLb.TabIndex = 13
-        Me.EmLb.Text = "E-mail :"
+        PerioxhLabel.AutoSize = True
+        PerioxhLabel.Location = New System.Drawing.Point(59, 129)
+        PerioxhLabel.Name = "PerioxhLabel"
+        PerioxhLabel.Size = New System.Drawing.Size(53, 13)
+        PerioxhLabel.TabIndex = 58
+        PerioxhLabel.Text = "Περιοχή :"
         '
         'EmShow
         '
         Me.EmShow.AutoSize = True
-        Me.EmShow.Location = New System.Drawing.Point(118, 191)
+        Me.EmShow.Location = New System.Drawing.Point(131, 179)
         Me.EmShow.Name = "EmShow"
         Me.EmShow.Size = New System.Drawing.Size(10, 13)
-        Me.EmShow.TabIndex = 14
+        Me.EmShow.TabIndex = 52
         Me.EmShow.Text = "-"
+        '
+        'ErgasiaShow
+        '
+        Me.ErgasiaShow.AutoSize = True
+        Me.ErgasiaShow.Location = New System.Drawing.Point(131, 154)
+        Me.ErgasiaShow.Name = "ErgasiaShow"
+        Me.ErgasiaShow.Size = New System.Drawing.Size(10, 13)
+        Me.ErgasiaShow.TabIndex = 51
+        Me.ErgasiaShow.Text = "-"
+        '
+        'SearchButton
+        '
+        Me.SearchButton.Location = New System.Drawing.Point(429, 36)
+        Me.SearchButton.Name = "SearchButton"
+        Me.SearchButton.Size = New System.Drawing.Size(75, 23)
+        Me.SearchButton.TabIndex = 50
+        Me.SearchButton.Text = "Search"
+        Me.SearchButton.UseVisualStyleBackColor = True
+        '
+        'LogoutButton
+        '
+        Me.LogoutButton.Location = New System.Drawing.Point(429, 303)
+        Me.LogoutButton.Name = "LogoutButton"
+        Me.LogoutButton.Size = New System.Drawing.Size(75, 23)
+        Me.LogoutButton.TabIndex = 49
+        Me.LogoutButton.Text = "Logout"
+        Me.LogoutButton.UseVisualStyleBackColor = True
+        '
+        'EditButton
+        '
+        Me.EditButton.Location = New System.Drawing.Point(43, 300)
+        Me.EditButton.Name = "EditButton"
+        Me.EditButton.Size = New System.Drawing.Size(75, 23)
+        Me.EditButton.TabIndex = 48
+        Me.EditButton.Text = "Edit Profile"
+        Me.EditButton.UseVisualStyleBackColor = True
+        '
+        'PerioxhShow
+        '
+        Me.PerioxhShow.AutoSize = True
+        Me.PerioxhShow.Location = New System.Drawing.Point(131, 129)
+        Me.PerioxhShow.Name = "PerioxhShow"
+        Me.PerioxhShow.Size = New System.Drawing.Size(10, 13)
+        Me.PerioxhShow.TabIndex = 47
+        Me.PerioxhShow.Text = "-"
+        '
+        'HmShow
+        '
+        Me.HmShow.AutoSize = True
+        Me.HmShow.Location = New System.Drawing.Point(131, 102)
+        Me.HmShow.Name = "HmShow"
+        Me.HmShow.Size = New System.Drawing.Size(10, 13)
+        Me.HmShow.TabIndex = 46
+        Me.HmShow.Text = "-"
+        '
+        'EpithetoShow
+        '
+        Me.EpithetoShow.AutoSize = True
+        Me.EpithetoShow.Location = New System.Drawing.Point(131, 74)
+        Me.EpithetoShow.Name = "EpithetoShow"
+        Me.EpithetoShow.Size = New System.Drawing.Size(10, 13)
+        Me.EpithetoShow.TabIndex = 45
+        Me.EpithetoShow.Text = "-"
+        '
+        'OnomaShow
+        '
+        Me.OnomaShow.AutoSize = True
+        Me.OnomaShow.Location = New System.Drawing.Point(131, 47)
+        Me.OnomaShow.Name = "OnomaShow"
+        Me.OnomaShow.Size = New System.Drawing.Size(10, 13)
+        Me.OnomaShow.TabIndex = 44
+        Me.OnomaShow.Text = "-"
         '
         'ProfileForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(534, 362)
+        Me.Controls.Add(OnomaLabel)
+        Me.Controls.Add(EpithetoLabel)
+        Me.Controls.Add(Hm_GennisisLabel)
+        Me.Controls.Add(EmailLabel)
+        Me.Controls.Add(ErgasiaLabel)
+        Me.Controls.Add(PerioxhLabel)
         Me.Controls.Add(Me.EmShow)
-        Me.Controls.Add(Me.EmLb)
         Me.Controls.Add(Me.ErgasiaShow)
-        Me.Controls.Add(Me.ErgasiaLb)
         Me.Controls.Add(Me.SearchButton)
         Me.Controls.Add(Me.LogoutButton)
         Me.Controls.Add(Me.EditButton)
@@ -190,29 +200,19 @@ Partial Class ProfileForm
         Me.Controls.Add(Me.HmShow)
         Me.Controls.Add(Me.EpithetoShow)
         Me.Controls.Add(Me.OnomaShow)
-        Me.Controls.Add(Me.PerioxhLb)
-        Me.Controls.Add(Me.HmLb)
-        Me.Controls.Add(Me.EpihetoLb)
-        Me.Controls.Add(Me.NameLb)
         Me.Name = "ProfileForm"
         Me.Text = "Profile"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents NameLb As System.Windows.Forms.Label
-    Friend WithEvents EpihetoLb As System.Windows.Forms.Label
-    Friend WithEvents HmLb As System.Windows.Forms.Label
-    Friend WithEvents PerioxhLb As System.Windows.Forms.Label
-    Friend WithEvents OnomaShow As System.Windows.Forms.Label
-    Friend WithEvents EpithetoShow As System.Windows.Forms.Label
-    Friend WithEvents HmShow As System.Windows.Forms.Label
-    Friend WithEvents PerioxhShow As System.Windows.Forms.Label
-    Friend WithEvents EditButton As System.Windows.Forms.Button
-    Friend WithEvents LogoutButton As System.Windows.Forms.Button
-    Friend WithEvents SearchButton As System.Windows.Forms.Button
-    Friend WithEvents ErgasiaLb As System.Windows.Forms.Label
-    Friend WithEvents ErgasiaShow As System.Windows.Forms.Label
-    Friend WithEvents EmLb As System.Windows.Forms.Label
     Friend WithEvents EmShow As System.Windows.Forms.Label
+    Friend WithEvents ErgasiaShow As System.Windows.Forms.Label
+    Friend WithEvents SearchButton As System.Windows.Forms.Button
+    Friend WithEvents LogoutButton As System.Windows.Forms.Button
+    Friend WithEvents EditButton As System.Windows.Forms.Button
+    Friend WithEvents PerioxhShow As System.Windows.Forms.Label
+    Friend WithEvents HmShow As System.Windows.Forms.Label
+    Friend WithEvents EpithetoShow As System.Windows.Forms.Label
+    Friend WithEvents OnomaShow As System.Windows.Forms.Label
 End Class

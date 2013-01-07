@@ -12,15 +12,37 @@ Public Class Search
     Public Shared users_krit_hmgen As String(,)
     Public Shared users_krit_ypsos As String(,)
     Public Shared users_krit_xr_mat As String(,)
+    Public Shared users_krit_xr_mal As String(,)
     Public Shared users_krit_onoma As String(,)
+    Public Shared users_krit_hob1 As String(,)
+    Public Shared users_krit_hob2 As String(,)
+    Public Shared users_krit_hob3 As String(,)
+    Public Shared users_krit_glws1 As String(,)
+    Public Shared users_krit_glws2 As String(,)
+    Public Shared users_krit_ergasia As String(,)
+    Public Shared users_krit_perioxh As String(,)
+    Public Shared users_krit_fylo As String(,)
+    Public Shared users_krit_anazita As String(,)
+
     Public Shared all_users As String(,)
-    Public Shadows pedio As String
-    Public Shadows kritirio_varos_selected As Boolean = False
-    Public Shadows kritirio_hmgen_selected As Boolean = False
-    Public Shadows kritirio_tat_selected As Boolean = False
+    Public Shared pedio As String
+    Public Shared kritirio_varos_selected As Boolean = False
+    Public Shared kritirio_hmgen_selected As Boolean = False
+    Public Shared kritirio_tat_selected As Boolean = False
     Public Shared kritirio_ypsos_selected As Boolean = False
     Public Shared kritirio_xrmat_selected As Boolean = False
+    Public Shared kritirio_xrmal_selected As Boolean = False
     Public Shared kritirio_onoma_selected As Boolean = False
+    Public Shared kritirio_hob1_selected As Boolean = False
+    Public Shared kritirio_hob2_selected As Boolean = False
+    Public Shared kritirio_hob3_selected As Boolean = False
+    Public Shared kritirio_glws1_selected As Boolean = False
+    Public Shared kritirio_glws2_selected As Boolean = False
+    Public Shared kritirio_ergasia_selected As Boolean = False
+    Public Shared kritirio_perioxh_selected As Boolean = False
+    Public Shared kritirio_fylo_selected As Boolean = False
+    Public Shared kritirio_anazita_selected As Boolean = False
+
 
     Public Shared db_count As Integer = 33 'database length (tha allaksei...)
 
@@ -33,8 +55,7 @@ Public Class Search
     End Sub
 
     Private Sub Search_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        'TODO: This line of code loads data into the 'PeopleDataSet.People' table. You can move, or remove it, as needed.
-        ' Me.PeopleTableAdapter.Fill(Me.PeopleDataSet.People)
+
         Dim all_dbusers As String = "SELECT Onoma,ID FROM people"
         ReDim all_users(db_count, 3)
         Dim cmd2 As New OleDbCommand
@@ -43,7 +64,7 @@ Public Class Search
         cn2.Open()
         cmd2.Connection = cn2
         Dim myadapt2 As OleDbDataAdapter ' = New OleDbDataAdapter(querybaros1, cmd.Connection.ConnectionString())
-        ' Dim myadapttat As OleDbDataAdapter ' = New OleDbDataAdapter(querybaros1, cmd.Connection.ConnectionString())
+
         Dim temprow2 As DataRow
         Dim ds2 As DataSet = New DataSet
         For k = 0 To db_count
@@ -55,18 +76,11 @@ Public Class Search
         myadapt2.Fill(ds2, "people")
         Dim i As Integer = 0
         For Each temprow2 In ds2.Tables("people").Rows
-            ' MessageBox.Show("1 - " & (temprow2.Item("Onoma").ToString) & " - " & (temprow2.Item("Epitheto").ToString))
-            '   users_krit_baros(i)(0) = (temprow.Item("Onoma").ToString)
-            ' If i < db_count Then
+
             all_users(i, 0) = temprow2.Item("Onoma").ToString
             all_users(i, 1) = temprow2.Item("ID").ToString
-
-            '  all_users(i, 2) = temprow2.Item("ID").ToString
             i += 1
-            '  End If
-            ' If arr(i).Length <> 0 Then
-            '  users_krit_baros(i)(1) += 1
-            'End If
+
 
         Next
 
@@ -82,7 +96,17 @@ Public Class Search
         ReDim users_krit_hmgen(db_count, 2)
         ReDim users_krit_ypsos(db_count, 2)
         ReDim users_krit_xr_mat(db_count, 2)
+        ReDim users_krit_xr_mal(db_count, 2)
         ReDim users_krit_onoma(db_count, 2)
+        ReDim users_krit_hob1(db_count, 2)
+        ReDim users_krit_hob2(db_count, 2)
+        ReDim users_krit_hob3(db_count, 2)
+        ReDim users_krit_glws1(db_count, 2)
+        ReDim users_krit_glws2(db_count, 2)
+        ReDim users_krit_perioxh(db_count, 2)
+        ReDim users_krit_ergasia(db_count, 2)
+        ReDim users_krit_fylo(db_count, 2)
+        ReDim users_krit_anazita(db_count, 2)
 
         For i = 0 To db_count
             users_krit_baros(i, 0) = ""
@@ -111,7 +135,21 @@ Public Class Search
         Dim queryypsosrange As String = "SELECT Onoma,Epitheto,ID FROM people WHERE Ypsos>=" & ypsosApo.Text & " AND Ypsos<=" & YpsosEws.Text
         Dim queryypsos As String = "SELECT Onoma,Epitheto,ID FROM people WHERE Ypsos=" & ypsosApo.Text
         Dim query_xrwma_matiwn As String = "SELECT Onoma,Epitheto,ID FROM people WHERE Xrwma_Matiwn='" & Xrmatbox.Text & "'"
+        Dim query_xrwma_maliwn As String = "SELECT Onoma,Epitheto,ID FROM people WHERE Xrwma_Malliwn='" & Xrmalbox.Text & "'"
         Dim query_onoma As String = "SELECT Onoma,Epitheto,ID FROM people WHERE Onoma='" & OnomaTextBox.Text & "'"
+        Dim query_hob1 As String = "SELECT Onoma,Epitheto,ID FROM people WHERE Hoby1='" & Hoby1TextBox.Text & "' or Hoby2='" & Hoby1TextBox.Text & "' or Hoby3='" & Hoby1TextBox.Text & "'"
+        Dim query_hob2 As String = "SELECT Onoma,Epitheto,ID FROM people WHERE Hoby1='" & Hoby2TextBox.Text & "' or Hoby2='" & Hoby2TextBox.Text & "' or Hoby3='" & Hoby2TextBox.Text & "'"
+        Dim query_hob3 As String = "SELECT Onoma,Epitheto,ID FROM people WHERE Hoby1='" & Hoby3TextBox.Text & "' or Hoby2='" & Hoby3TextBox.Text & "' or Hoby3='" & Hoby3TextBox.Text & "'"
+
+        Dim query_glws1 As String = "SELECT Onoma,Epitheto,ID FROM people WHERE Glwssa='" & GlwssaTextBox.Text & "' or Glwssa2='" & GlwssaTextBox.Text & "'"
+        Dim query_glws2 As String = "SELECT Onoma,Epitheto,ID FROM people WHERE Glwssa='" & Glwssa2TextBox.Text & "' or Glwssa2='" & Glwssa2TextBox.Text & "'"
+        Dim query_perioxh As String = "SELECT Onoma,Epitheto,ID FROM people WHERE Perioxh='" & PerioxhTextBox.Text & "'"
+        Dim query_ergasia As String = "SELECT Onoma,Epitheto,ID FROM people WHERE Ergasia='" & ErgasiaTextBox.Text & "'"
+        Dim query_male As String = "SELECT Onoma,Epitheto,ID FROM people WHERE Fylo='MALE'"
+        Dim query_female As String = "SELECT Onoma,Epitheto,ID FROM people WHERE Fylo='FEMALE'"
+
+        Dim query_man As String = "SELECT Onoma,Epitheto,ID FROM people WHERE Anazita='MAN'"
+        Dim query_woman As String = "SELECT Onoma,Epitheto,ID FROM people WHERE Anazita='WOMAN'"
 
 
         Dim cmd As New OleDbCommand
@@ -119,18 +157,34 @@ Public Class Search
         cn.ConnectionString = My.Settings.peopleConnectionString
         cn.Open()
         cmd.Connection = cn
-        Dim myadapt As OleDbDataAdapter ' = New OleDbDataAdapter(querybaros1, cmd.Connection.ConnectionString())
+        ' Dim query_xrwma_matiwn = (From peop In PeopleBindingSource Order By peop.ID Ascending Where (peop.Xrwma_Matiwn = Xrmatbox.Text) Select Onoma = peop.Onoma, ID = peop.ID)
+        Dim myadapt As OleDbDataAdapter 'Xreisimopoiihtai gia to varos = New OleDbDataAdapter(querybaros1, cmd.Connection.ConnectionString())
         Dim myadaptbaros As OleDbDataAdapter
         Dim myadapttat As OleDbDataAdapter
         Dim myadapthmgen As OleDbDataAdapter
         Dim myadaptypsos As OleDbDataAdapter
         Dim myadaptxr_mat As OleDbDataAdapter
         Dim myadaptonoma As OleDbDataAdapter
-
+        Dim myadaptxr_mal As OleDbDataAdapter
+        Dim myadapthob1 As OleDbDataAdapter
+        Dim myadapthob2 As OleDbDataAdapter
+        Dim myadapthob3 As OleDbDataAdapter
+        Dim myadaptglws1 As OleDbDataAdapter
+        Dim myadaptglws2 As OleDbDataAdapter
+        Dim myadaptergasia As OleDbDataAdapter
+        Dim myadaptperioxh As OleDbDataAdapter
+        Dim myadaptfylo As OleDbDataAdapter
+        Dim myadaptanazita As OleDbDataAdapter
 
         ' Dim myadapttat As OleDbDataAdapter ' = New OleDbDataAdapter(querybaros1, cmd.Connection.ConnectionString())
         Dim temprow As DataRow
         Dim ds As DataSet = New DataSet
+
+        Dim temprowxr_mat As DataRow
+        Dim dsxr_mat As DataSet = New DataSet
+
+        Dim temprowxr_mal As DataRow
+        Dim dsxr_mal As DataSet = New DataSet
 
         Dim temprowtat As DataRow
         Dim dstat As DataSet = New DataSet
@@ -138,29 +192,44 @@ Public Class Search
         Dim temprowhm As DataRow
         Dim dshm As DataSet = New DataSet
 
-        Dim temprowxr_mat As DataRow
-        Dim dsxr_mat As DataSet = New DataSet
-
         Dim temprowonoma As DataRow
         Dim dsonoma As DataSet = New DataSet
 
         Dim temprowypsos As DataRow
         Dim dsypsos As DataSet = New DataSet
-        '  Dim dstat As DataSet = New DataSet
-        ' myadapt.Fill(ds, "people")
+
+        Dim temprowhob1 As DataRow
+        Dim dshob1 As DataSet = New DataSet
+
+        Dim temprowhob2 As DataRow
+        Dim dshob2 As DataSet = New DataSet
+
+        Dim temprowhob3 As DataRow
+        Dim dshob3 As DataSet = New DataSet
+
+        Dim temprowglws1 As DataRow
+        Dim dsglws1 As DataSet = New DataSet
+
+        Dim temprowglws2 As DataRow
+        Dim dsglws2 As DataSet = New DataSet
+
+        Dim temprowperioxh As DataRow
+        Dim dsperioxh As DataSet = New DataSet
+
+        Dim temprowergasia As DataRow
+        Dim dsergasia As DataSet = New DataSet
+
+        Dim temprowfylo As DataRow
+        Dim dsfylo As DataSet = New DataSet
+
+        Dim temprowanazita As DataRow
+        Dim dsanazita As DataSet = New DataSet
 
 
 
-        ' For j = 0 To arr.Length
-        'MessageBox.Show(arr(j))
-        '  Next j
-        '  onoma_xr = (ds.Tables(0).Rows(0).Item(0))
-        'Catch ex As Exception
-        'MessageBox.Show("haiii")
-        ' End Try
 
-        '  MessageBox.Show(cmd.ToString.ToString)
         If OnomaTextBox.Text <> "" Then
+
             ar_krit = ar_krit + 1
 
             kritirio_onoma_selected = True
@@ -178,7 +247,6 @@ Public Class Search
             Next
 
         End If
-
         If HmGenApo.Text <> "" And HmGenEws.Text <> "" Then
             If HmGenApo.Text > HmGenEws.Text Then
                 MessageBox.Show("HMgen einai megalytero apo im ews")
@@ -198,7 +266,7 @@ Public Class Search
                         'users_krit_hmgen(i, 1) = users_krit_hmgen(i, 1) + 1
                         users_krit_hmgen(i, 1) = temprowhm.Item("ID").ToString
                         i += 1
-                        'MessageBox.Show("HmGen onoma= " & temprowhm.Item("Onoma").ToString)
+                        '  MessageBox.Show("HmGen onoma= " & temprowhm.Item("Onoma").ToString)
                     End If
                     ' If arr(i).Length <> 0 Then
                     '  users_krit_baros(i)(1) += 1
@@ -214,13 +282,14 @@ Public Class Search
             myadapthmgen.Fill(dshm, "people")
             Dim i As Integer = 0
             For Each temprowhm In dshm.Tables("people").Rows
-                '  MessageBox.Show("1 - " & (temprow.Item("Onoma").ToString) & " - " & (temprow.Item("Epitheto").ToString))
+                '    MessageBox.Show("1 - " & (temprowhm.Item("Onoma").ToString))
                 '   users_krit_baros(i)(0) = (temprow.Item("Onoma").ToString)
                 ' If i < db_count Then
                 If temprowhm.Item("Onoma").ToString <> "" Then
                     users_krit_hmgen(i, 0) = temprowhm.Item("Onoma").ToString
                     'users_krit_hmgen(i, 1) = users_krit_hmgen(i, 1) + 1
                     users_krit_hmgen(i, 1) = temprowhm.Item("ID").ToString
+                    ' MessageBox.Show("1 - " & (temprowhm.Item("Onoma").ToString))
                     i += 1
                 End If
                 ' If arr(i).Length <> 0 Then
@@ -240,23 +309,15 @@ Public Class Search
                 myadapt.Fill(ds, "people")
                 Dim i As Integer = 0
                 For Each temprow In ds.Tables("people").Rows
-                    ' MessageBox.Show("1 - " & (temprow.Item("Onoma").ToString) & " - " & (temprow.Item("Epitheto").ToString))
-                    '   users_krit_baros(i)(0) = (temprow.Item("Onoma").ToString)
-                    '  If i < 5 Then
+
                     users_krit_baros(i, 0) = temprow.Item("Onoma").ToString
-                    '  users_krit_baros(i, 1) = users_krit_baros(i, 1) + 1
+
                     users_krit_baros(i, 1) = temprow.Item("ID").ToString
-                    '   users_krit_baros(i, 2) = temprow.Item("ID").ToString
+
                     i += 1
-                    '  End If
-                    ' If arr(i).Length <> 0 Then
-                    '  users_krit_baros(i)(1) += 1
-                    'End If
 
                 Next
-                '  For i = 0 To 5
 
-                '  Next
 
             ElseIf Barosbox.SelectedIndex = 1 Then 'ean exei epilexthei to deytero item toy kritiriou baros
 
@@ -264,18 +325,11 @@ Public Class Search
                 myadapt.Fill(ds, "people")
                 Dim i As Integer = 0
                 For Each temprow In ds.Tables("people").Rows
-                    ' MessageBox.Show("2 - " & (temprow.Item("Onoma").ToString) & " - " & (temprow.Item("Epitheto").ToString))
-                    '  users_krit_baros(i)(0) = (temprow.Item("Onoma").ToString)
-                    '  If i < 5 Then
                     users_krit_baros(i, 0) = temprow.Item("Onoma").ToString
-                    '  users_krit_baros(i, 1) = users_krit_baros(i, 1) + 1
                     users_krit_baros(i, 1) = temprow.Item("ID").ToString
-                    '      users_krit_baros(i, 2) = temprow.Item("ID").ToString
+
                     i += 1
-                    '  End If
-                    ' If arr(i).Length <> 0 Then
-                    '  users_krit_baros(i)(1) += 1
-                    'End If
+
 
                 Next
             ElseIf Barosbox.SelectedIndex = 2 Then 'ean exei epilexthei to trito item toy kritiriou baros
@@ -283,18 +337,10 @@ Public Class Search
                 myadapt.Fill(ds, "people")
                 Dim i As Integer = 0
                 For Each temprow In ds.Tables("people").Rows
-                    '    MessageBox.Show("3 - " & (temprow.Item("Onoma").ToString) & " - " & (temprow.Item("Epitheto").ToString))
-                    '   users_krit_baros(i)(0) = (temprow.Item("Onoma").ToString)
-                    '  If i < 5 Then
                     users_krit_baros(i, 0) = temprow.Item("Onoma").ToString
-                    'users_krit_baros(i, 1) = users_krit_baros(i, 1) + 1
                     users_krit_baros(i, 1) = temprow.Item("ID").ToString
-                    '   users_krit_baros(i, 2) = temprow.Item("ID").ToString
+
                     i += 1
-                    '  End If
-                    ' If arr(i).Length <> 0 Then
-                    '  users_krit_baros(i)(1) += 1
-                    'End If
 
                 Next
             ElseIf Barosbox.SelectedIndex = 3 Then 'ean exei epilexthei to tetarto item toy kritiriou baros
@@ -302,19 +348,13 @@ Public Class Search
                 myadaptbaros.Fill(ds, "people")
                 Dim i As Integer = 0
                 For Each temprow In ds.Tables("people").Rows
-                    '  MessageBox.Show("4 - " & (temprow.Item("Onoma").ToString) & " - " & (temprow.Item("Epitheto").ToString))
-                    '   users_krit_baros(i)(0) = (temprow.Item("Onoma").ToString)
-                    '  If i < 5 Then
+
                     If temprow.Item("Onoma").ToString <> "" Then
                         users_krit_baros(i, 0) = temprow.Item("Onoma").ToString
-                        ' users_krit_baros(i, 1) = users_krit_baros(i, 1) + 1
-                        ' MessageBox.Show("4 - " & (temprow.Item("Onoma").ToString) & "-" & temprow.Item("Onoma").ToString & "-" & users_krit_baros(i, 1))
                         users_krit_baros(i, 1) = temprow.Item("ID").ToString
                         i += 1
                     End If
-                    ' If arr(i).Length <> 0 Then
-                    '  users_krit_baros(i)(1) += 1
-                    'End If
+
 
                 Next
             ElseIf Barosbox.SelectedIndex = 4 Then 'ean exei epilexthei to pempto item toy kritiriou baros
@@ -323,45 +363,25 @@ Public Class Search
 
                 Dim i As Integer = 0
                 For Each temprow In ds.Tables("people").Rows
-                    '  MessageBox.Show("5 - " & (temprow.Item("Onoma").ToString) & " - " & (temprow.Item("Epitheto").ToString))
-                    '   MessageBox.Show("5 - " & ((temprow.Item("Onoma").ToString)) & " - " & (temprow.Item("Epitheto").ToString) & ((temprow.Item("Ypsos")).ToString))
-                    '   users_krit_baros(i)(0) = (temprow.Item("Onoma").ToString)
-                    ' If i < 5 Then
                     users_krit_baros(i, 0) = temprow.Item("Onoma").ToString
-                    ' users_krit_baros(i, 1) = users_krit_baros(i, 1) + 1
                     users_krit_baros(i, 1) = temprow.Item("ID").ToString
-                    '     users_krit_baros(i, 2) = temprow.Item("ID").ToString
                     i += 1
-                    '   End If
-                    ' If arr(i).Length <> 0 Then
-                    '  users_krit_baros(i)(1) += 1
-                    'End If
-
                 Next
             ElseIf Barosbox.SelectedIndex = 5 Then 'ean exei epilexthei to ekto item toy kritiriou baros
                 myadapt = New OleDbDataAdapter(querybaros6, cmd.Connection.ConnectionString())
                 myadapt.Fill(ds, "people")
                 Dim i As Integer = 0
                 For Each temprow In ds.Tables("people").Rows
-                    '  MessageBox.Show("6 - " & (temprow.Item("Onoma").ToString) & " - " & (temprow.Item("Epitheto").ToString))
-                    '   users_krit_baros(i)(0) = (temprow.Item("Onoma").ToString)
-                    '  If i < 5 Then
                     users_krit_baros(i, 0) = temprow.Item("Onoma").ToString
-                    ' users_krit_baros(i, 1) = users_krit_baros(i, 1) + 1
                     users_krit_baros(i, 1) = temprow.Item("ID").ToString
-                    '      users_krit_baros(i, 2) = temprow.Item("ID").ToString
+
                     i += 1
-                    ' End If
-                    ' If arr(i).Length <> 0 Then
-                    ' users_krit_baros(i)(1) += 1
-                    'End If
 
                 Next
             End If
 
 
         End If 'telos if toy kritiriou baros
-
 
         If ypsosApo.Text <> "" And YpsosEws.Text <> "" Then 'ean to kritirio ypsos exei epilexthei(den einai adeia kai ta dyo text boxs)
             If ypsosApo.Text > YpsosEws.Text Then
@@ -401,14 +421,56 @@ Public Class Search
         End If
 
 
-        If MaleCheck.Checked() = True Then
-            MessageBox.Show("MaleCheck.Checked()")
+
+        If MaleRadioButton.Checked() = True Or FemaleRadioButton.Checked() = True Then
             ar_krit = ar_krit + 1
-        ElseIf FemaleCheck.Checked() = True Then
-            MessageBox.Show("FemaleCheck.Checked()")
-            ar_krit = ar_krit + 1
+            If MaleRadioButton.Checked() = True Then
+
+
+                kritirio_fylo_selected = True
+                myadaptfylo = New OleDbDataAdapter(query_male, cmd.Connection.ConnectionString())
+                myadaptfylo.Fill(dsfylo, "people")
+                Dim i As Integer = 0
+                For Each temprowfylo In dsfylo.Tables("people").Rows
+
+                    If temprowfylo.Item("Onoma").ToString <> "" Then
+                        users_krit_fylo(i, 0) = temprowfylo.Item("Onoma").ToString
+
+                        users_krit_fylo(i, 1) = temprowfylo.Item("ID").ToString
+
+                        i += 1
+
+
+                    End If
+
+                Next
+            ElseIf FemaleRadioButton.Checked = True Then
+
+                kritirio_fylo_selected = True
+                myadaptfylo = New OleDbDataAdapter(query_female, cmd.Connection.ConnectionString())
+                myadaptfylo.Fill(dsfylo, "people")
+                Dim i As Integer = 0
+                For Each temprowfylo In dsfylo.Tables("people").Rows
+
+
+                    If temprowfylo.Item("Onoma").ToString <> "" Then
+                        users_krit_fylo(i, 0) = temprowfylo.Item("Onoma").ToString
+
+                        users_krit_fylo(i, 1) = temprowfylo.Item("ID").ToString
+                        i += 1
+
+
+                    End If
+
+                Next
+            End If
         End If
-        If Xrmatbox.Text <> "" Then 'ean exei epilexthei to kritirio xrwmA matiwn
+
+
+
+
+        If Xrmatbox.Text <> "" Then
+
             ar_krit = ar_krit + 1
 
             kritirio_xrmat_selected = True
@@ -424,103 +486,244 @@ Public Class Search
                     i += 1
                 End If
             Next
+
+
         End If
+
+
+
+
         If Xrmalbox.Text <> "" Then
-            MessageBox.Show("Xrmalbox.Text")
+
             ar_krit = ar_krit + 1
+
+            kritirio_xrmal_selected = True
+            myadaptxr_mal = New OleDbDataAdapter(query_xrwma_maliwn, cmd.Connection.ConnectionString())
+            myadaptxr_mal.Fill(dsxr_mal, "people")
+
+            Dim i As Integer = 0
+            For Each temprowxr_mal In dsxr_mal.Tables("people").Rows
+
+                If temprowxr_mal.Item("Onoma").ToString <> "" Then
+                    users_krit_xr_mal(i, 0) = temprowxr_mal.Item("Onoma").ToString
+                    users_krit_xr_mal(i, 1) = temprowxr_mal.Item("ID").ToString
+                    i += 1
+                End If
+            Next
+
         End If
         If Hoby1TextBox.Text <> "" Then
-            MessageBox.Show("Hoby1TextBox.Text")
             ar_krit = ar_krit + 1
+            kritirio_hob1_selected = True
+            myadapthob1 = New OleDbDataAdapter(query_hob1, cmd.Connection.ConnectionString())
+            myadapthob1.Fill(dshob1, "people")
+
+            Dim i As Integer = 0
+            For Each temprowhob1 In dshob1.Tables("people").Rows
+
+                If temprowhob1.Item("Onoma").ToString <> "" Then
+                    users_krit_hob1(i, 0) = temprowhob1.Item("Onoma").ToString
+                    users_krit_hob1(i, 1) = temprowhob1.Item("ID").ToString
+                    i += 1
+                End If
+            Next
         End If
         If Hoby2TextBox.Text <> "" Then
-            MessageBox.Show("Hoby2TextBox.Text")
             ar_krit = ar_krit + 1
+            kritirio_hob2_selected = True
+
+            myadapthob2 = New OleDbDataAdapter(query_hob2, cmd.Connection.ConnectionString())
+            myadapthob2.Fill(dshob2, "people")
+
+            Dim i As Integer = 0
+            For Each temprowhob2 In dshob2.Tables("people").Rows
+
+                If temprowhob2.Item("Onoma").ToString <> "" Then
+
+                    users_krit_hob2(i, 0) = temprowhob2.Item("Onoma").ToString
+                    users_krit_hob2(i, 1) = temprowhob2.Item("ID").ToString
+                    i += 1
+                End If
+            Next
         End If
         If Hoby3TextBox.Text <> "" Then
-            MessageBox.Show("Hoby3TextBox.Text")
             ar_krit = ar_krit + 1
+            kritirio_hob3_selected = True
+            myadapthob3 = New OleDbDataAdapter(query_hob3, cmd.Connection.ConnectionString())
+            myadapthob3.Fill(dshob3, "people")
+
+            Dim i As Integer = 0
+            For Each temprowhob3 In dshob3.Tables("people").Rows
+
+                If temprowhob3.Item("Onoma").ToString <> "" Then
+                    users_krit_hob3(i, 0) = temprowhob3.Item("Onoma").ToString
+                    users_krit_hob3(i, 1) = temprowhob3.Item("ID").ToString
+                    i += 1
+                End If
+            Next
         End If
-        If ManCheck.Checked = True Then
-            MessageBox.Show("ManCheck.Checked")
+
+
+        If ManRadioButton.Checked() = True Or WomanRadioButton.Checked() = True Then
             ar_krit = ar_krit + 1
-        ElseIf WomanCheck.Checked = True Then
-            MessageBox.Show("WomanCheck.Checked")
-            ar_krit = ar_krit + 1
+            If ManRadioButton.Checked() = True Then
+
+
+                kritirio_anazita_selected = True
+                myadaptanazita = New OleDbDataAdapter(query_man, cmd.Connection.ConnectionString())
+                myadaptanazita.Fill(dsanazita, "people")
+                Dim i As Integer = 0
+                For Each temprowanazita In dsanazita.Tables("people").Rows
+
+                    If temprowanazita.Item("Onoma").ToString <> "" Then
+                        users_krit_anazita(i, 0) = temprowanazita.Item("Onoma").ToString
+
+                        users_krit_anazita(i, 1) = temprowanazita.Item("ID").ToString
+
+                        i += 1
+
+
+                    End If
+
+                Next
+            ElseIf WomanRadioButton.Checked = True Then
+
+                kritirio_anazita_selected = True
+                myadaptanazita = New OleDbDataAdapter(query_woman, cmd.Connection.ConnectionString())
+                myadaptanazita.Fill(dsanazita, "people")
+                Dim i As Integer = 0
+                For Each temprowanazita In dsanazita.Tables("people").Rows
+
+                    If temprowanazita.Item("Onoma").ToString <> "" Then
+                        users_krit_anazita(i, 0) = temprowanazita.Item("Onoma").ToString
+
+                        users_krit_anazita(i, 1) = temprowanazita.Item("ID").ToString
+
+                        i += 1
+
+
+                    End If
+
+                Next
+            End If
         End If
+
+
         If GlwssaTextBox.Text <> "" Then
-            MessageBox.Show("GlwssaTextBox.Text")
             ar_krit = ar_krit + 1
+            kritirio_glws1_selected = True
+
+            myadaptglws1 = New OleDbDataAdapter(query_glws1, cmd.Connection.ConnectionString())
+            myadaptglws1.Fill(dsglws1, "people")
+
+            Dim i As Integer = 0
+            For Each temprowglws1 In dsglws1.Tables("people").Rows
+
+                If temprowglws1.Item("Onoma").ToString <> "" Then
+
+                    users_krit_glws1(i, 0) = temprowglws1.Item("Onoma").ToString
+                    users_krit_glws1(i, 1) = temprowglws1.Item("ID").ToString
+                    i += 1
+                End If
+            Next
         End If
+
         If Glwssa2TextBox.Text <> "" Then
-            MessageBox.Show("Glwssa2TextBox.Text")
             ar_krit = ar_krit + 1
+            kritirio_glws2_selected = True
+
+            myadaptglws2 = New OleDbDataAdapter(query_glws2, cmd.Connection.ConnectionString())
+            myadaptglws2.Fill(dsglws2, "people")
+
+            Dim i As Integer = 0
+            For Each temprowglws2 In dsglws2.Tables("people").Rows
+
+                If temprowglws2.Item("Onoma").ToString <> "" Then
+
+                    users_krit_glws2(i, 0) = temprowglws2.Item("Onoma").ToString
+                    users_krit_glws2(i, 1) = temprowglws2.Item("ID").ToString
+                    i += 1
+                End If
+            Next
         End If
-        If TatooCheckYes.Checked <> False Then
-            MessageBox.Show("TatooCheck.Checked")
+        If YesRadioButton.Checked <> False Then
+
             ar_krit = ar_krit + 1
             kritirio_tat_selected = True
             myadapttat = New OleDbDataAdapter(querytatyes, cmd.Connection.ConnectionString())
             myadapttat.Fill(dstat, "people")
             Dim i As Integer = 0
             For Each temprowtat In dstat.Tables("people").Rows
-                '  MessageBox.Show("5 - " & (temprow.Item("Onoma").ToString) & " - " & (temprow.Item("Epitheto").ToString))
-                '   MessageBox.Show("5 - " & ((temprow.Item("Onoma").ToString)) & " - " & (temprow.Item("Epitheto").ToString) & ((temprow.Item("Ypsos")).ToString))
-                '   users_krit_baros(i)(0) = (temprow.Item("Onoma").ToString)
-                If i < 5 Then
-                    If temprowtat.Item("Onoma").ToString <> "" Then
-                        users_krit_tat(i, 0) = temprowtat.Item("Onoma").ToString
-                        ' users_krit_tat(i, 1) = users_krit_tat(i, 1) + 1
-                        users_krit_tat(i, 1) = temprowtat.Item("ID").ToString
-                        i += 1
-                    End If
-                    ' If arr(i).Length <> 0 Then
-                    '  users_krit_baros(i)(1) += 1
+
+
+                If temprowtat.Item("Onoma").ToString <> "" Then
+                    users_krit_tat(i, 0) = temprowtat.Item("Onoma").ToString
+
+                    users_krit_tat(i, 1) = temprowtat.Item("ID").ToString
+                    i += 1
+
+
                 End If
 
             Next
-        ElseIf TatooCheckNo.Checked <> False Then
-            'MessageBox.Show("TatooCheck.Checked")
+        ElseIf NoRadioButton.Checked <> False Then
+
             ar_krit = ar_krit + 1
             kritirio_tat_selected = True
             myadapttat = New OleDbDataAdapter(querytatno, cmd.Connection.ConnectionString())
             myadapttat.Fill(dstat, "people")
             Dim i_tat As Integer = 0
             For Each temprowtat In dstat.Tables("people").Rows
-                '  MessageBox.Show("5 - " & (temprow.Item("Onoma").ToString) & " - " & (temprow.Item("Epitheto").ToString))
-                '   MessageBox.Show("5 - " & ((temprow.Item("Onoma").ToString)) & " - " & (temprow.Item("Epitheto").ToString) & ((temprow.Item("Ypsos")).ToString))
-                '   users_krit_baros(i)(0) = (temprow.Item("Onoma").ToString)
-                If i_tat < 5 Then
-                    If temprowtat.Item("Onoma").ToString <> "" Then
-                        users_krit_tat(i_tat, 0) = temprowtat.Item("Onoma").ToString
-                        '  users_krit_tat(i_tat, 1) = users_krit_tat(i_tat, 1) + 1
-                        users_krit_tat(i_tat, 1) = temprowtat.Item("ID").ToString
-                        i_tat += 1
-                    End If
-                    ' If arr(i).Length <> 0 Then
-                    '  users_krit_baros(i)(1) += 1
+
+
+                If temprowtat.Item("Onoma").ToString <> "" Then
+                    users_krit_tat(i_tat, 0) = temprowtat.Item("Onoma").ToString
+                    users_krit_tat(i_tat, 1) = temprowtat.Item("ID").ToString
+                    i_tat += 1
                 End If
+
 
             Next
         End If
         If ErgasiaTextBox.Text <> "" Then
-            MessageBox.Show("ErgasiaTextBox.Text")
             ar_krit = ar_krit + 1
+            kritirio_ergasia_selected = True
+
+            myadaptergasia = New OleDbDataAdapter(query_ergasia, cmd.Connection.ConnectionString())
+            myadaptergasia.Fill(dsergasia, "people")
+
+            Dim i As Integer = 0
+            For Each temprowergasia In dsergasia.Tables("people").Rows
+
+                If temprowergasia.Item("Onoma").ToString <> "" Then
+
+                    users_krit_ergasia(i, 0) = temprowergasia.Item("Onoma").ToString
+                    users_krit_ergasia(i, 1) = temprowergasia.Item("ID").ToString
+                    i += 1
+                End If
+            Next
         End If
-        If PerioxhTextBox.Text <> "" Then
-            MessageBox.Show("PerioxhTextBox.Text")
+        If PerioxhTextBox.Text <> "" Then 'ean exei epilexthei to kritirio perioxh
             ar_krit = ar_krit + 1
+            kritirio_perioxh_selected = True
+
+            myadaptperioxh = New OleDbDataAdapter(query_perioxh, cmd.Connection.ConnectionString())
+            myadaptperioxh.Fill(dsperioxh, "people")
+
+            Dim i As Integer = 0
+            For Each temprowperioxh In dsperioxh.Tables("people").Rows
+
+                If temprowperioxh.Item("Onoma").ToString <> "" Then
+
+                    users_krit_perioxh(i, 0) = temprowperioxh.Item("Onoma").ToString
+                    users_krit_perioxh(i, 1) = temprowperioxh.Item("ID").ToString
+                    i += 1
+                End If
+            Next
         End If
 
         Results.ShowDialog()
     End Sub
 
 
-    Private Sub GroupBox1_Enter(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles GroupBox1.Enter
-
-    End Sub
-
-    Private Sub ManCheck_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ManCheck.CheckedChanged
-
-    End Sub
 End Class

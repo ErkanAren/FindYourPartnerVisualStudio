@@ -11,7 +11,7 @@
 
     End Sub
 
-    
+
     Private Sub ProfileForm_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         EmShow.Text = Login.username1
         OnomaShow.Text = Login.onoma1

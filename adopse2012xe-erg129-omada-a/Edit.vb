@@ -35,7 +35,7 @@
 
     End Sub
 
-    Private Sub EditBt_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles EditBt.Click
+    Private Sub EditBt_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         Dim peopleRow As Data.DataRow
         peopleRow = PeopleDataSet.People.FindByID(IDTextBox.Text)
 
