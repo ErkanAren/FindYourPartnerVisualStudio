@@ -97,7 +97,6 @@ Partial Class Login
         Me.PasswordText.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.PasswordText.Size = New System.Drawing.Size(141, 20)
         Me.PasswordText.TabIndex = 8
-        Me.PasswordText.Text = "16"
         '
         'UserNameText
         '
@@ -107,7 +106,6 @@ Partial Class Login
         Me.UserNameText.Name = "UserNameText"
         Me.UserNameText.Size = New System.Drawing.Size(141, 22)
         Me.UserNameText.TabIndex = 7
-        Me.UserNameText.Text = "lima@gmail.com"
         '
         'Login
         '

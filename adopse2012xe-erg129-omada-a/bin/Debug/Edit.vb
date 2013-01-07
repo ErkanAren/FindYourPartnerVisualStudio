@@ -1,5 +1,5 @@
 ﻿Public Class Edit
-
+    Public Shared editclicked As Boolean = False
     Private Sub PeopleBindingNavigatorSaveItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         Me.Validate()
         Me.PeopleBindingSource.EndEdit()
@@ -35,7 +35,7 @@
 
     End Sub
 
-    Private Sub EditBt_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
+    Private Sub EditBt_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles EditBt.Click
         Dim peopleRow As Data.DataRow
         peopleRow = PeopleDataSet.People.FindByID(IDTextBox.Text)
 
@@ -59,5 +59,10 @@
         peopleRow(19) = PerioxhTextBox.Text
 
         Me.TableAdapterManager.UpdateAll(Me.PeopleDataSet)
+
+        editclicked = True
+        'Me.Close()
+        Me.Hide()
+        ProfileForm.Show()
     End Sub
 End Class

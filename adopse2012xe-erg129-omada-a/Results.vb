@@ -1,4 +1,10 @@
 ﻿Public Class Results
+    Dim max As Integer(,)
+    Dim analytic1click As Boolean = False
+    Dim analytic2click As Boolean = False
+    Dim analytic3click As Boolean = False
+    Dim analytic4click As Boolean = False
+    Dim analytic5click As Boolean = False
 
     Private Sub Results_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         ' Dim name1 As String = Search.users_krit_baros(1, 0)
@@ -6,7 +12,7 @@
         Dim pr_num As Double
         Dim new_table As String(,)
         ReDim new_table(Search.db_count, 4)
-        Dim max As Integer(,)
+
         ReDim max(5, 2)
 
 
@@ -124,7 +130,7 @@
 
                         If Search.all_users(i, 1) = Search.users_krit_xr_mal(j, 1) Then
                             Search.all_users(i, 2) += 1
-
+                            axrmal.ForeColor = Color.Green
                         End If
                     End If
                 Next
@@ -375,6 +381,7 @@
         '   MessageBox.Show("Ar_krit= " & Search.ar_krit & ", Petiximena krit= " & Search.all_users(2, 2) & ",Onoma= " & Search.all_users(2, 0))
 
         If Search.all_users(max(0, 0), 2) <> 0 Then
+            analytic1.Visible = True
             onoma1.Visible = True
             pr_num_l1.Visible = True
             ProgressBar1.Visible = True
@@ -388,6 +395,7 @@
         End If
 
         If Search.all_users(max(1, 0), 2) <> 0 Then
+            analytic2.Visible = True
             onoma2.Visible = True
             pr_num_l2.Visible = True
             ProgressBar2.Visible = True
@@ -399,6 +407,7 @@
         End If
 
         If Search.all_users(max(2, 0), 2) <> 0 Then
+            analytic3.Visible = True
             onoma3.Visible = True
             pr_num_l3.Visible = True
             ProgressBar3.Visible = True
@@ -411,6 +420,7 @@
 
 
         If Search.all_users(max(3, 0), 2) <> 0 Then
+            analytic4.Visible = True
             onoma4.Visible = True
             pr_num_l4.Visible = True
             ProgressBar4.Visible = True
@@ -422,6 +432,7 @@
         End If
 
         If Search.all_users(max(4, 0), 2) <> 0 Then
+            analytic5.Visible = True
             onoma5.Visible = True
             pr_num_l5.Visible = True
             ProgressBar5.Visible = True
@@ -483,4 +494,203 @@
     End Sub
 
 
+
+
+
+    Private Sub analytic1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles analytic1.Click
+
+
+        If analytic1click = False Then
+            analytic1click = True
+            Panel1.Visible = True
+            handpic1.Visible = True
+            handpic2.Visible = False
+            handpic3.Visible = False
+            handpic4.Visible = False
+            handpic5.Visible = False
+            analytic2click = False
+            analytic3click = False
+            analytic4click = False
+            analytic5click = False
+        Else
+            analytic1click = False
+            Panel1.Visible = False
+            handpic1.Visible = False
+        End If
+
+        aonoma.Text = Search.all_users(max(0, 0), 0)
+        aepitheto.Text = Search.all_users(max(0, 0), 3)
+        ahmgen.Text = Search.all_users(max(0, 0), 4)
+        abaros.Text = Search.all_users(max(0, 0), 5)
+        aypsos.Text = Search.all_users(max(0, 0), 6)
+        axrmat.Text = Search.all_users(max(0, 0), 7)
+        axrmal.Text = Search.all_users(max(0, 0), 8)
+        ahob1.Text = Search.all_users(max(0, 0), 9)
+        ahob2.Text = Search.all_users(max(0, 0), 10)
+        ahob3.Text = Search.all_users(max(0, 0), 11)
+        aanazita.Text = Search.all_users(max(0, 0), 12)
+        aemail.Text = Search.all_users(max(0, 0), 13)
+        aglwssa.Text = Search.all_users(max(0, 0), 14)
+        aglwssa2.Text = Search.all_users(max(0, 0), 15)
+        atatoo.Text = Search.all_users(max(0, 0), 16)
+        aergasia.Text = Search.all_users(max(0, 0), 17)
+        aperioxh.Text = Search.all_users(max(0, 0), 18)
+        afylo.Text = Search.all_users(max(0, 0), 19)
+    End Sub
+
+    Private Sub analytic2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles analytic2.Click
+        If analytic2click = False Then
+            analytic2click = True
+            Panel1.Visible = True
+            handpic2.Visible = True
+            handpic1.Visible = False
+            handpic3.Visible = False
+            handpic4.Visible = False
+            handpic5.Visible = False
+            analytic1click = False
+            analytic3click = False
+            analytic4click = False
+            analytic5click = False
+        Else
+            analytic2click = False
+            Panel1.Visible = False
+            handpic2.Visible = False
+        End If
+
+        aonoma.Text = Search.all_users(max(1, 0), 0)
+        aepitheto.Text = Search.all_users(max(1, 0), 3)
+        ahmgen.Text = Search.all_users(max(1, 0), 4)
+        abaros.Text = Search.all_users(max(1, 0), 5)
+        aypsos.Text = Search.all_users(max(1, 0), 6)
+        axrmat.Text = Search.all_users(max(1, 0), 7)
+        axrmal.Text = Search.all_users(max(1, 0), 8)
+        ahob1.Text = Search.all_users(max(1, 0), 9)
+        ahob2.Text = Search.all_users(max(1, 0), 10)
+        ahob3.Text = Search.all_users(max(1, 0), 11)
+        aanazita.Text = Search.all_users(max(1, 0), 12)
+        aemail.Text = Search.all_users(max(1, 0), 13)
+        aglwssa.Text = Search.all_users(max(1, 0), 14)
+        aglwssa2.Text = Search.all_users(max(1, 0), 15)
+        atatoo.Text = Search.all_users(max(1, 0), 16)
+        aergasia.Text = Search.all_users(max(1, 0), 17)
+        aperioxh.Text = Search.all_users(max(1, 0), 18)
+        afylo.Text = Search.all_users(max(1, 0), 19)
+    End Sub
+
+    Private Sub analytic3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles analytic3.Click
+        If analytic3click = False Then
+            analytic3click = True
+            Panel1.Visible = True
+            handpic3.Visible = True
+            handpic1.Visible = False
+            handpic2.Visible = False
+            handpic4.Visible = False
+            handpic5.Visible = False
+            analytic1click = False
+            analytic2click = False
+            analytic4click = False
+            analytic5click = False
+        Else
+            analytic3click = False
+            Panel1.Visible = False
+            handpic3.Visible = False
+        End If
+
+        aonoma.Text = Search.all_users(max(2, 0), 0)
+        aepitheto.Text = Search.all_users(max(2, 0), 3)
+        ahmgen.Text = Search.all_users(max(2, 0), 4)
+        abaros.Text = Search.all_users(max(2, 0), 5)
+        aypsos.Text = Search.all_users(max(2, 0), 6)
+        axrmat.Text = Search.all_users(max(2, 0), 7)
+        axrmal.Text = Search.all_users(max(2, 0), 8)
+        ahob1.Text = Search.all_users(max(2, 0), 9)
+        ahob2.Text = Search.all_users(max(2, 0), 10)
+        ahob3.Text = Search.all_users(max(2, 0), 11)
+        aanazita.Text = Search.all_users(max(2, 0), 12)
+        aemail.Text = Search.all_users(max(2, 0), 13)
+        aglwssa.Text = Search.all_users(max(2, 0), 14)
+        aglwssa2.Text = Search.all_users(max(2, 0), 15)
+        atatoo.Text = Search.all_users(max(2, 0), 16)
+        aergasia.Text = Search.all_users(max(2, 0), 17)
+        aperioxh.Text = Search.all_users(max(2, 0), 18)
+        afylo.Text = Search.all_users(max(2, 0), 19)
+    End Sub
+
+    Private Sub analytic4_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles analytic4.Click
+        If analytic4click = False Then
+            analytic4click = True
+            Panel1.Visible = True
+            handpic4.Visible = True
+            handpic1.Visible = False
+            handpic2.Visible = False
+            handpic3.Visible = False
+            handpic5.Visible = False
+            analytic1click = False
+            analytic2click = False
+            analytic3click = False
+            analytic5click = False
+        Else
+            analytic4click = False
+            Panel1.Visible = False
+            handpic4.Visible = False
+        End If
+
+        aonoma.Text = Search.all_users(max(3, 0), 0)
+        aepitheto.Text = Search.all_users(max(3, 0), 3)
+        ahmgen.Text = Search.all_users(max(3, 0), 4)
+        abaros.Text = Search.all_users(max(3, 0), 5)
+        aypsos.Text = Search.all_users(max(3, 0), 6)
+        axrmat.Text = Search.all_users(max(3, 0), 7)
+        axrmal.Text = Search.all_users(max(3, 0), 8)
+        ahob1.Text = Search.all_users(max(3, 0), 9)
+        ahob2.Text = Search.all_users(max(3, 0), 10)
+        ahob3.Text = Search.all_users(max(3, 0), 11)
+        aanazita.Text = Search.all_users(max(3, 0), 12)
+        aemail.Text = Search.all_users(max(3, 0), 13)
+        aglwssa.Text = Search.all_users(max(3, 0), 14)
+        aglwssa2.Text = Search.all_users(max(3, 0), 15)
+        atatoo.Text = Search.all_users(max(3, 0), 16)
+        aergasia.Text = Search.all_users(max(3, 0), 17)
+        aperioxh.Text = Search.all_users(max(3, 0), 18)
+        afylo.Text = Search.all_users(max(3, 0), 19)
+    End Sub
+
+    Private Sub analytic5_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles analytic5.Click
+        If analytic5click = False Then
+            analytic5click = True
+            Panel1.Visible = True
+            handpic5.Visible = True
+            handpic1.Visible = False
+            handpic2.Visible = False
+            handpic3.Visible = False
+            handpic4.Visible = False
+            analytic1click = False
+            analytic2click = False
+            analytic3click = False
+            analytic4click = False
+        Else
+            analytic5click = False
+            Panel1.Visible = False
+            handpic5.Visible = False
+        End If
+
+        aonoma.Text = Search.all_users(max(4, 0), 0)
+        aepitheto.Text = Search.all_users(max(4, 0), 3)
+        ahmgen.Text = Search.all_users(max(4, 0), 4)
+        abaros.Text = Search.all_users(max(4, 0), 5)
+        aypsos.Text = Search.all_users(max(4, 0), 6)
+        axrmat.Text = Search.all_users(max(4, 0), 7)
+        axrmal.Text = Search.all_users(max(4, 0), 8)
+        ahob1.Text = Search.all_users(max(4, 0), 9)
+        ahob2.Text = Search.all_users(max(4, 0), 10)
+        ahob3.Text = Search.all_users(max(4, 0), 11)
+        aanazita.Text = Search.all_users(max(4, 0), 12)
+        aemail.Text = Search.all_users(max(4, 0), 13)
+        aglwssa.Text = Search.all_users(max(4, 0), 14)
+        aglwssa2.Text = Search.all_users(max(4, 0), 15)
+        atatoo.Text = Search.all_users(max(4, 0), 16)
+        aergasia.Text = Search.all_users(max(4, 0), 17)
+        aperioxh.Text = Search.all_users(max(4, 0), 18)
+        afylo.Text = Search.all_users(max(4, 0), 19)
+    End Sub
 End Class

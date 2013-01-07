@@ -110,6 +110,7 @@ Public Class Login
     Private Sub LoginButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles LoginButton.Click
         If Login() = True Then
             ProfileForm.Show()
+            Me.Hide()
         Else
             MessageBox.Show(errorstr)
         End If

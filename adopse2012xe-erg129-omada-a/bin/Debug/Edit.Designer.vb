@@ -23,7 +23,6 @@ Partial Class Edit
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Edit))
         Dim Hoby1Label As System.Windows.Forms.Label
         Dim Hoby2Label As System.Windows.Forms.Label
         Dim Hoby3Label As System.Windows.Forms.Label
@@ -33,7 +32,6 @@ Partial Class Edit
         Dim TatooLabel As System.Windows.Forms.Label
         Dim ErgasiaLabel As System.Windows.Forms.Label
         Dim PerioxhLabel As System.Windows.Forms.Label
-        Dim Label1 As System.Windows.Forms.Label
         Dim Label2 As System.Windows.Forms.Label
         Dim Label3 As System.Windows.Forms.Label
         Dim Label4 As System.Windows.Forms.Label
@@ -43,6 +41,7 @@ Partial Class Edit
         Dim Label8 As System.Windows.Forms.Label
         Dim Label9 As System.Windows.Forms.Label
         Dim Label10 As System.Windows.Forms.Label
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Edit))
         Me.PeopleDataSet = New WindowsApplication1.peopleDataSet
         Me.PeopleBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.PeopleTableAdapter = New WindowsApplication1.peopleDataSetTableAdapters.PeopleTableAdapter
@@ -77,7 +76,6 @@ Partial Class Edit
         TatooLabel = New System.Windows.Forms.Label
         ErgasiaLabel = New System.Windows.Forms.Label
         PerioxhLabel = New System.Windows.Forms.Label
-        Label1 = New System.Windows.Forms.Label
         Label2 = New System.Windows.Forms.Label
         Label3 = New System.Windows.Forms.Label
         Label4 = New System.Windows.Forms.Label
@@ -91,36 +89,6 @@ Partial Class Edit
         CType(Me.PeopleBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'PeopleDataSet
-        '
-        Me.PeopleDataSet.DataSetName = "peopleDataSet"
-        Me.PeopleDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'PeopleBindingSource
-        '
-        Me.PeopleBindingSource.DataMember = "People"
-        Me.PeopleBindingSource.DataSource = Me.PeopleDataSet
-        '
-        'PeopleTableAdapter
-        '
-        Me.PeopleTableAdapter.ClearBeforeFill = True
-        '
-        'TableAdapterManager
-        '
-        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
-        Me.TableAdapterManager.PeopleTableAdapter = Me.PeopleTableAdapter
-        Me.TableAdapterManager.UpdateOrder = WindowsApplication1.peopleDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(5, 15)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(69, 66)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
-        Me.PictureBox1.TabIndex = 99
-        Me.PictureBox1.TabStop = False
         '
         'Hoby1Label
         '
@@ -203,15 +171,6 @@ Partial Class Edit
         PerioxhLabel.TabIndex = 98
         PerioxhLabel.Text = "Περιοχή :"
         '
-        'Label1
-        '
-        Label1.AutoSize = True
-        Label1.Location = New System.Drawing.Point(152, 37)
-        Label1.Name = "Label1"
-        Label1.Size = New System.Drawing.Size(24, 13)
-        Label1.TabIndex = 80
-        Label1.Text = "ID :"
-        '
         'Label2
         '
         Label2.AutoSize = True
@@ -293,6 +252,36 @@ Partial Class Edit
         Label10.TabIndex = 89
         Label10.Text = "E-mail :"
         '
+        'PeopleDataSet
+        '
+        Me.PeopleDataSet.DataSetName = "peopleDataSet"
+        Me.PeopleDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'PeopleBindingSource
+        '
+        Me.PeopleBindingSource.DataMember = "People"
+        Me.PeopleBindingSource.DataSource = Me.PeopleDataSet
+        '
+        'PeopleTableAdapter
+        '
+        Me.PeopleTableAdapter.ClearBeforeFill = True
+        '
+        'TableAdapterManager
+        '
+        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager.PeopleTableAdapter = Me.PeopleTableAdapter
+        Me.TableAdapterManager.UpdateOrder = WindowsApplication1.peopleDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(5, 15)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(69, 66)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
+        Me.PictureBox1.TabIndex = 99
+        Me.PictureBox1.TabStop = False
+        '
         'EditBt
         '
         Me.EditBt.BackgroundImage = CType(resources.GetObject("EditBt.BackgroundImage"), System.Drawing.Image)
@@ -313,6 +302,7 @@ Partial Class Edit
         Me.IDTextBox.Name = "IDTextBox"
         Me.IDTextBox.Size = New System.Drawing.Size(100, 20)
         Me.IDTextBox.TabIndex = 60
+        Me.IDTextBox.Visible = False
         '
         'OnomaTextBox
         '
@@ -492,7 +482,6 @@ Partial Class Edit
         Me.Controls.Add(TatooLabel)
         Me.Controls.Add(ErgasiaLabel)
         Me.Controls.Add(PerioxhLabel)
-        Me.Controls.Add(Label1)
         Me.Controls.Add(Label2)
         Me.Controls.Add(Label3)
         Me.Controls.Add(Label4)

@@ -23,7 +23,6 @@ Partial Class Search
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Search))
         Dim Label9 As System.Windows.Forms.Label
         Dim Label10 As System.Windows.Forms.Label
         Dim Label11 As System.Windows.Forms.Label
@@ -40,6 +39,7 @@ Partial Class Search
         Dim Label4 As System.Windows.Forms.Label
         Dim Label5 As System.Windows.Forms.Label
         Dim Label6 As System.Windows.Forms.Label
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Search))
         Me.PeopleDataSet = New WindowsApplication1.peopleDataSet
         Me.PeopleBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.PeopleTableAdapter = New WindowsApplication1.peopleDataSetTableAdapters.PeopleTableAdapter
@@ -72,6 +72,7 @@ Partial Class Search
         Me.ErgasiaTextBox = New System.Windows.Forms.TextBox
         Me.PerioxhTextBox = New System.Windows.Forms.TextBox
         Me.SrBt = New System.Windows.Forms.Button
+        Me.Button1 = New System.Windows.Forms.Button
         Label9 = New System.Windows.Forms.Label
         Label10 = New System.Windows.Forms.Label
         Label11 = New System.Windows.Forms.Label
@@ -95,132 +96,6 @@ Partial Class Search
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
-        '
-        'PeopleDataSet
-        '
-        Me.PeopleDataSet.DataSetName = "peopleDataSet"
-        Me.PeopleDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'PeopleBindingSource
-        '
-        Me.PeopleBindingSource.DataMember = "People"
-        Me.PeopleBindingSource.DataSource = Me.PeopleDataSet
-        '
-        'PeopleTableAdapter
-        '
-        Me.PeopleTableAdapter.ClearBeforeFill = True
-        '
-        'TableAdapterManager
-        '
-        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
-        Me.TableAdapterManager.PeopleTableAdapter = Me.PeopleTableAdapter
-        Me.TableAdapterManager.UpdateOrder = WindowsApplication1.peopleDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(22, 27)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(69, 66)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
-        Me.PictureBox1.TabIndex = 151
-        Me.PictureBox1.TabStop = False
-        '
-        'GroupBox3
-        '
-        Me.GroupBox3.Controls.Add(Me.NoRadioButton)
-        Me.GroupBox3.Controls.Add(Me.YesRadioButton)
-        Me.GroupBox3.Location = New System.Drawing.Point(209, 267)
-        Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(139, 35)
-        Me.GroupBox3.TabIndex = 150
-        Me.GroupBox3.TabStop = False
-        '
-        'NoRadioButton
-        '
-        Me.NoRadioButton.AutoSize = True
-        Me.NoRadioButton.Location = New System.Drawing.Point(72, 11)
-        Me.NoRadioButton.Name = "NoRadioButton"
-        Me.NoRadioButton.Size = New System.Drawing.Size(41, 17)
-        Me.NoRadioButton.TabIndex = 1
-        Me.NoRadioButton.TabStop = True
-        Me.NoRadioButton.Text = "NO"
-        Me.NoRadioButton.UseVisualStyleBackColor = True
-        '
-        'YesRadioButton
-        '
-        Me.YesRadioButton.AutoSize = True
-        Me.YesRadioButton.Location = New System.Drawing.Point(12, 11)
-        Me.YesRadioButton.Name = "YesRadioButton"
-        Me.YesRadioButton.Size = New System.Drawing.Size(46, 17)
-        Me.YesRadioButton.TabIndex = 0
-        Me.YesRadioButton.TabStop = True
-        Me.YesRadioButton.Text = "YES"
-        Me.YesRadioButton.UseVisualStyleBackColor = True
-        '
-        'GroupBox2
-        '
-        Me.GroupBox2.Controls.Add(Me.WomanRadioButton)
-        Me.GroupBox2.Controls.Add(Me.ManRadioButton)
-        Me.GroupBox2.Location = New System.Drawing.Point(448, 136)
-        Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(145, 35)
-        Me.GroupBox2.TabIndex = 149
-        Me.GroupBox2.TabStop = False
-        '
-        'WomanRadioButton
-        '
-        Me.WomanRadioButton.AutoSize = True
-        Me.WomanRadioButton.Location = New System.Drawing.Point(71, 12)
-        Me.WomanRadioButton.Name = "WomanRadioButton"
-        Me.WomanRadioButton.Size = New System.Drawing.Size(68, 17)
-        Me.WomanRadioButton.TabIndex = 1
-        Me.WomanRadioButton.TabStop = True
-        Me.WomanRadioButton.Text = "WOMAN"
-        Me.WomanRadioButton.UseVisualStyleBackColor = True
-        '
-        'ManRadioButton
-        '
-        Me.ManRadioButton.AutoSize = True
-        Me.ManRadioButton.Location = New System.Drawing.Point(16, 12)
-        Me.ManRadioButton.Name = "ManRadioButton"
-        Me.ManRadioButton.Size = New System.Drawing.Size(49, 17)
-        Me.ManRadioButton.TabIndex = 0
-        Me.ManRadioButton.TabStop = True
-        Me.ManRadioButton.Text = "MAN"
-        Me.ManRadioButton.UseVisualStyleBackColor = True
-        '
-        'GroupBox1
-        '
-        Me.GroupBox1.Controls.Add(Me.FemaleRadioButton)
-        Me.GroupBox1.Controls.Add(Me.MaleRadioButton)
-        Me.GroupBox1.Location = New System.Drawing.Point(208, 167)
-        Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(145, 35)
-        Me.GroupBox1.TabIndex = 148
-        Me.GroupBox1.TabStop = False
-        '
-        'FemaleRadioButton
-        '
-        Me.FemaleRadioButton.AutoSize = True
-        Me.FemaleRadioButton.Location = New System.Drawing.Point(73, 12)
-        Me.FemaleRadioButton.Name = "FemaleRadioButton"
-        Me.FemaleRadioButton.Size = New System.Drawing.Size(67, 17)
-        Me.FemaleRadioButton.TabIndex = 3
-        Me.FemaleRadioButton.TabStop = True
-        Me.FemaleRadioButton.Text = "FEMALE"
-        Me.FemaleRadioButton.UseVisualStyleBackColor = True
-        '
-        'MaleRadioButton
-        '
-        Me.MaleRadioButton.AutoSize = True
-        Me.MaleRadioButton.Location = New System.Drawing.Point(13, 11)
-        Me.MaleRadioButton.Name = "MaleRadioButton"
-        Me.MaleRadioButton.Size = New System.Drawing.Size(54, 17)
-        Me.MaleRadioButton.TabIndex = 2
-        Me.MaleRadioButton.TabStop = True
-        Me.MaleRadioButton.Text = "MALE"
-        Me.MaleRadioButton.UseVisualStyleBackColor = True
         '
         'Label9
         '
@@ -366,6 +241,132 @@ Partial Class Search
         Label6.TabIndex = 135
         Label6.Text = "Ύψος :"
         '
+        'PeopleDataSet
+        '
+        Me.PeopleDataSet.DataSetName = "peopleDataSet"
+        Me.PeopleDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'PeopleBindingSource
+        '
+        Me.PeopleBindingSource.DataMember = "People"
+        Me.PeopleBindingSource.DataSource = Me.PeopleDataSet
+        '
+        'PeopleTableAdapter
+        '
+        Me.PeopleTableAdapter.ClearBeforeFill = True
+        '
+        'TableAdapterManager
+        '
+        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager.PeopleTableAdapter = Me.PeopleTableAdapter
+        Me.TableAdapterManager.UpdateOrder = WindowsApplication1.peopleDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(22, 27)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(69, 66)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
+        Me.PictureBox1.TabIndex = 151
+        Me.PictureBox1.TabStop = False
+        '
+        'GroupBox3
+        '
+        Me.GroupBox3.Controls.Add(Me.NoRadioButton)
+        Me.GroupBox3.Controls.Add(Me.YesRadioButton)
+        Me.GroupBox3.Location = New System.Drawing.Point(209, 267)
+        Me.GroupBox3.Name = "GroupBox3"
+        Me.GroupBox3.Size = New System.Drawing.Size(139, 35)
+        Me.GroupBox3.TabIndex = 150
+        Me.GroupBox3.TabStop = False
+        '
+        'NoRadioButton
+        '
+        Me.NoRadioButton.AutoSize = True
+        Me.NoRadioButton.Location = New System.Drawing.Point(72, 11)
+        Me.NoRadioButton.Name = "NoRadioButton"
+        Me.NoRadioButton.Size = New System.Drawing.Size(41, 17)
+        Me.NoRadioButton.TabIndex = 1
+        Me.NoRadioButton.TabStop = True
+        Me.NoRadioButton.Text = "NO"
+        Me.NoRadioButton.UseVisualStyleBackColor = True
+        '
+        'YesRadioButton
+        '
+        Me.YesRadioButton.AutoSize = True
+        Me.YesRadioButton.Location = New System.Drawing.Point(12, 11)
+        Me.YesRadioButton.Name = "YesRadioButton"
+        Me.YesRadioButton.Size = New System.Drawing.Size(46, 17)
+        Me.YesRadioButton.TabIndex = 0
+        Me.YesRadioButton.TabStop = True
+        Me.YesRadioButton.Text = "YES"
+        Me.YesRadioButton.UseVisualStyleBackColor = True
+        '
+        'GroupBox2
+        '
+        Me.GroupBox2.Controls.Add(Me.WomanRadioButton)
+        Me.GroupBox2.Controls.Add(Me.ManRadioButton)
+        Me.GroupBox2.Location = New System.Drawing.Point(448, 136)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.Size = New System.Drawing.Size(145, 35)
+        Me.GroupBox2.TabIndex = 149
+        Me.GroupBox2.TabStop = False
+        '
+        'WomanRadioButton
+        '
+        Me.WomanRadioButton.AutoSize = True
+        Me.WomanRadioButton.Location = New System.Drawing.Point(71, 12)
+        Me.WomanRadioButton.Name = "WomanRadioButton"
+        Me.WomanRadioButton.Size = New System.Drawing.Size(68, 17)
+        Me.WomanRadioButton.TabIndex = 1
+        Me.WomanRadioButton.TabStop = True
+        Me.WomanRadioButton.Text = "WOMAN"
+        Me.WomanRadioButton.UseVisualStyleBackColor = True
+        '
+        'ManRadioButton
+        '
+        Me.ManRadioButton.AutoSize = True
+        Me.ManRadioButton.Location = New System.Drawing.Point(16, 12)
+        Me.ManRadioButton.Name = "ManRadioButton"
+        Me.ManRadioButton.Size = New System.Drawing.Size(49, 17)
+        Me.ManRadioButton.TabIndex = 0
+        Me.ManRadioButton.TabStop = True
+        Me.ManRadioButton.Text = "MAN"
+        Me.ManRadioButton.UseVisualStyleBackColor = True
+        '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.FemaleRadioButton)
+        Me.GroupBox1.Controls.Add(Me.MaleRadioButton)
+        Me.GroupBox1.Location = New System.Drawing.Point(208, 167)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(145, 35)
+        Me.GroupBox1.TabIndex = 148
+        Me.GroupBox1.TabStop = False
+        '
+        'FemaleRadioButton
+        '
+        Me.FemaleRadioButton.AutoSize = True
+        Me.FemaleRadioButton.Location = New System.Drawing.Point(73, 12)
+        Me.FemaleRadioButton.Name = "FemaleRadioButton"
+        Me.FemaleRadioButton.Size = New System.Drawing.Size(67, 17)
+        Me.FemaleRadioButton.TabIndex = 3
+        Me.FemaleRadioButton.TabStop = True
+        Me.FemaleRadioButton.Text = "FEMALE"
+        Me.FemaleRadioButton.UseVisualStyleBackColor = True
+        '
+        'MaleRadioButton
+        '
+        Me.MaleRadioButton.AutoSize = True
+        Me.MaleRadioButton.Location = New System.Drawing.Point(13, 11)
+        Me.MaleRadioButton.Name = "MaleRadioButton"
+        Me.MaleRadioButton.Size = New System.Drawing.Size(54, 17)
+        Me.MaleRadioButton.TabIndex = 2
+        Me.MaleRadioButton.TabStop = True
+        Me.MaleRadioButton.Text = "MALE"
+        Me.MaleRadioButton.UseVisualStyleBackColor = True
+        '
         'YpsosEws
         '
         Me.YpsosEws.BackColor = System.Drawing.SystemColors.Info
@@ -407,7 +408,6 @@ Partial Class Search
         Me.HmGenEws.Name = "HmGenEws"
         Me.HmGenEws.Size = New System.Drawing.Size(37, 20)
         Me.HmGenEws.TabIndex = 127
-        Me.HmGenEws.Text = "1990"
         '
         'HmGenApo
         '
@@ -416,7 +416,6 @@ Partial Class Search
         Me.HmGenApo.Name = "HmGenApo"
         Me.HmGenApo.Size = New System.Drawing.Size(38, 20)
         Me.HmGenApo.TabIndex = 126
-        Me.HmGenApo.Text = "1980"
         '
         'Xrmalbox
         '
@@ -532,12 +531,25 @@ Partial Class Search
         Me.SrBt.Text = "Search"
         Me.SrBt.UseVisualStyleBackColor = True
         '
+        'Button1
+        '
+        Me.Button1.BackgroundImage = CType(resources.GetObject("Button1.BackgroundImage"), System.Drawing.Image)
+        Me.Button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Button1.ForeColor = System.Drawing.SystemColors.Info
+        Me.Button1.Location = New System.Drawing.Point(402, 340)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(85, 33)
+        Me.Button1.TabIndex = 152
+        Me.Button1.Text = "Profile"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
         'Search
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(614, 401)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.GroupBox2)
@@ -623,4 +635,5 @@ Partial Class Search
     Friend WithEvents ErgasiaTextBox As System.Windows.Forms.TextBox
     Friend WithEvents PerioxhTextBox As System.Windows.Forms.TextBox
     Friend WithEvents SrBt As System.Windows.Forms.Button
+    Friend WithEvents Button1 As System.Windows.Forms.Button
 End Class
