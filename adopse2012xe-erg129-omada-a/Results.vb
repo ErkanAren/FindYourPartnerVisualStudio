@@ -1,6 +1,6 @@
 ﻿Public Class Results
-    Dim max As Integer(,)
-    Dim analytic1click As Boolean = False
+    Dim max As Integer(,) 'o pinakas poy tha xrhsimopoiithei gia na kataxorhthoyn oi theseis twn xristwn sto all_users me ti megalyteri symbatotita
+    Dim analytic1click As Boolean = False 'tha xrhsimopoiithoyn gia tin emfanisi analytikwn apotelesmatwn
     Dim analytic2click As Boolean = False
     Dim analytic3click As Boolean = False
     Dim analytic4click As Boolean = False
@@ -9,23 +9,23 @@
     Private Sub Results_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         ' Dim name1 As String = Search.users_krit_baros(1, 0)
         ' For i = 0 To 5
-        Dim pr_num As Double
-        Dim new_table As String(,)
+        Dim pr_num As Double 'metavliti ypologismoy twn apotelesmatwn epi tis ekato
+        Dim new_table As String(,) 'temp pinakas poy tha xrhsimopoihthei sto max,(gia na min xathoyn ta epitiximena kritiria)
         ReDim new_table(Search.db_count, 4)
 
-        ReDim max(5, 2)
+        ReDim max(5, 2) 'h prwti stili toy pinaka tha periexei ti thesi kai i deyteri stili twn arithmo twn kritiriwn poy tairiasan
 
 
 
         Dim i As Integer = 0
         If (Search.kritirio_varos_selected = True) Then
-            Do Until Search.all_users(i, 0) = ""
+            Do Until Search.all_users(i, 0) = "" ' kane mexri na min yparxei onoma xristi
                 For j = 0 To Search.db_count
-                    If Search.users_krit_baros(j, 0) = "" Then
+                    If Search.users_krit_baros(j, 0) = "" Then 'Search.users_krit_baros(j, 0) periexei toys xristes poy tairiaksan sto zitoymeno kritirio
                         ' MessageBox.Show("Search.users_krit_baros(j, 0)= " & Search.users_krit_baros(j, 0) & "- Search.all_users(i, 0)= " & Search.all_users(i, 0))
                     Else
-                        If Search.all_users(i, 1) = Search.users_krit_baros(j, 1) Then
-                            Search.all_users(i, 2) += 1
+                        If Search.all_users(i, 1) = Search.users_krit_baros(j, 1) Then ' ean to ID toy all_users(i) = users_krit_baros(j).ID
+                            Search.all_users(i, 2) += 1 ' ayksise to pedio toy xristi poy apothikeyetai o arithmos twn petiximenwn kritiriwn
                         End If
 
                     End If
@@ -130,7 +130,7 @@
 
                         If Search.all_users(i, 1) = Search.users_krit_xr_mal(j, 1) Then
                             Search.all_users(i, 2) += 1
-                            axrmal.ForeColor = Color.Green
+
                         End If
                     End If
                 Next
@@ -302,18 +302,18 @@
 
         End If
 
-        If Search.kritirio_fylo_selected = True Then
-            i = 0
-            Dim selected_fylo As Boolean = False
+        If Search.kritirio_fylo_selected = True Then 'ean exei epilexthei to kritirio fylo
+            i = 0 'arxikopoihei to i
+            Dim selected_fylo As Boolean = False 'h metavlitis boolean poy tha xrhsimopoithei gia ton orismo toy fyloy
             Do Until Search.all_users(i, 0) = ""
                 selected_fylo = False
                 For j = 0 To Search.db_count
-                    If Search.users_krit_fylo(j, 0) = "" Then
-                        If selected_fylo <> True Then
-                            Search.all_users(i, 2) = -1
+                    If Search.users_krit_fylo(j, 0) = "" Then 'ean o pinakas den periexei alla stoixeia
+                        If selected_fylo <> True Then 'ean o users den einai mes to pinaka Search.users_krit_fylo
+                            Search.all_users(i, 2) = -1 'kataxwrisi -1 sto pedio synolikos arithmos pet. kritiriwn gia xristes poy den tairiazoyn
 
                         End If
-                    Else
+                    Else 'Search.users_krit_fylo(j, 0) <> "" 
                         If Search.all_users(i, 1) = Search.users_krit_fylo(j, 1) Then
                             Search.all_users(i, 2) += 1
                             selected_fylo = True
@@ -349,49 +349,58 @@
         End If
 
 
-
-        For i = 0 To Search.db_count
+        Dim tempresults As Integer()
+        ReDim tempresults(Search.db_count)
+        For i = 0 To Search.db_count ' ekxwrish pediwn tou pinaka all_users sto temp pinaka new table gia xrisi parakatw
             new_table(i, 0) = Search.all_users(i, 0)
             new_table(i, 1) = Search.all_users(i, 1)
             new_table(i, 2) = Search.all_users(i, 2)
             new_table(i, 3) = Search.all_users(i, 3)
+
+            tempresults(i) = Search.all_users(i, 2) 'kataxwroyme twn arithmo twn petiximenwn kritiriwn gia kathe xristi ston temp results
+
         Next
         Dim th As Integer
-        For th = 0 To 5
+        For th = 0 To 5 'arxikopoiisi toy pinaka max
             max(th, 1) = 0
             max(th, 0) = 0
         Next
-
-
+        Array.Sort(tempresults) 'taksinomei to pinaka
+        Array.Reverse(tempresults) ' antistrefei to taksinomimeno pinaka
+        Dim n As Integer = 0
         For th = 0 To 5
             For k = 0 To Search.db_count
 
-                If max(th, 1) < new_table(k, 2) Then
+                If max(th, 1) < new_table(k, 2) Then 'new_table(k, 2)= arithmos pet. kritiriwn toy xristi
 
-                    max(th, 0) = k
-                    max(th, 1) = new_table(k, 2)
-                    new_table(k, 2) = 0
+                    max(th, 0) = k ' kataxwrei ti thesi toy xristi sti prwti thesi toy pinaka max
+                    max(th, 1) = new_table(k, 2) 'kataxwrei twn arithmo twn pet. krit sti deyteri thesi toy pinaka max
+
+                    If tempresults(n) = max(th, 1) Then
+                        new_table(k, 2) = 0
+                        n += 1 ' ean einai o max(th) pane ston epomeno tempresults
+                    End If
+
                 End If
             Next
         Next
 
 
 
-
         '   MessageBox.Show("Ar_krit= " & Search.ar_krit & ", Petiximena krit= " & Search.all_users(2, 2) & ",Onoma= " & Search.all_users(2, 0))
 
-        If Search.all_users(max(0, 0), 2) <> 0 Then
+        If Search.all_users(max(0, 0), 2) <> 0 Then 'ean i timi toy megalyteroy arithmoy twn petyximenwn kritiriwn einai diaforo toy mhdenos
             analytic1.Visible = True
             onoma1.Visible = True
             pr_num_l1.Visible = True
             ProgressBar1.Visible = True
             Label1.Visible = True
-            onoma1.Text = Search.all_users(max(0, 0), 0) & " " & Search.all_users(max(0, 0), 3)
-            pr_num = CInt((16 / Search.ar_krit) * 6.25 * Search.all_users(max(0, 0), 2))
+            onoma1.Text = Search.all_users(max(0, 0), 0) & " " & Search.all_users(max(0, 0), 3) 'emfanisi onomatos = Search.all_users(max(0, 0), 0) kai epitheto = Search.all_users(max(0, 0), 3)
+            pr_num = CInt((16 / Search.ar_krit) * 6.25 * Search.all_users(max(0, 0), 2)) ' pr_num= (16 / ar. epilegmenwn krit.) * 6.25 * ar. petiximenwn krit. xristi .....6.25 = (100/synolikos arithmos kritiriwn)
             pr_num_l1.Text = pr_num
             ProgressBar1.Value = pr_num
         Else
-            dontmatch.Visible = True
+            dontmatch.Visible = True 'ean den yparxoyn pet. krit. (epeidi einai o prwtos elegxos emfanise to mnm donmatch)
         End If
 
         If Search.all_users(max(1, 0), 2) <> 0 Then
@@ -449,24 +458,14 @@
             new_table(i, 1) = ""
             new_table(i, 2) = 0
         Next
-        ' Label1.Text = Search.users_krit_hmgen(0, 0)
-        '  ProgressBar1.Value = (16 / Search.ar_krit) * 6.25 * Search.users_krit_hmgen(0, 1)
-        ' Label2.Text = (16 / Search.ar_krit) * 6.25 * Search.users_krit_hmgen(0, 1)
-        ' Next
-        ' Dim pr_num As Double
-        ' pr_num = (16 / Search.ar_krit) * 6.25 * Search.pet_krit
-        ' Label1.Text = Search.onoma_xr
-        ' ProgressBar1.Value = pr_num
+       
     End Sub
 
 
-    Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
+    Private Sub closebutton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles closebutton.Click
         Search.ar_krit = 0
         For i = 0 To Search.db_count
-            'Search.all_users(i, 0) = ""
-            '  Search.all_users(i, 1) = ""
             Search.all_users(i, 2) = 0
-
         Next
         Me.Close()
     End Sub
@@ -479,14 +478,10 @@
         If response = MsgBoxResult.Yes Then
             Search.ar_krit = 0
             For i = 0 To Search.db_count
-                'Search.all_users(i, 0) = ""
-                '  Search.all_users(i, 1) = ""
                 Search.all_users(i, 2) = 0
-
             Next
             Me.Dispose()
         ElseIf response = MsgBoxResult.No Then
-
             e.Cancel = True
             Exit Sub
         End If

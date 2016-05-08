@@ -22,7 +22,6 @@ Partial Class Results
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Results))
         Dim FyloLabel As System.Windows.Forms.Label
         Dim Label25 As System.Windows.Forms.Label
         Dim Label27 As System.Windows.Forms.Label
@@ -39,6 +38,7 @@ Partial Class Results
         Dim Label19 As System.Windows.Forms.Label
         Dim Label21 As System.Windows.Forms.Label
         Dim Label23 As System.Windows.Forms.Label
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Results))
         Me.handpic5 = New System.Windows.Forms.PictureBox
         Me.handpic4 = New System.Windows.Forms.PictureBox
         Me.handpic3 = New System.Windows.Forms.PictureBox
@@ -76,7 +76,7 @@ Partial Class Results
         Me.Label2 = New System.Windows.Forms.Label
         Me.Label1 = New System.Windows.Forms.Label
         Me.PictureBox1 = New System.Windows.Forms.PictureBox
-        Me.Button1 = New System.Windows.Forms.Button
+        Me.closebutton = New System.Windows.Forms.Button
         Me.ProgressBar5 = New System.Windows.Forms.ProgressBar
         Me.ProgressBar4 = New System.Windows.Forms.ProgressBar
         Me.pr_num_l5 = New System.Windows.Forms.Label
@@ -116,6 +116,150 @@ Partial Class Results
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
+        '
+        'FyloLabel
+        '
+        FyloLabel.AutoSize = True
+        FyloLabel.Location = New System.Drawing.Point(67, 164)
+        FyloLabel.Name = "FyloLabel"
+        FyloLabel.Size = New System.Drawing.Size(40, 13)
+        FyloLabel.TabIndex = 84
+        FyloLabel.Text = "Φύλο :"
+        '
+        'Label25
+        '
+        Label25.AutoSize = True
+        Label25.Location = New System.Drawing.Point(49, 410)
+        Label25.Name = "Label25"
+        Label25.Size = New System.Drawing.Size(55, 13)
+        Label25.TabIndex = 82
+        Label25.Text = "Εργασία :"
+        '
+        'Label27
+        '
+        Label27.AutoSize = True
+        Label27.Location = New System.Drawing.Point(51, 436)
+        Label27.Name = "Label27"
+        Label27.Size = New System.Drawing.Size(53, 13)
+        Label27.TabIndex = 83
+        Label27.Text = "Περιοχή :"
+        '
+        'Label29
+        '
+        Label29.AutoSize = True
+        Label29.Location = New System.Drawing.Point(49, 226)
+        Label29.Name = "Label29"
+        Label29.Size = New System.Drawing.Size(59, 13)
+        Label29.TabIndex = 75
+        Label29.Text = "Hobby - 1 :"
+        '
+        'Label31
+        '
+        Label31.AutoSize = True
+        Label31.Location = New System.Drawing.Point(49, 252)
+        Label31.Name = "Label31"
+        Label31.Size = New System.Drawing.Size(59, 13)
+        Label31.TabIndex = 76
+        Label31.Text = "Hobby - 2 :"
+        '
+        'Label33
+        '
+        Label33.AutoSize = True
+        Label33.Location = New System.Drawing.Point(49, 279)
+        Label33.Name = "Label33"
+        Label33.Size = New System.Drawing.Size(59, 13)
+        Label33.TabIndex = 77
+        Label33.Text = "Hobby - 3 :"
+        '
+        'Label35
+        '
+        Label35.AutoSize = True
+        Label35.Location = New System.Drawing.Point(50, 305)
+        Label35.Name = "Label35"
+        Label35.Size = New System.Drawing.Size(57, 13)
+        Label35.TabIndex = 78
+        Label35.Text = "Αναζήτα :"
+        '
+        'Label36
+        '
+        Label36.AutoSize = True
+        Label36.Location = New System.Drawing.Point(52, 331)
+        Label36.Name = "Label36"
+        Label36.Size = New System.Drawing.Size(56, 13)
+        Label36.TabIndex = 79
+        Label36.Text = "Γλωσσά : "
+        '
+        'Label37
+        '
+        Label37.AutoSize = True
+        Label37.Location = New System.Drawing.Point(37, 357)
+        Label37.Name = "Label37"
+        Label37.Size = New System.Drawing.Size(68, 13)
+        Label37.TabIndex = 80
+        Label37.Text = "Γλωσσά - 2 :"
+        '
+        'Label38
+        '
+        Label38.AutoSize = True
+        Label38.Location = New System.Drawing.Point(64, 383)
+        Label38.Name = "Label38"
+        Label38.Size = New System.Drawing.Size(41, 13)
+        Label38.TabIndex = 81
+        Label38.Text = "Tatoo :"
+        '
+        'Label9
+        '
+        Label9.AutoSize = True
+        Label9.Location = New System.Drawing.Point(74, 52)
+        Label9.Name = "Label9"
+        Label9.Size = New System.Drawing.Size(41, 13)
+        Label9.TabIndex = 74
+        Label9.Text = "E-mail :"
+        '
+        'Label11
+        '
+        Label11.AutoSize = True
+        Label11.Location = New System.Drawing.Point(39, 180)
+        Label11.Name = "Label11"
+        Label11.Size = New System.Drawing.Size(76, 13)
+        Label11.TabIndex = 72
+        Label11.Text = "Χρ. Ματιών :  "
+        '
+        'Label13
+        '
+        Label13.AutoSize = True
+        Label13.Location = New System.Drawing.Point(34, 207)
+        Label13.Name = "Label13"
+        Label13.Size = New System.Drawing.Size(74, 13)
+        Label13.TabIndex = 73
+        Label13.Text = "Χρ. Μαλλιών :"
+        '
+        'Label19
+        '
+        Label19.AutoSize = True
+        Label19.Location = New System.Drawing.Point(34, 81)
+        Label19.Name = "Label19"
+        Label19.Size = New System.Drawing.Size(81, 13)
+        Label19.TabIndex = 69
+        Label19.Text = "Ημ. γέννησης :"
+        '
+        'Label21
+        '
+        Label21.AutoSize = True
+        Label21.Location = New System.Drawing.Point(71, 109)
+        Label21.Name = "Label21"
+        Label21.Size = New System.Drawing.Size(44, 13)
+        Label21.TabIndex = 70
+        Label21.Text = "Βάρος :"
+        '
+        'Label23
+        '
+        Label23.AutoSize = True
+        Label23.Location = New System.Drawing.Point(73, 135)
+        Label23.Name = "Label23"
+        Label23.Size = New System.Drawing.Size(42, 13)
+        Label23.TabIndex = 71
+        Label23.Text = "Ύψος :"
         '
         'handpic5
         '
@@ -284,150 +428,6 @@ Partial Class Results
         Me.aemail.Size = New System.Drawing.Size(45, 13)
         Me.aemail.TabIndex = 85
         Me.aemail.Text = "Label39"
-        '
-        'FyloLabel
-        '
-        FyloLabel.AutoSize = True
-        FyloLabel.Location = New System.Drawing.Point(67, 164)
-        FyloLabel.Name = "FyloLabel"
-        FyloLabel.Size = New System.Drawing.Size(40, 13)
-        FyloLabel.TabIndex = 84
-        FyloLabel.Text = "Φύλο :"
-        '
-        'Label25
-        '
-        Label25.AutoSize = True
-        Label25.Location = New System.Drawing.Point(49, 410)
-        Label25.Name = "Label25"
-        Label25.Size = New System.Drawing.Size(55, 13)
-        Label25.TabIndex = 82
-        Label25.Text = "Εργασία :"
-        '
-        'Label27
-        '
-        Label27.AutoSize = True
-        Label27.Location = New System.Drawing.Point(51, 436)
-        Label27.Name = "Label27"
-        Label27.Size = New System.Drawing.Size(53, 13)
-        Label27.TabIndex = 83
-        Label27.Text = "Περιοχή :"
-        '
-        'Label29
-        '
-        Label29.AutoSize = True
-        Label29.Location = New System.Drawing.Point(49, 226)
-        Label29.Name = "Label29"
-        Label29.Size = New System.Drawing.Size(59, 13)
-        Label29.TabIndex = 75
-        Label29.Text = "Hobby - 1 :"
-        '
-        'Label31
-        '
-        Label31.AutoSize = True
-        Label31.Location = New System.Drawing.Point(49, 252)
-        Label31.Name = "Label31"
-        Label31.Size = New System.Drawing.Size(59, 13)
-        Label31.TabIndex = 76
-        Label31.Text = "Hobby - 2 :"
-        '
-        'Label33
-        '
-        Label33.AutoSize = True
-        Label33.Location = New System.Drawing.Point(49, 279)
-        Label33.Name = "Label33"
-        Label33.Size = New System.Drawing.Size(59, 13)
-        Label33.TabIndex = 77
-        Label33.Text = "Hobby - 3 :"
-        '
-        'Label35
-        '
-        Label35.AutoSize = True
-        Label35.Location = New System.Drawing.Point(50, 305)
-        Label35.Name = "Label35"
-        Label35.Size = New System.Drawing.Size(57, 13)
-        Label35.TabIndex = 78
-        Label35.Text = "Αναζήτα :"
-        '
-        'Label36
-        '
-        Label36.AutoSize = True
-        Label36.Location = New System.Drawing.Point(52, 331)
-        Label36.Name = "Label36"
-        Label36.Size = New System.Drawing.Size(56, 13)
-        Label36.TabIndex = 79
-        Label36.Text = "Γλωσσά : "
-        '
-        'Label37
-        '
-        Label37.AutoSize = True
-        Label37.Location = New System.Drawing.Point(37, 357)
-        Label37.Name = "Label37"
-        Label37.Size = New System.Drawing.Size(68, 13)
-        Label37.TabIndex = 80
-        Label37.Text = "Γλωσσά - 2 :"
-        '
-        'Label38
-        '
-        Label38.AutoSize = True
-        Label38.Location = New System.Drawing.Point(64, 383)
-        Label38.Name = "Label38"
-        Label38.Size = New System.Drawing.Size(41, 13)
-        Label38.TabIndex = 81
-        Label38.Text = "Tatoo :"
-        '
-        'Label9
-        '
-        Label9.AutoSize = True
-        Label9.Location = New System.Drawing.Point(74, 52)
-        Label9.Name = "Label9"
-        Label9.Size = New System.Drawing.Size(41, 13)
-        Label9.TabIndex = 74
-        Label9.Text = "E-mail :"
-        '
-        'Label11
-        '
-        Label11.AutoSize = True
-        Label11.Location = New System.Drawing.Point(39, 180)
-        Label11.Name = "Label11"
-        Label11.Size = New System.Drawing.Size(76, 13)
-        Label11.TabIndex = 72
-        Label11.Text = "Χρ. Ματιών :  "
-        '
-        'Label13
-        '
-        Label13.AutoSize = True
-        Label13.Location = New System.Drawing.Point(34, 207)
-        Label13.Name = "Label13"
-        Label13.Size = New System.Drawing.Size(74, 13)
-        Label13.TabIndex = 73
-        Label13.Text = "Χρ. Μαλλιών :"
-        '
-        'Label19
-        '
-        Label19.AutoSize = True
-        Label19.Location = New System.Drawing.Point(34, 81)
-        Label19.Name = "Label19"
-        Label19.Size = New System.Drawing.Size(81, 13)
-        Label19.TabIndex = 69
-        Label19.Text = "Ημ. γέννησης :"
-        '
-        'Label21
-        '
-        Label21.AutoSize = True
-        Label21.Location = New System.Drawing.Point(71, 109)
-        Label21.Name = "Label21"
-        Label21.Size = New System.Drawing.Size(44, 13)
-        Label21.TabIndex = 70
-        Label21.Text = "Βάρος :"
-        '
-        'Label23
-        '
-        Label23.AutoSize = True
-        Label23.Location = New System.Drawing.Point(73, 135)
-        Label23.Name = "Label23"
-        Label23.Size = New System.Drawing.Size(42, 13)
-        Label23.TabIndex = 71
-        Label23.Text = "Ύψος :"
         '
         'afylo
         '
@@ -661,17 +661,17 @@ Partial Class Results
         Me.PictureBox1.TabIndex = 52
         Me.PictureBox1.TabStop = False
         '
-        'Button1
+        'closebutton
         '
-        Me.Button1.BackgroundImage = CType(resources.GetObject("Button1.BackgroundImage"), System.Drawing.Image)
-        Me.Button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button1.ForeColor = System.Drawing.SystemColors.Info
-        Me.Button1.Location = New System.Drawing.Point(679, 500)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(81, 35)
-        Me.Button1.TabIndex = 51
-        Me.Button1.Text = "close"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.closebutton.BackgroundImage = CType(resources.GetObject("closebutton.BackgroundImage"), System.Drawing.Image)
+        Me.closebutton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.closebutton.ForeColor = System.Drawing.SystemColors.Info
+        Me.closebutton.Location = New System.Drawing.Point(679, 500)
+        Me.closebutton.Name = "closebutton"
+        Me.closebutton.Size = New System.Drawing.Size(81, 35)
+        Me.closebutton.TabIndex = 51
+        Me.closebutton.Text = "close"
+        Me.closebutton.UseVisualStyleBackColor = True
         '
         'ProgressBar5
         '
@@ -838,7 +838,7 @@ Partial Class Results
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.PictureBox1)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.closebutton)
         Me.Controls.Add(Me.ProgressBar5)
         Me.Controls.Add(Me.ProgressBar4)
         Me.Controls.Add(Me.pr_num_l5)
@@ -905,7 +905,7 @@ Partial Class Results
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
-    Friend WithEvents Button1 As System.Windows.Forms.Button
+    Friend WithEvents closebutton As System.Windows.Forms.Button
     Friend WithEvents ProgressBar5 As System.Windows.Forms.ProgressBar
     Friend WithEvents ProgressBar4 As System.Windows.Forms.ProgressBar
     Friend WithEvents pr_num_l5 As System.Windows.Forms.Label

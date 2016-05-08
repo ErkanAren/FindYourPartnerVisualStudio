@@ -4,10 +4,8 @@ Imports System.IO
 Imports System.Data.Common
 Public Class Search
     Public Shared ar_krit As Integer = 0 'synolikos arithmos kritiriwn
-    ' Public Shared pet_krit As Integer = 0 'kritiria poy petyxan
-    Public Shared onoma_xr As String
     Public loop_count As Integer = 0
-    Public Shared users_krit_baros As String(,)
+    Public Shared users_krit_baros As String(,) 'oi pinakes poy tha kataxwrhthoyn oi xristes poy tairiazoyn sta zitoymena kritiria
     Public Shared users_krit_tat As String(,)
     Public Shared users_krit_hmgen As String(,)
     Public Shared users_krit_ypsos As String(,)
@@ -24,9 +22,9 @@ Public Class Search
     Public Shared users_krit_fylo As String(,)
     Public Shared users_krit_anazita As String(,)
 
-    Public Shared all_users As String(,)
-    Public Shared pedio As String
-    Public Shared kritirio_varos_selected As Boolean = False
+    Public Shared all_users As String(,) ' o pinakas poy tha periexei oloys toys xristes me ola ta pedia
+    'Public Shared pedio As String
+    Public Shared kritirio_varos_selected As Boolean = False 'boolean metavlites gia na elegksoume ean exei epilexthei to sygkekrimeno kritirio
     Public Shared kritirio_hmgen_selected As Boolean = False
     Public Shared kritirio_tat_selected As Boolean = False
     Public Shared kritirio_ypsos_selected As Boolean = False
@@ -44,20 +42,17 @@ Public Class Search
     Public Shared kritirio_anazita_selected As Boolean = False
 
 
-    Public Shared db_count As Integer = 33 'database length (tha allaksei...)
+    Public Shared db_count As Integer  'o arithmos twn eggrafwn toy pinaka
 
 
-    Private Sub PeopleBindingNavigatorSaveItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
-        Me.Validate()
-        Me.PeopleBindingSource.EndEdit()
-        Me.TableAdapterManager.UpdateAll(Me.PeopleDataSet)
 
-    End Sub
+
 
     Private Sub Search_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
 
-        Dim all_dbusers As String = "SELECT * FROM people"
-        ReDim all_users(db_count, 19)
+        Dim all_dbusers As String = "SELECT * FROM people" 'query gia ton pinaka all_users
+        Dim counterquery As String = "SELECT count(*) as 'count' FROM people" 'query gia db_count
+
         Dim cmd2 As New OleDbCommand
         Dim cn2 As OleDbConnection = New OleDbConnection
         cn2.ConnectionString = My.Settings.peopleConnectionString
@@ -67,10 +62,31 @@ Public Class Search
 
         Dim temprow2 As DataRow
         Dim ds2 As DataSet = New DataSet
-        For k = 0 To db_count
+
+
+        Dim cmd3 As New OleDbCommand
+        Dim cn3 As OleDbConnection = New OleDbConnection
+        cn3.ConnectionString = My.Settings.peopleConnectionString
+        cn3.Open()
+        cmd3.Connection = cn3
+        Dim myadapt3 As OleDbDataAdapter ' = New OleDbDataAdapter(querybaros1, cmd.Connection.ConnectionString())
+
+        Dim temprow3 As DataRow
+        Dim ds3 As DataSet = New DataSet
+
+
+        myadapt3 = New OleDbDataAdapter(counterquery, cmd3.Connection.ConnectionString())
+        myadapt3.Fill(ds3, "people")
+        For Each temprow3 In ds3.Tables("people").Rows
+            db_count = temprow3.Item("'count'")
+        Next
+        ReDim all_users(db_count, 20) 'diastaseis toy pinaka
+
+        'MessageBox.Show("" & db_count)
+        For k = 0 To db_count 'arxikopoiish toy pinaka all_users
             all_users(k, 0) = ""
             all_users(k, 1) = ""
-            all_users(k, 2) = 0
+            all_users(k, 2) = 0 'ta petiximena kritiria toy xristi
             all_users(k, 3) = ""
             all_users(k, 4) = 0
             all_users(k, 5) = 0
@@ -87,11 +103,12 @@ Public Class Search
             all_users(k, 16) = ""
             all_users(k, 17) = ""
             all_users(k, 18) = ""
+            all_users(k, 19) = ""
         Next
         myadapt2 = New OleDbDataAdapter(all_dbusers, cmd2.Connection.ConnectionString())
         myadapt2.Fill(ds2, "people")
         Dim i As Integer = 0
-        For Each temprow2 In ds2.Tables("people").Rows
+        For Each temprow2 In ds2.Tables("people").Rows 'gemizei ton pinaka all_users me kathe grammi tis vasis
 
             all_users(i, 0) = temprow2.Item("Onoma").ToString
             all_users(i, 1) = temprow2.Item("ID").ToString
@@ -111,6 +128,7 @@ Public Class Search
             all_users(i, 16) = temprow2.Item("Tatoo").ToString
             all_users(i, 17) = temprow2.Item("Ergasia").ToString
             all_users(i, 18) = temprow2.Item("Perioxh").ToString
+            all_users(i, 19) = temprow2.Item("Fylo").ToString
             i += 1
 
 
@@ -123,7 +141,7 @@ Public Class Search
         '  Dim cmd As New SqlCommand("SELECT Onoma FROM people WHERE Baros = 49")
         '  con.Open()
 
-        ReDim users_krit_baros(db_count, 2)
+        ReDim users_krit_baros(db_count, 2) 'dhmiourgeia pinakwn
         ReDim users_krit_tat(db_count, 2)
         ReDim users_krit_hmgen(db_count, 2)
         ReDim users_krit_ypsos(db_count, 2)
@@ -140,21 +158,21 @@ Public Class Search
         ReDim users_krit_fylo(db_count, 2)
         ReDim users_krit_anazita(db_count, 2)
 
-        For i = 0 To db_count
-            users_krit_baros(i, 0) = ""
-            users_krit_baros(i, 1) = ""
-        Next
-        For i = 0 To db_count
-            users_krit_tat(i, 0) = ""
-            users_krit_tat(i, 1) = ""
-        Next
-        For i = 0 To db_count
-            users_krit_tat(i, 0) = ""
-            users_krit_tat(i, 1) = ""
-        Next
+        '  For i = 0 To db_count
+        'users_krit_baros(i, 0) = ""
+        ' users_krit_baros(i, 1) = ""
+        ' Next
+        ' For i = 0 To db_count
+        'users_krit_tat(i, 0) = ""
+        'users_krit_tat(i, 1) = ""
+        ' Next
+        'For i = 0 To db_count
+        'users_krit_tat(i, 0) = ""
+        ' users_krit_tat(i, 1) = ""
+        ' Next
         '  Dim db_counter As String = "SELECT Count(*) AS usercount FROM people"
-        Dim all_dbusers As String = "SELECT * FROM people"
-        Dim querybaros1 As String = "SELECT Onoma,Epitheto,ID FROM people WHERE Baros<=55"
+        'Dim all_dbusers As String = "SELECT * FROM people"
+        Dim querybaros1 As String = "SELECT Onoma,Epitheto,ID FROM people WHERE Baros<=55" 'queries gia kathe kritirio
         Dim querybaros2 As String = "SELECT Onoma,Epitheto,ID FROM people WHERE Baros>55 AND Baros<=65"
         Dim querybaros3 As String = "SELECT Onoma,Epitheto,ID FROM people WHERE Baros>65 AND Baros<=75"
         Dim querybaros4 As String = "SELECT Onoma,Epitheto,ID FROM people WHERE Baros>75 AND Baros<=85"
@@ -184,15 +202,15 @@ Public Class Search
         Dim query_woman As String = "SELECT Onoma,Epitheto,ID FROM people WHERE Anazita='WOMAN'"
 
 
-        Dim cmd As New OleDbCommand
+        Dim cmd As New OleDbCommand 'dhmiourgeia connection
         Dim cn As OleDbConnection = New OleDbConnection
         cn.ConnectionString = My.Settings.peopleConnectionString
         cn.Open()
         cmd.Connection = cn
         ' Dim query_xrwma_matiwn = (From peop In PeopleBindingSource Order By peop.ID Ascending Where (peop.Xrwma_Matiwn = Xrmatbox.Text) Select Onoma = peop.Onoma, ID = peop.ID)
-        Dim myadapt As OleDbDataAdapter 'Xreisimopoiihtai gia to varos = New OleDbDataAdapter(querybaros1, cmd.Connection.ConnectionString())
-        Dim myadaptbaros As OleDbDataAdapter
-        Dim myadapttat As OleDbDataAdapter
+        Dim myadapt As OleDbDataAdapter 'Xreisimopoiihtai gia to varos 
+        Dim myadaptbaros As OleDbDataAdapter 'dhmiourgeia dataadapter gia kathe kritirio
+        Dim myadapttat As OleDbDataAdapter 'alliws bgazei diplo eggrafes
         Dim myadapthmgen As OleDbDataAdapter
         Dim myadaptypsos As OleDbDataAdapter
         Dim myadaptxr_mat As OleDbDataAdapter
@@ -262,9 +280,9 @@ Public Class Search
 
         If OnomaTextBox.Text <> "" Then
 
-            ar_krit = ar_krit + 1
+            ar_krit = ar_krit + 1 'ayksanei ton arithmo twn kritiriwn pou exoyn epilexthei
 
-            kritirio_onoma_selected = True
+            kritirio_onoma_selected = True 'tha xrhsimopoihthei sto results
             myadaptonoma = New OleDbDataAdapter(query_onoma, cmd.Connection.ConnectionString())
             myadaptonoma.Fill(dsonoma, "people")
 
@@ -272,51 +290,42 @@ Public Class Search
             For Each temprowonoma In dsonoma.Tables("people").Rows
 
                 If temprowonoma.Item("Onoma").ToString <> "" Then
-                    users_krit_onoma(i, 0) = temprowonoma.Item("Onoma").ToString
+                    users_krit_onoma(i, 0) = temprowonoma.Item("Onoma").ToString 'gemizei ton pinaka me ta apotelesmata toy query_onoma (onoma,ID)
                     users_krit_onoma(i, 1) = temprowonoma.Item("ID").ToString
                     i += 1
                 End If
             Next
 
         End If
-        If HmGenApo.Text <> "" And HmGenEws.Text <> "" Then
+        If HmGenApo.Text <> "" And HmGenEws.Text <> "" Then 'ean den einai kena kai ta dyo textboxes
             If HmGenApo.Text > HmGenEws.Text Then
-                MessageBox.Show("HMgen einai megalytero apo im ews")
-            Else
+                MessageBox.Show("Lathos eisagwgi")
+            Else 'ean den exei kanei lathos eisagwgi im o xristis
                 ar_krit = ar_krit + 1
                 kritirio_hmgen_selected = True
                 myadapthmgen = New OleDbDataAdapter(querydaterange, cmd.Connection.ConnectionString())
                 myadapthmgen.Fill(dshm, "people")
                 Dim i As Integer = 0
                 For Each temprowhm In dshm.Tables("people").Rows
-                    '  MessageBox.Show("Hm_gen - " & (temprow.Item("Onoma").ToString) & " - " & (temprow.Item("Epitheto").ToString))
-                    '   users_krit_baros(i)(0) = (temprow.Item("Onoma").ToString)
-                    ' If i < db_count Then
+
                     If temprowhm.Item("Onoma").ToString <> "" Then
                         users_krit_hmgen(i, 0) = temprowhm.Item("Onoma").ToString
-
-                        'users_krit_hmgen(i, 1) = users_krit_hmgen(i, 1) + 1
                         users_krit_hmgen(i, 1) = temprowhm.Item("ID").ToString
                         i += 1
                         '  MessageBox.Show("HmGen onoma= " & temprowhm.Item("Onoma").ToString)
                     End If
-                    ' If arr(i).Length <> 0 Then
-                    '  users_krit_baros(i)(1) += 1
-                    'End If
 
                 Next
             End If
             '   MessageBox.Show("Hmbox.SelectedItem")
-        ElseIf HmGenApo.Text <> "" Then
+        ElseIf HmGenApo.Text <> "" Then 'ean o xristis exei valei sygkekrimeni imerominia
             ar_krit = ar_krit + 1
             kritirio_hmgen_selected = True
             myadapthmgen = New OleDbDataAdapter(querydate, cmd.Connection.ConnectionString())
             myadapthmgen.Fill(dshm, "people")
             Dim i As Integer = 0
             For Each temprowhm In dshm.Tables("people").Rows
-                '    MessageBox.Show("1 - " & (temprowhm.Item("Onoma").ToString))
-                '   users_krit_baros(i)(0) = (temprow.Item("Onoma").ToString)
-                ' If i < db_count Then
+
                 If temprowhm.Item("Onoma").ToString <> "" Then
                     users_krit_hmgen(i, 0) = temprowhm.Item("Onoma").ToString
                     'users_krit_hmgen(i, 1) = users_krit_hmgen(i, 1) + 1
@@ -450,11 +459,11 @@ Public Class Search
                     i += 1
                 End If
             Next
-        End If
+        End If 'telos twn elegxwn toy ypsous
 
 
 
-        If MaleRadioButton.Checked() = True Or FemaleRadioButton.Checked() = True Then
+        If MaleRadioButton.Checked() = True Or FemaleRadioButton.Checked() = True Then 'ean exei epilexthei to kritirio fylo
             ar_krit = ar_krit + 1
             If MaleRadioButton.Checked() = True Then
 
@@ -496,7 +505,7 @@ Public Class Search
 
                 Next
             End If
-        End If
+        End If 'end if fylo
 
 
 
@@ -518,8 +527,6 @@ Public Class Search
                     i += 1
                 End If
             Next
-
-
         End If
 
 
@@ -544,6 +551,10 @@ Public Class Search
             Next
 
         End If
+
+
+
+
         If Hoby1TextBox.Text <> "" Then
             ar_krit = ar_krit + 1
             kritirio_hob1_selected = True
@@ -560,6 +571,9 @@ Public Class Search
                 End If
             Next
         End If
+
+
+
         If Hoby2TextBox.Text <> "" Then
             ar_krit = ar_krit + 1
             kritirio_hob2_selected = True
@@ -578,6 +592,9 @@ Public Class Search
                 End If
             Next
         End If
+
+
+
         If Hoby3TextBox.Text <> "" Then
             ar_krit = ar_krit + 1
             kritirio_hob3_selected = True
@@ -594,6 +611,11 @@ Public Class Search
                 End If
             Next
         End If
+
+
+
+
+
 
 
         If ManRadioButton.Checked() = True Or WomanRadioButton.Checked() = True Then
@@ -641,6 +663,8 @@ Public Class Search
         End If
 
 
+
+
         If GlwssaTextBox.Text <> "" Then
             ar_krit = ar_krit + 1
             kritirio_glws1_selected = True
@@ -660,6 +684,9 @@ Public Class Search
             Next
         End If
 
+
+
+
         If Glwssa2TextBox.Text <> "" Then
             ar_krit = ar_krit + 1
             kritirio_glws2_selected = True
@@ -678,6 +705,8 @@ Public Class Search
                 End If
             Next
         End If
+
+
         If YesRadioButton.Checked <> False Then
 
             ar_krit = ar_krit + 1
@@ -698,6 +727,9 @@ Public Class Search
                 End If
 
             Next
+
+
+
         ElseIf NoRadioButton.Checked <> False Then
 
             ar_krit = ar_krit + 1
@@ -717,6 +749,11 @@ Public Class Search
 
             Next
         End If
+
+
+
+
+
         If ErgasiaTextBox.Text <> "" Then
             ar_krit = ar_krit + 1
             kritirio_ergasia_selected = True
@@ -735,6 +772,10 @@ Public Class Search
                 End If
             Next
         End If
+
+
+
+
         If PerioxhTextBox.Text <> "" Then 'ean exei epilexthei to kritirio perioxh
             ar_krit = ar_krit + 1
             kritirio_perioxh_selected = True
@@ -753,6 +794,8 @@ Public Class Search
                 End If
             Next
         End If
+
+
 
         Results.ShowDialog()
     End Sub

@@ -31,7 +31,7 @@ Public Class Login
 
     End Sub
 
-    Dim errorstr As String
+    Dim errorstr As String 'tha xrisimopoihthei gia emfanisi sfalmatwn
 
     Public Function Login()
         Dim DBcon As New ADODB.Connection
@@ -42,7 +42,7 @@ Public Class Login
         Dim userdb As String
         Dim passdb As String
 
-        Dim userfound As Boolean
+        Dim userfound As Boolean 'ean vrethei o user ginetai true
         DBcon.Open("Provider=Microsoft.Jet.OLEDB.4.0;" & _
                    "Data source = '" & Application.StartupPath & "\people.mdb'")
 
@@ -50,13 +50,13 @@ Public Class Login
 
         userfound = False
         Login = False
-        username = "email='" & UserNameText.Text & "'"
+        username = "email='" & UserNameText.Text & "'" 'to onoma toy pediou sti vasi + UserNameText.Text
 
         Do
-            User.Find(username)
-            If User.BOF = False And User.EOF = False Then
+            User.Find(username) 'vres ton user me email= username!!
+            If User.BOF = False And User.EOF = False Then ' synthiki egkyrotitas gia to username
                 userdb = User.Fields("email").Value.ToString
-                passdb = User.Fields("Password").Value.ToString
+                passdb = User.Fields("Password").Value.ToString 'kataxwrish timwn toy user poy ekane login apo ti vasi stis public shared metavlites
                 username1 = userdb
                 ID = User.Fields("ID").Value.ToString
                 onoma1 = User.Fields("Onoma").Value.ToString
@@ -77,28 +77,29 @@ Public Class Login
                 glwssa2 = User.Fields("Glwssa2").Value.ToString
                 tatoo = User.Fields("Tatoo").Value.ToString
 
-                If userdb <> UserNameText.Text Then
-                    User.MoveNext()
-                Else
-                    userfound = True
-                    If passdb <> PasswordText.Text Then
-                        User.Close()
-                        DBcon.Close()
-                        errorstr = "Invalid password"
-                        Return False
-                    Else
+                '  If userdb <> UserNameText.Text Then
+                'User.MoveNext()
 
-                        Return True
-                    End If
+                '  Else
+                userfound = True 'o xristis vrethike
+                If passdb <> PasswordText.Text Then 'ean to password poy evale o xristis einai diaforo toy password toy xristi
+                    User.Close()
+                    DBcon.Close()
+                    errorstr = "Invalid password"
+                    Return False
+                Else
+
+                    Return True 'epistrefei true apo tin methodo Login
                 End If
-            Else
+                'End If
+            Else 'ean den exei vrethei o xristis
                 errorstr = "Invalid username"
                 User.Close()
                 DBcon.Close()
                 Return False
 
-            End If
-        Loop Until userfound = True
+            End If 'if eof bof
+        Loop Until userfound = True ' ektelesi toy block mexri na vrethei o xristis
 
 
         User.Close()
@@ -121,6 +122,7 @@ Public Class Login
 
 
 
+ 
     Private Sub Login_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
 
     End Sub

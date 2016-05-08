@@ -23,7 +23,6 @@ Partial Class RegisterForm
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(RegisterForm))
         Dim Label9 As System.Windows.Forms.Label
         Dim FyloLabel As System.Windows.Forms.Label
         Dim Label16 As System.Windows.Forms.Label
@@ -43,6 +42,7 @@ Partial Class RegisterForm
         Dim Label5 As System.Windows.Forms.Label
         Dim Label6 As System.Windows.Forms.Label
         Dim PasswordLabel As System.Windows.Forms.Label
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(RegisterForm))
         Me.PeopleDataSet = New WindowsApplication1.peopleDataSet
         Me.PeopleBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.PeopleTableAdapter = New WindowsApplication1.peopleDataSetTableAdapters.PeopleTableAdapter
@@ -75,6 +75,10 @@ Partial Class RegisterForm
         Me.PerioxhTextBox = New System.Windows.Forms.TextBox
         Me.PasswordTextBox = New System.Windows.Forms.TextBox
         Me.RgButton = New System.Windows.Forms.Button
+        Me.Label19 = New System.Windows.Forms.Label
+        Me.Label20 = New System.Windows.Forms.Label
+        Me.Label21 = New System.Windows.Forms.Label
+        Me.Label22 = New System.Windows.Forms.Label
         Label9 = New System.Windows.Forms.Label
         FyloLabel = New System.Windows.Forms.Label
         Label16 = New System.Windows.Forms.Label
@@ -99,139 +103,19 @@ Partial Class RegisterForm
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'PeopleDataSet
-        '
-        Me.PeopleDataSet.DataSetName = "peopleDataSet"
-        Me.PeopleDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'PeopleBindingSource
-        '
-        Me.PeopleBindingSource.DataMember = "People"
-        Me.PeopleBindingSource.DataSource = Me.PeopleDataSet
-        '
-        'PeopleTableAdapter
-        '
-        Me.PeopleTableAdapter.ClearBeforeFill = True
-        '
-        'TableAdapterManager
-        '
-        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
-        Me.TableAdapterManager.PeopleTableAdapter = Me.PeopleTableAdapter
-        Me.TableAdapterManager.UpdateOrder = WindowsApplication1.peopleDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
-        '
-        'Label18
-        '
-        Me.Label18.AutoSize = True
-        Me.Label18.Location = New System.Drawing.Point(592, 213)
-        Me.Label18.Name = "Label18"
-        Me.Label18.Size = New System.Drawing.Size(59, 13)
-        Me.Label18.TabIndex = 117
-        Me.Label18.Text = "YES or NO"
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.BackgroundImage = CType(resources.GetObject("PictureBox1.BackgroundImage"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(26, 38)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(69, 66)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
-        Me.PictureBox1.TabIndex = 116
-        Me.PictureBox1.TabStop = False
-        '
-        'HelpLabel
-        '
-        Me.HelpLabel.AutoSize = True
-        Me.HelpLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(161, Byte))
-        Me.HelpLabel.ForeColor = System.Drawing.Color.Red
-        Me.HelpLabel.Location = New System.Drawing.Point(167, 343)
-        Me.HelpLabel.Name = "HelpLabel"
-        Me.HelpLabel.Size = New System.Drawing.Size(243, 13)
-        Me.HelpLabel.TabIndex = 115
-        Me.HelpLabel.Text = "Συμπληρώστε τα υποχρεωτικά πεδία  !!!"
-        Me.HelpLabel.Visible = False
-        '
-        'EmailError
-        '
-        Me.EmailError.AutoSize = True
-        Me.EmailError.Font = New System.Drawing.Font("Symbol", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(2, Byte))
-        Me.EmailError.ForeColor = System.Drawing.Color.Red
-        Me.EmailError.Location = New System.Drawing.Point(346, 77)
-        Me.EmailError.Name = "EmailError"
-        Me.EmailError.Size = New System.Drawing.Size(21, 23)
-        Me.EmailError.TabIndex = 114
-        Me.EmailError.Text = "*"
-        Me.EmailError.Visible = False
-        '
         'Label9
         '
         Label9.AutoSize = True
-        Label9.Location = New System.Drawing.Point(195, 80)
+        Label9.Location = New System.Drawing.Point(157, 76)
         Label9.Name = "Label9"
         Label9.Size = New System.Drawing.Size(41, 13)
         Label9.TabIndex = 113
         Label9.Text = "E-mail :"
         '
-        'EmailTextBox
-        '
-        Me.EmailTextBox.BackColor = System.Drawing.SystemColors.Info
-        Me.EmailTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PeopleBindingSource, "email", True))
-        Me.EmailTextBox.Location = New System.Drawing.Point(244, 78)
-        Me.EmailTextBox.Name = "EmailTextBox"
-        Me.EmailTextBox.Size = New System.Drawing.Size(100, 20)
-        Me.EmailTextBox.TabIndex = 112
-        '
-        'HmError
-        '
-        Me.HmError.AutoSize = True
-        Me.HmError.Font = New System.Drawing.Font("Symbol", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(2, Byte))
-        Me.HmError.ForeColor = System.Drawing.Color.Red
-        Me.HmError.Location = New System.Drawing.Point(346, 154)
-        Me.HmError.Name = "HmError"
-        Me.HmError.Size = New System.Drawing.Size(21, 23)
-        Me.HmError.TabIndex = 111
-        Me.HmError.Text = "*"
-        Me.HmError.Visible = False
-        '
-        'EpithetoError
-        '
-        Me.EpithetoError.AutoSize = True
-        Me.EpithetoError.Font = New System.Drawing.Font("Symbol", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(2, Byte))
-        Me.EpithetoError.ForeColor = System.Drawing.Color.Red
-        Me.EpithetoError.Location = New System.Drawing.Point(346, 127)
-        Me.EpithetoError.Name = "EpithetoError"
-        Me.EpithetoError.Size = New System.Drawing.Size(21, 23)
-        Me.EpithetoError.TabIndex = 110
-        Me.EpithetoError.Text = "*"
-        Me.EpithetoError.Visible = False
-        '
-        'OnomaError
-        '
-        Me.OnomaError.AutoSize = True
-        Me.OnomaError.Font = New System.Drawing.Font("Symbol", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(2, Byte))
-        Me.OnomaError.ForeColor = System.Drawing.Color.Red
-        Me.OnomaError.Location = New System.Drawing.Point(346, 101)
-        Me.OnomaError.Name = "OnomaError"
-        Me.OnomaError.Size = New System.Drawing.Size(21, 23)
-        Me.OnomaError.TabIndex = 109
-        Me.OnomaError.Text = "*"
-        Me.OnomaError.Visible = False
-        '
-        'PasswordError
-        '
-        Me.PasswordError.AutoSize = True
-        Me.PasswordError.Font = New System.Drawing.Font("Symbol", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(2, Byte))
-        Me.PasswordError.ForeColor = System.Drawing.Color.Red
-        Me.PasswordError.Location = New System.Drawing.Point(346, 53)
-        Me.PasswordError.Name = "PasswordError"
-        Me.PasswordError.Size = New System.Drawing.Size(21, 23)
-        Me.PasswordError.TabIndex = 108
-        Me.PasswordError.Text = "*"
-        Me.PasswordError.Visible = False
-        '
         'FyloLabel
         '
         FyloLabel.AutoSize = True
-        FyloLabel.Location = New System.Drawing.Point(194, 288)
+        FyloLabel.Location = New System.Drawing.Point(156, 284)
         FyloLabel.Name = "FyloLabel"
         FyloLabel.Size = New System.Drawing.Size(40, 13)
         FyloLabel.TabIndex = 107
@@ -321,7 +205,7 @@ Partial Class RegisterForm
         'Label7
         '
         Label7.AutoSize = True
-        Label7.Location = New System.Drawing.Point(167, 234)
+        Label7.Location = New System.Drawing.Point(129, 230)
         Label7.Name = "Label7"
         Label7.Size = New System.Drawing.Size(76, 13)
         Label7.TabIndex = 96
@@ -330,7 +214,7 @@ Partial Class RegisterForm
         'Label8
         '
         Label8.AutoSize = True
-        Label8.Location = New System.Drawing.Point(162, 261)
+        Label8.Location = New System.Drawing.Point(124, 257)
         Label8.Name = "Label8"
         Label8.Size = New System.Drawing.Size(74, 13)
         Label8.TabIndex = 97
@@ -339,7 +223,7 @@ Partial Class RegisterForm
         'Label2
         '
         Label2.AutoSize = True
-        Label2.Location = New System.Drawing.Point(191, 104)
+        Label2.Location = New System.Drawing.Point(153, 100)
         Label2.Name = "Label2"
         Label2.Size = New System.Drawing.Size(47, 13)
         Label2.TabIndex = 91
@@ -348,7 +232,7 @@ Partial Class RegisterForm
         'Label3
         '
         Label3.AutoSize = True
-        Label3.Location = New System.Drawing.Point(184, 131)
+        Label3.Location = New System.Drawing.Point(146, 127)
         Label3.Name = "Label3"
         Label3.Size = New System.Drawing.Size(55, 13)
         Label3.TabIndex = 92
@@ -357,7 +241,7 @@ Partial Class RegisterForm
         'Label4
         '
         Label4.AutoSize = True
-        Label4.Location = New System.Drawing.Point(157, 155)
+        Label4.Location = New System.Drawing.Point(119, 151)
         Label4.Name = "Label4"
         Label4.Size = New System.Drawing.Size(81, 13)
         Label4.TabIndex = 93
@@ -366,7 +250,7 @@ Partial Class RegisterForm
         'Label5
         '
         Label5.AutoSize = True
-        Label5.Location = New System.Drawing.Point(194, 183)
+        Label5.Location = New System.Drawing.Point(156, 179)
         Label5.Name = "Label5"
         Label5.Size = New System.Drawing.Size(44, 13)
         Label5.TabIndex = 94
@@ -375,17 +259,147 @@ Partial Class RegisterForm
         'Label6
         '
         Label6.AutoSize = True
-        Label6.Location = New System.Drawing.Point(196, 209)
+        Label6.Location = New System.Drawing.Point(158, 205)
         Label6.Name = "Label6"
         Label6.Size = New System.Drawing.Size(42, 13)
         Label6.TabIndex = 95
         Label6.Text = "Ύψος :"
         '
+        'PasswordLabel
+        '
+        PasswordLabel.AutoSize = True
+        PasswordLabel.Location = New System.Drawing.Point(106, 53)
+        PasswordLabel.Name = "PasswordLabel"
+        PasswordLabel.Size = New System.Drawing.Size(94, 13)
+        PasswordLabel.TabIndex = 89
+        PasswordLabel.Text = "Κωδικός Χρήστη :"
+        '
+        'PeopleDataSet
+        '
+        Me.PeopleDataSet.DataSetName = "peopleDataSet"
+        Me.PeopleDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'PeopleBindingSource
+        '
+        Me.PeopleBindingSource.DataMember = "People"
+        Me.PeopleBindingSource.DataSource = Me.PeopleDataSet
+        '
+        'PeopleTableAdapter
+        '
+        Me.PeopleTableAdapter.ClearBeforeFill = True
+        '
+        'TableAdapterManager
+        '
+        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager.PeopleTableAdapter = Me.PeopleTableAdapter
+        Me.TableAdapterManager.UpdateOrder = WindowsApplication1.peopleDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        '
+        'Label18
+        '
+        Me.Label18.AutoSize = True
+        Me.Label18.ForeColor = System.Drawing.SystemColors.ActiveCaption
+        Me.Label18.Location = New System.Drawing.Point(592, 213)
+        Me.Label18.Name = "Label18"
+        Me.Label18.Size = New System.Drawing.Size(59, 13)
+        Me.Label18.TabIndex = 117
+        Me.Label18.Text = "YES or NO"
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.BackgroundImage = CType(resources.GetObject("PictureBox1.BackgroundImage"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(26, 38)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(69, 66)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
+        Me.PictureBox1.TabIndex = 116
+        Me.PictureBox1.TabStop = False
+        '
+        'HelpLabel
+        '
+        Me.HelpLabel.AutoSize = True
+        Me.HelpLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(161, Byte))
+        Me.HelpLabel.ForeColor = System.Drawing.Color.Red
+        Me.HelpLabel.Location = New System.Drawing.Point(167, 343)
+        Me.HelpLabel.Name = "HelpLabel"
+        Me.HelpLabel.Size = New System.Drawing.Size(243, 13)
+        Me.HelpLabel.TabIndex = 115
+        Me.HelpLabel.Text = "Συμπληρώστε τα υποχρεωτικά πεδία  !!!"
+        Me.HelpLabel.Visible = False
+        '
+        'EmailError
+        '
+        Me.EmailError.AutoSize = True
+        Me.EmailError.Font = New System.Drawing.Font("Symbol", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(2, Byte))
+        Me.EmailError.ForeColor = System.Drawing.Color.Red
+        Me.EmailError.Location = New System.Drawing.Point(308, 73)
+        Me.EmailError.Name = "EmailError"
+        Me.EmailError.Size = New System.Drawing.Size(21, 23)
+        Me.EmailError.TabIndex = 114
+        Me.EmailError.Text = "*"
+        Me.EmailError.Visible = False
+        '
+        'EmailTextBox
+        '
+        Me.EmailTextBox.BackColor = System.Drawing.SystemColors.Info
+        Me.EmailTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PeopleBindingSource, "email", True))
+        Me.EmailTextBox.Location = New System.Drawing.Point(206, 74)
+        Me.EmailTextBox.Name = "EmailTextBox"
+        Me.EmailTextBox.Size = New System.Drawing.Size(100, 20)
+        Me.EmailTextBox.TabIndex = 112
+        '
+        'HmError
+        '
+        Me.HmError.AutoSize = True
+        Me.HmError.Font = New System.Drawing.Font("Symbol", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(2, Byte))
+        Me.HmError.ForeColor = System.Drawing.Color.Red
+        Me.HmError.Location = New System.Drawing.Point(308, 150)
+        Me.HmError.Name = "HmError"
+        Me.HmError.Size = New System.Drawing.Size(21, 23)
+        Me.HmError.TabIndex = 111
+        Me.HmError.Text = "*"
+        Me.HmError.Visible = False
+        '
+        'EpithetoError
+        '
+        Me.EpithetoError.AutoSize = True
+        Me.EpithetoError.Font = New System.Drawing.Font("Symbol", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(2, Byte))
+        Me.EpithetoError.ForeColor = System.Drawing.Color.Red
+        Me.EpithetoError.Location = New System.Drawing.Point(308, 123)
+        Me.EpithetoError.Name = "EpithetoError"
+        Me.EpithetoError.Size = New System.Drawing.Size(21, 23)
+        Me.EpithetoError.TabIndex = 110
+        Me.EpithetoError.Text = "*"
+        Me.EpithetoError.Visible = False
+        '
+        'OnomaError
+        '
+        Me.OnomaError.AutoSize = True
+        Me.OnomaError.Font = New System.Drawing.Font("Symbol", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(2, Byte))
+        Me.OnomaError.ForeColor = System.Drawing.Color.Red
+        Me.OnomaError.Location = New System.Drawing.Point(308, 97)
+        Me.OnomaError.Name = "OnomaError"
+        Me.OnomaError.Size = New System.Drawing.Size(21, 23)
+        Me.OnomaError.TabIndex = 109
+        Me.OnomaError.Text = "*"
+        Me.OnomaError.Visible = False
+        '
+        'PasswordError
+        '
+        Me.PasswordError.AutoSize = True
+        Me.PasswordError.Font = New System.Drawing.Font("Symbol", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(2, Byte))
+        Me.PasswordError.ForeColor = System.Drawing.Color.Red
+        Me.PasswordError.Location = New System.Drawing.Point(308, 49)
+        Me.PasswordError.Name = "PasswordError"
+        Me.PasswordError.Size = New System.Drawing.Size(21, 23)
+        Me.PasswordError.TabIndex = 108
+        Me.PasswordError.Text = "*"
+        Me.PasswordError.Visible = False
+        '
         'OnomaTextBox
         '
         Me.OnomaTextBox.BackColor = System.Drawing.SystemColors.Info
         Me.OnomaTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PeopleBindingSource, "Onoma", True))
-        Me.OnomaTextBox.Location = New System.Drawing.Point(244, 102)
+        Me.OnomaTextBox.Location = New System.Drawing.Point(206, 98)
         Me.OnomaTextBox.Name = "OnomaTextBox"
         Me.OnomaTextBox.Size = New System.Drawing.Size(100, 20)
         Me.OnomaTextBox.TabIndex = 72
@@ -394,7 +408,7 @@ Partial Class RegisterForm
         '
         Me.EpithetoTextBox.BackColor = System.Drawing.SystemColors.Info
         Me.EpithetoTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PeopleBindingSource, "Epitheto", True))
-        Me.EpithetoTextBox.Location = New System.Drawing.Point(244, 128)
+        Me.EpithetoTextBox.Location = New System.Drawing.Point(206, 124)
         Me.EpithetoTextBox.Name = "EpithetoTextBox"
         Me.EpithetoTextBox.Size = New System.Drawing.Size(100, 20)
         Me.EpithetoTextBox.TabIndex = 73
@@ -403,7 +417,7 @@ Partial Class RegisterForm
         '
         Me.Hm_GennisisTextBox.BackColor = System.Drawing.SystemColors.Info
         Me.Hm_GennisisTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PeopleBindingSource, "Hm_Gennisis", True))
-        Me.Hm_GennisisTextBox.Location = New System.Drawing.Point(244, 154)
+        Me.Hm_GennisisTextBox.Location = New System.Drawing.Point(206, 150)
         Me.Hm_GennisisTextBox.Name = "Hm_GennisisTextBox"
         Me.Hm_GennisisTextBox.Size = New System.Drawing.Size(100, 20)
         Me.Hm_GennisisTextBox.TabIndex = 74
@@ -412,7 +426,7 @@ Partial Class RegisterForm
         '
         Me.BarosTextBox.BackColor = System.Drawing.SystemColors.Info
         Me.BarosTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PeopleBindingSource, "Baros", True))
-        Me.BarosTextBox.Location = New System.Drawing.Point(244, 180)
+        Me.BarosTextBox.Location = New System.Drawing.Point(206, 176)
         Me.BarosTextBox.Name = "BarosTextBox"
         Me.BarosTextBox.Size = New System.Drawing.Size(100, 20)
         Me.BarosTextBox.TabIndex = 75
@@ -421,7 +435,7 @@ Partial Class RegisterForm
         '
         Me.YpsosTextBox.BackColor = System.Drawing.SystemColors.Info
         Me.YpsosTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PeopleBindingSource, "Ypsos", True))
-        Me.YpsosTextBox.Location = New System.Drawing.Point(244, 206)
+        Me.YpsosTextBox.Location = New System.Drawing.Point(206, 202)
         Me.YpsosTextBox.Name = "YpsosTextBox"
         Me.YpsosTextBox.Size = New System.Drawing.Size(100, 20)
         Me.YpsosTextBox.TabIndex = 76
@@ -430,7 +444,7 @@ Partial Class RegisterForm
         '
         Me.FyloTextBox.BackColor = System.Drawing.SystemColors.Info
         Me.FyloTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PeopleBindingSource, "Fylo", True))
-        Me.FyloTextBox.Location = New System.Drawing.Point(244, 285)
+        Me.FyloTextBox.Location = New System.Drawing.Point(206, 281)
         Me.FyloTextBox.Name = "FyloTextBox"
         Me.FyloTextBox.Size = New System.Drawing.Size(100, 20)
         Me.FyloTextBox.TabIndex = 77
@@ -439,7 +453,7 @@ Partial Class RegisterForm
         '
         Me.Xrwma_MatiwnTextBox.BackColor = System.Drawing.SystemColors.Info
         Me.Xrwma_MatiwnTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PeopleBindingSource, "Xrwma_Matiwn", True))
-        Me.Xrwma_MatiwnTextBox.Location = New System.Drawing.Point(244, 233)
+        Me.Xrwma_MatiwnTextBox.Location = New System.Drawing.Point(206, 229)
         Me.Xrwma_MatiwnTextBox.Name = "Xrwma_MatiwnTextBox"
         Me.Xrwma_MatiwnTextBox.Size = New System.Drawing.Size(100, 20)
         Me.Xrwma_MatiwnTextBox.TabIndex = 78
@@ -448,7 +462,7 @@ Partial Class RegisterForm
         '
         Me.Xrwma_MalliwnTextBox.BackColor = System.Drawing.SystemColors.Info
         Me.Xrwma_MalliwnTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PeopleBindingSource, "Xrwma_Malliwn", True))
-        Me.Xrwma_MalliwnTextBox.Location = New System.Drawing.Point(244, 259)
+        Me.Xrwma_MalliwnTextBox.Location = New System.Drawing.Point(206, 255)
         Me.Xrwma_MalliwnTextBox.Name = "Xrwma_MalliwnTextBox"
         Me.Xrwma_MalliwnTextBox.Size = New System.Drawing.Size(100, 20)
         Me.Xrwma_MalliwnTextBox.TabIndex = 79
@@ -534,20 +548,11 @@ Partial Class RegisterForm
         Me.PerioxhTextBox.Size = New System.Drawing.Size(100, 20)
         Me.PerioxhTextBox.TabIndex = 88
         '
-        'PasswordLabel
-        '
-        PasswordLabel.AutoSize = True
-        PasswordLabel.Location = New System.Drawing.Point(144, 57)
-        PasswordLabel.Name = "PasswordLabel"
-        PasswordLabel.Size = New System.Drawing.Size(94, 13)
-        PasswordLabel.TabIndex = 89
-        PasswordLabel.Text = "Κωδικός Χρήστη :"
-        '
         'PasswordTextBox
         '
         Me.PasswordTextBox.BackColor = System.Drawing.SystemColors.Info
         Me.PasswordTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PeopleBindingSource, "Password", True))
-        Me.PasswordTextBox.Location = New System.Drawing.Point(244, 54)
+        Me.PasswordTextBox.Location = New System.Drawing.Point(206, 50)
         Me.PasswordTextBox.Name = "PasswordTextBox"
         Me.PasswordTextBox.Size = New System.Drawing.Size(100, 20)
         Me.PasswordTextBox.TabIndex = 90
@@ -557,19 +562,63 @@ Partial Class RegisterForm
         Me.RgButton.BackgroundImage = CType(resources.GetObject("RgButton.BackgroundImage"), System.Drawing.Image)
         Me.RgButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.RgButton.ForeColor = System.Drawing.SystemColors.Info
-        Me.RgButton.Location = New System.Drawing.Point(487, 333)
+        Me.RgButton.Location = New System.Drawing.Point(565, 332)
         Me.RgButton.Name = "RgButton"
         Me.RgButton.Size = New System.Drawing.Size(86, 34)
         Me.RgButton.TabIndex = 71
         Me.RgButton.Text = "Register"
         Me.RgButton.UseVisualStyleBackColor = True
         '
+        'Label19
+        '
+        Me.Label19.AutoSize = True
+        Me.Label19.ForeColor = System.Drawing.SystemColors.ActiveCaption
+        Me.Label19.Location = New System.Drawing.Point(313, 205)
+        Me.Label19.Name = "Label19"
+        Me.Label19.Size = New System.Drawing.Size(21, 13)
+        Me.Label19.TabIndex = 118
+        Me.Label19.Text = "cm"
+        '
+        'Label20
+        '
+        Me.Label20.AutoSize = True
+        Me.Label20.ForeColor = System.Drawing.SystemColors.ActiveCaption
+        Me.Label20.Location = New System.Drawing.Point(312, 179)
+        Me.Label20.Name = "Label20"
+        Me.Label20.Size = New System.Drawing.Size(19, 13)
+        Me.Label20.TabIndex = 119
+        Me.Label20.Text = "kg"
+        '
+        'Label21
+        '
+        Me.Label21.AutoSize = True
+        Me.Label21.ForeColor = System.Drawing.SystemColors.ActiveCaption
+        Me.Label21.Location = New System.Drawing.Point(312, 284)
+        Me.Label21.Name = "Label21"
+        Me.Label21.Size = New System.Drawing.Size(93, 13)
+        Me.Label21.TabIndex = 120
+        Me.Label21.Text = "MALE or FEMALE"
+        '
+        'Label22
+        '
+        Me.Label22.AutoSize = True
+        Me.Label22.ForeColor = System.Drawing.SystemColors.ActiveCaption
+        Me.Label22.Location = New System.Drawing.Point(595, 136)
+        Me.Label22.Name = "Label22"
+        Me.Label22.Size = New System.Drawing.Size(89, 13)
+        Me.Label22.TabIndex = 121
+        Me.Label22.Text = "MAN or WOMAN"
+        '
         'RegisterForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(676, 404)
+        Me.ClientSize = New System.Drawing.Size(695, 404)
+        Me.Controls.Add(Me.Label22)
+        Me.Controls.Add(Me.Label21)
+        Me.Controls.Add(Me.Label20)
+        Me.Controls.Add(Me.Label19)
         Me.Controls.Add(Me.Label18)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.HelpLabel)
@@ -658,4 +707,8 @@ Partial Class RegisterForm
     Friend WithEvents PerioxhTextBox As System.Windows.Forms.TextBox
     Friend WithEvents PasswordTextBox As System.Windows.Forms.TextBox
     Friend WithEvents RgButton As System.Windows.Forms.Button
+    Friend WithEvents Label19 As System.Windows.Forms.Label
+    Friend WithEvents Label20 As System.Windows.Forms.Label
+    Friend WithEvents Label21 As System.Windows.Forms.Label
+    Friend WithEvents Label22 As System.Windows.Forms.Label
 End Class

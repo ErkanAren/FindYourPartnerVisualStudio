@@ -1,11 +1,6 @@
 ﻿Public Class Edit
     Public Shared editclicked As Boolean = False
-    Private Sub PeopleBindingNavigatorSaveItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
-        Me.Validate()
-        Me.PeopleBindingSource.EndEdit()
-        Me.TableAdapterManager.UpdateAll(Me.PeopleDataSet)
-
-    End Sub
+    
 
     Private Sub Edit_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         'TODO: This line of code loads data into the 'PeopleDataSet.People' table. You can move, or remove it, as needed.
@@ -37,7 +32,7 @@
 
     Private Sub EditBt_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles EditBt.Click
         Dim peopleRow As Data.DataRow
-        peopleRow = PeopleDataSet.People.FindByID(IDTextBox.Text)
+        peopleRow = PeopleDataSet.People.FindByID(IDTextBox.Text) 'ananewnei tis times toy dataset
 
         peopleRow(2) = OnomaTextBox.Text
         peopleRow(3) = EpithetoTextBox.Text
@@ -58,7 +53,7 @@
         peopleRow(18) = ErgasiaTextBox.Text
         peopleRow(19) = PerioxhTextBox.Text
 
-        Me.TableAdapterManager.UpdateAll(Me.PeopleDataSet)
+        Me.TableAdapterManager.UpdateAll(Me.PeopleDataSet) 'ananewsi tis vasis apo to dataset
 
         editclicked = True
         'Me.Close()

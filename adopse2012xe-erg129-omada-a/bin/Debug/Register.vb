@@ -1,12 +1,7 @@
 ﻿
 Public Class RegisterForm
     Dim ID As Integer = 1
-    Private Sub PeopleBindingNavigatorSaveItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
-        Me.Validate()
-        Me.PeopleBindingSource.EndEdit()
-        Me.TableAdapterManager.UpdateAll(Me.PeopleDataSet)
-
-    End Sub
+ 
 
     Private Sub RegisterForm_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         'TODO: This line of code loads data into the 'PeopleDataSet.People' table. You can move, or remove it, as needed.
@@ -22,10 +17,11 @@ Public Class RegisterForm
         Dim temprow3 As DataRow
         Dim dsNewRow As DataRow
 
-        For Each temprow3 In PeopleDataSet.Tables("people").Rows
+        For Each temprow3 In PeopleDataSet.Tables("people").Rows 'ayksisi toy id kata ena gia kathe xristi
             ID = ID + 1
         Next
-        dsNewRow = PeopleDataSet.Tables("people").NewRow()
+
+        dsNewRow = PeopleDataSet.Tables("people").NewRow() 'kataxwrisi timwn apo to dataset sti nea grammi dsnewrow
         dsNewRow.Item("ID") = ID
         dsNewRow.Item("Password") = PasswordTextBox.Text
         dsNewRow.Item("Onoma") = OnomaTextBox.Text

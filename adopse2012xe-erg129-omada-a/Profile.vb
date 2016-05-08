@@ -14,14 +14,14 @@
 
 
     Private Sub ProfileForm_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        If Edit.editclicked = False Then
+        If Edit.editclicked = False Then 'ean den exoume kanei click sto button edit pare times gia emfanisi apo to login
             EmShow.Text = Login.username1
             OnomaShow.Text = Login.onoma1
             EpithetoShow.Text = Login.epitheto1
             HmShow.Text = Login.hmergen1
             PerioxhShow.Text = Login.perioxh1
             ErgasiaShow.Text = Login.ergasia1
-        Else
+        Else 'ean exoume kanei click sto button edit pare times gia emfanisi apo ta textboxes toy edit
             EmShow.Text = Edit.EmailTextBox.Text
             OnomaShow.Text = Edit.OnomaTextBox.Text
             EpithetoShow.Text = Edit.EpithetoTextBox.Text
